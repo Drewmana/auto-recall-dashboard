@@ -3,2082 +3,1154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>St. John's University — Strategic Recall Analysis</title>
+<title>Riverdale Investments — Strategic Recall Analysis</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
- --red: #CC0000;
- --red-dark: #990000;
- --red-light: #ff3333;
- --navy: #002654;
- --navy-light: #003580;
- --navy-dark: #001a3a;
- --gold: #9E7C0C;
- --gold-light: #c9a227;
- --white: #ffffff;
- --off-white: #f8f8f8;
- --gray-light: #f0f0f0;
- --gray: #e0e0e0;
- --gray-mid: #999;
- --gray-dark: #444;
- --text: #1a1a1a;
- --green: #1a7a3f;
- --green-light: #e8f5ee;
+  --red: #CC0000; --red-dark: #990000; --red-light: #ff3333;
+  --navy: #002654; --navy-light: #003580; --navy-dark: #001a3a;
+  --gold: #9E7C0C; --gold-light: #c9a227;
+  --white: #ffffff; --off-white: #f8f8f8;
+  --gray-light: #f0f0f0; --gray: #e0e0e0; --gray-mid: #999; --gray-dark: #444;
+  --text: #1a1a1a; --green: #1a7a3f; --green-light: #e8f5ee;
 }
- 
-* { margin: 0; padding: 0; box-sizing: border-box; }
- 
-html { scroll-behavior: smooth; }
- 
-body {
- font-family: 'DM Sans', sans-serif;
- background: var(--off-white);
- color: var(--text);
- overflow-x: hidden;
-}
- 
-/* ── NAVIGATION ─────────────────────────────────────── */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--off-white); color:var(--text); overflow-x:hidden; }
+
+/* NAV */
 nav {
- position: fixed;
- top: 0; left: 0; right: 0;
- z-index: 1000;
- background: var(--navy-dark);
- border-bottom: 3px solid var(--red);
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 0 2rem;
- height: 60px;
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:var(--navy-dark); border-bottom:3px solid var(--red);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 2rem; height:60px;
 }
- 
-.nav-brand {
- display: flex;
- align-items: center;
- gap: 12px;
-}
- 
+.nav-brand { display:flex; align-items:center; gap:12px; }
 .nav-logo {
- width: 36px;
- height: 36px;
- background: var(--red);
- border-radius: 50%;
- display: flex;
- align-items: center;
- justify-content: center;
- font-family: 'Playfair Display', serif;
- font-weight: 900;
- color: white;
- font-size: 16px;
+  width:36px; height:36px; background:var(--red); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display',serif; font-weight:900; color:white; font-size:16px;
 }
- 
-.nav-title {
- font-family: 'Playfair Display', serif;
- font-weight: 700;
- color: white;
- font-size: 1rem;
- letter-spacing: 0.5px;
-}
- 
-.nav-links {
- display: flex;
- gap: 0;
- list-style: none;
-}
- 
+.nav-title { font-family:'Playfair Display',serif; font-weight:700; color:white; font-size:1rem; }
+.nav-links { display:flex; gap:0; list-style:none; }
 .nav-links a {
- color: rgba(255,255,255,0.75);
- text-decoration: none;
- font-size: 0.78rem;
- font-weight: 500;
- letter-spacing: 0.5px;
- padding: 0 14px;
- height: 60px;
- display: flex;
- align-items: center;
- transition: all 0.2s;
- border-bottom: 3px solid transparent;
- margin-bottom: -3px;
- text-transform: uppercase;
-}
- 
-.nav-links a:hover {
- color: white;
- border-bottom-color: var(--red);
- background: rgba(255,255,255,0.05);
-}
- 
-/* ── HERO ────────────────────────────────────────────── */
-#hero {
- min-height: 100vh;
- background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #003d7a 100%);
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- text-align: center;
- padding: 80px 2rem 4rem;
- position: relative;
- overflow: hidden;
-}
- 
-#hero::before {
- content: '';
- position: absolute;
- top: -50%;
- left: -50%;
- width: 200%;
- height: 200%;
- background: radial-gradient(ellipse at 30% 40%, rgba(204,0,0,0.12) 0%, transparent 60%),
-             radial-gradient(ellipse at 70% 60%, rgba(158,124,12,0.08) 0%, transparent 60%);
- animation: pulse 8s ease-in-out infinite alternate;
-}
- 
-@keyframes pulse {
- from { transform: scale(1); opacity: 0.7; }
- to { transform: scale(1.1); opacity: 1; }
-}
- 
-.hero-badge {
- background: rgba(204,0,0,0.2);
- border: 1px solid rgba(204,0,0,0.5);
- color: #ff9999;
- font-size: 0.75rem;
- font-weight: 600;
- letter-spacing: 2px;
- text-transform: uppercase;
- padding: 6px 18px;
- border-radius: 20px;
- margin-bottom: 1.5rem;
- position: relative;
-}
- 
-#hero h1 {
- font-family: 'Playfair Display', serif;
- font-weight: 900;
- font-size: clamp(2.5rem, 6vw, 5rem);
- color: white;
- line-height: 1.1;
- margin-bottom: 1rem;
- position: relative;
-}
- 
-#hero h1 span { color: var(--red-light); }
- 
-.hero-subtitle {
- font-size: 1.15rem;
- color: rgba(255,255,255,0.7);
- max-width: 680px;
- margin: 0 auto 1rem;
- line-height: 1.6;
- position: relative;
-}
- 
-.hero-course {
- font-size: 0.9rem;
- color: rgba(255,255,255,0.5);
- margin-bottom: 2.5rem;
- position: relative;
-}
- 
-.hero-metrics {
- display: flex;
- gap: 1px;
- background: rgba(255,255,255,0.1);
- border: 1px solid rgba(255,255,255,0.15);
- border-radius: 12px;
- overflow: hidden;
- margin-bottom: 2rem;
- position: relative;
-}
- 
-.hero-metric {
- padding: 1.2rem 1.8rem;
- background: rgba(0,38,84,0.6);
- flex: 1;
- min-width: 100px;
- backdrop-filter: blur(10px);
-}
- 
-.hero-metric:not(:last-child) {
- border-right: 1px solid rgba(255,255,255,0.1);
-}
- 
-.hero-metric .val {
- font-family: 'DM Mono', monospace;
- font-size: 1.8rem;
- font-weight: 500;
- color: white;
- display: block;
-}
- 
-.hero-metric .val.green { color: #4ade80; }
-.hero-metric .val.red { color: #f87171; }
- 
-.hero-metric .lbl {
- font-size: 0.7rem;
- text-transform: uppercase;
- letter-spacing: 1px;
- color: rgba(255,255,255,0.5);
- margin-top: 2px;
- display: block;
-}
- 
-.thesis-box {
- background: rgba(255,255,255,0.06);
- border: 1px solid rgba(255,255,255,0.12);
- border-left: 4px solid var(--red);
- border-radius: 8px;
- padding: 1.2rem 1.8rem;
- max-width: 720px;
- margin: 0 auto;
- position: relative;
- text-align: left;
-}
- 
-.thesis-box p {
- color: rgba(255,255,255,0.85);
- font-size: 0.95rem;
- line-height: 1.7;
- font-style: italic;
-}
- 
-.scroll-indicator {
- position: absolute;
- bottom: 2rem;
- left: 50%;
- transform: translateX(-50%);
- color: rgba(255,255,255,0.4);
- font-size: 0.75rem;
- letter-spacing: 1px;
- text-transform: uppercase;
- animation: bounce 2s infinite;
-}
- 
-@keyframes bounce {
- 0%,100% { transform: translateX(-50%) translateY(0); }
- 50% { transform: translateX(-50%) translateY(6px); }
-}
- 
-/* ── SECTION WRAPPER ─────────────────────────────────── */
-section {
- padding: 5rem 0;
-}
- 
-/* Tab sections get generous top padding to clear the fixed nav with breathing room */
-section[id]:not(#hero) {
- padding-top: calc(60px + 2rem);
- min-height: calc(100vh - 60px);
-}
- 
-@media (max-width: 900px) {
- section[id]:not(#hero) {
-   padding-top: calc(60px + 1.5rem);
- }
-}
- 
-.container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 0 2rem;
-}
- 
-.section-label {
- font-size: 0.72rem;
- font-weight: 700;
- letter-spacing: 3px;
- text-transform: uppercase;
- color: var(--red);
- margin-bottom: 0.5rem;
- display: block;
-}
- 
-.section-title {
- font-family: 'Playfair Display', serif;
- font-weight: 700;
- font-size: clamp(1.8rem, 3vw, 2.6rem);
- color: var(--navy);
- margin-bottom: 1rem;
- line-height: 1.2;
-}
- 
-.section-desc {
- font-size: 1rem;
- color: var(--gray-dark);
- line-height: 1.7;
- max-width: 700px;
- margin-bottom: 2.5rem;
-}
- 
-/* ── ALTERNATING BG ─────────────────────────────────── */
-.bg-white { background: white; }
-.bg-light { background: var(--off-white); }
-.bg-navy {
- background: var(--navy);
- color: white;
-}
-.bg-navy .section-title { color: white; }
-.bg-navy .section-label { color: var(--gold-light); }
-.bg-navy .section-desc { color: rgba(255,255,255,0.75); }
- 
-/* ── CARDS ───────────────────────────────────────────── */
-.card {
- background: white;
- border-radius: 12px;
- padding: 1.8rem;
- border: 1px solid var(--gray);
- box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-}
- 
-.card-red {
- border-top: 4px solid var(--red);
-}
- 
-.card-navy {
- background: var(--navy);
- color: white;
- border: none;
-}
- 
-.card h3 {
- font-family: 'Playfair Display', serif;
- font-size: 1.1rem;
- color: var(--navy);
- margin-bottom: 0.8rem;
- font-weight: 700;
-}
- 
-.card-navy h3 { color: white; }
- 
-/* ── GRID LAYOUTS ────────────────────────────────────── */
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
- 
-/* ── STAT BOXES ──────────────────────────────────────── */
-.stat-box {
- background: white;
- border-radius: 10px;
- padding: 1.5rem;
- border: 1px solid var(--gray);
- text-align: center;
-}
- 
-.stat-box .stat-val {
- font-family: 'DM Mono', monospace;
- font-size: 2rem;
- font-weight: 500;
- color: var(--navy);
- display: block;
-}
- 
-.stat-box .stat-val.red { color: var(--red); }
-.stat-box .stat-val.green { color: var(--green); }
- 
-.stat-box .stat-lbl {
- font-size: 0.78rem;
- text-transform: uppercase;
- letter-spacing: 1px;
- color: var(--gray-mid);
- margin-top: 4px;
- display: block;
-}
- 
-.stat-box .stat-desc {
- font-size: 0.82rem;
- color: var(--gray-dark);
- margin-top: 8px;
- line-height: 1.5;
-}
- 
-/* ── PHASE NARRATIVE ─────────────────────────────────── */
-.phases {
- display: grid;
- grid-template-columns: repeat(3,1fr);
- gap: 0;
- border-radius: 12px;
- overflow: hidden;
- border: 1px solid var(--gray);
-}
- 
-.phase {
- padding: 2rem;
- position: relative;
-}
- 
-.phase-1 { background: var(--navy-dark); }
-.phase-2 { background: var(--navy); border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); }
-.phase-3 { background: var(--navy-light); }
- 
-.phase-num {
- font-family: 'Playfair Display', serif;
- font-size: 3rem;
- font-weight: 900;
- color: rgba(255,255,255,0.1);
- line-height: 1;
- margin-bottom: 0.5rem;
-}
- 
-.phase-tag {
- font-size: 0.7rem;
- font-weight: 700;
- letter-spacing: 2px;
- text-transform: uppercase;
- color: var(--gold-light);
- margin-bottom: 0.5rem;
- display: block;
-}
- 
-.phase h3 {
- color: white;
- font-family: 'Playfair Display', serif;
- font-size: 1.2rem;
- margin-bottom: 0.8rem;
-}
- 
-.phase p {
- color: rgba(255,255,255,0.75);
- font-size: 0.9rem;
- line-height: 1.6;
-}
- 
-.phase-arrow {
- position: absolute;
- right: -16px;
- top: 50%;
- transform: translateY(-50%);
- width: 32px;
- height: 32px;
- background: var(--red);
- clip-path: polygon(0 20%, 70% 20%, 70% 0, 100% 50%, 70% 100%, 70% 80%, 0 80%);
- z-index: 10;
-}
- 
-/* ── MODEL SECTION ───────────────────────────────────── */
-.feature-grid {
- display: grid;
- grid-template-columns: repeat(3,1fr);
- gap: 1rem;
-}
- 
-.feature-item {
- background: white;
- border-radius: 10px;
- padding: 1.2rem 1.4rem;
- border: 1px solid var(--gray);
- border-left: 3px solid var(--red);
-}
- 
-.feature-item h4 {
- font-weight: 600;
- font-size: 0.85rem;
- color: var(--navy);
- margin-bottom: 4px;
-}
- 
-.feature-item .fi-score {
- font-family: 'DM Mono', monospace;
- font-size: 0.8rem;
- color: var(--red);
- font-weight: 500;
-}
- 
-.feature-item p {
- font-size: 0.82rem;
- color: var(--gray-dark);
- margin-top: 4px;
- line-height: 1.5;
-}
- 
-/* ── AUC COMPARISON ──────────────────────────────────── */
-.auc-bars { display: flex; flex-direction: column; gap: 0.8rem; }
- 
-.auc-row {
- display: flex;
- align-items: center;
- gap: 1rem;
-}
- 
-.auc-label {
- width: 160px;
- font-size: 0.85rem;
- font-weight: 500;
- color: var(--navy);
- flex-shrink: 0;
-}
- 
-.auc-bar-wrap {
- flex: 1;
- background: var(--gray-light);
- border-radius: 4px;
- height: 32px;
- overflow: hidden;
-}
- 
-.auc-bar {
- height: 100%;
- border-radius: 4px;
- display: flex;
- align-items: center;
- padding-left: 10px;
- font-family: 'DM Mono', monospace;
- font-size: 0.82rem;
- font-weight: 500;
- color: white;
- transition: width 1s ease;
-}
- 
-.auc-bar.selected { background: var(--navy); }
-.auc-bar.alt { background: var(--gray-mid); }
-.auc-bar.weak { background: #bbb; }
- 
-.auc-badge {
- background: var(--red);
- color: white;
- font-size: 0.65rem;
- font-weight: 700;
- letter-spacing: 1px;
- text-transform: uppercase;
- padding: 3px 8px;
- border-radius: 10px;
- flex-shrink: 0;
-}
- 
-/* ── KELLY ───────────────────────────────────────────── */
-.kelly-equation {
- background: var(--navy-dark);
- border-radius: 12px;
- padding: 2rem;
- text-align: center;
- margin: 1.5rem 0;
- border: 1px solid rgba(255,255,255,0.1);
-}
- 
-.kelly-equation .eq-label {
- font-size: 0.72rem;
- letter-spacing: 2px;
- text-transform: uppercase;
- color: var(--gold-light);
- margin-bottom: 0.8rem;
- display: block;
-}
- 
-.kelly-equation .eq-full {
- font-family: 'DM Mono', monospace;
- font-size: 1.4rem;
- color: white;
- margin-bottom: 0.5rem;
-}
- 
-.kelly-equation .eq-simple {
- font-size: 0.9rem;
- color: rgba(255,255,255,0.6);
- font-style: italic;
-}
- 
-.kelly-vars {
- display: grid;
- grid-template-columns: repeat(2,1fr);
- gap: 0.8rem;
- margin-top: 1.5rem;
-}
- 
-.kelly-var {
- background: white;
- border-radius: 8px;
- padding: 1rem;
- border-left: 3px solid var(--navy);
-}
- 
-.kelly-var .kv-sym {
- font-family: 'DM Mono', monospace;
- font-size: 0.9rem;
- font-weight: 500;
- color: var(--navy);
-}
- 
-.kelly-var .kv-desc {
- font-size: 0.82rem;
- color: var(--gray-dark);
- margin-top: 3px;
-}
- 
-.kelly-var .kv-val {
- font-size: 0.8rem;
- color: var(--red);
- font-weight: 600;
- margin-top: 2px;
-}
- 
-/* ── SCORECARD TABLE ─────────────────────────────────── */
-.table-wrap {
- overflow-x: auto;
- border-radius: 10px;
- border: 1px solid var(--gray);
-}
- 
-table {
- width: 100%;
- border-collapse: collapse;
- font-size: 0.85rem;
-}
- 
-thead tr {
- background: var(--navy);
- color: white;
-}
- 
-thead th {
- padding: 12px 14px;
- text-align: left;
- font-size: 0.75rem;
- font-weight: 600;
- letter-spacing: 0.5px;
- text-transform: uppercase;
- white-space: nowrap;
-}
- 
-tbody tr:nth-child(even) { background: var(--off-white); }
-tbody tr:nth-child(odd) { background: white; }
-tbody tr:hover { background: #e8eef6; }
- 
-tbody td {
- padding: 10px 14px;
- color: var(--text);
- white-space: nowrap;
-}
- 
-.badge-trade {
- background: var(--green-light);
- color: var(--green);
- font-size: 0.72rem;
- font-weight: 700;
- padding: 3px 10px;
- border-radius: 12px;
- letter-spacing: 0.5px;
-}
- 
-.badge-skip {
- background: #fee2e2;
- color: var(--red-dark);
- font-size: 0.72rem;
- font-weight: 700;
- padding: 3px 10px;
- border-radius: 12px;
- letter-spacing: 0.5px;
-}
- 
-.badge-excluded {
- background: #fef3c7;
- color: #92400e;
- font-size: 0.72rem;
- font-weight: 700;
- padding: 3px 10px;
- border-radius: 12px;
- letter-spacing: 0.5px;
-}
- 
-.mono { font-family: 'DM Mono', monospace; }
- 
-/* ── TRADE TABLE ─────────────────────────────────────── */
-.outcome-win { color: var(--green); font-weight: 700; }
-.outcome-loss { color: var(--red); font-weight: 700; }
-.outcome-stop { color: #d97706; font-weight: 700; }
-.pnl-pos { color: var(--green); font-family: 'DM Mono', monospace; font-weight: 600; }
-.pnl-neg { color: var(--red); font-family: 'DM Mono', monospace; font-weight: 600; }
- 
-/* ── BENCHMARK CHART ─────────────────────────────────── */
-.benchmark-chart {
- display: flex;
- align-items: flex-end;
- gap: 1.5rem;
- padding: 2rem;
- background: var(--navy-dark);
- border-radius: 12px;
- height: 240px;
- position: relative;
-}
- 
-.bench-col {
- display: flex;
- flex-direction: column;
- align-items: center;
- flex: 1;
-}
- 
-.bench-label {
- color: rgba(255,255,255,0.7);
- font-size: 0.8rem;
- margin-bottom: 8px;
- text-align: center;
-}
- 
-.bench-bar-wrap {
- width: 100%;
- position: relative;
- display: flex;
- align-items: center;
- justify-content: center;
-}
- 
-.bench-bar {
- width: 70%;
- border-radius: 4px 4px 0 0;
- display: flex;
- align-items: flex-start;
- justify-content: center;
- padding-top: 8px;
- font-family: 'DM Mono', monospace;
- font-size: 0.9rem;
- font-weight: 600;
-}
- 
-.bench-bar.negative {
- border-radius: 0 0 4px 4px;
- align-items: flex-end;
- padding-top: 0;
- padding-bottom: 8px;
-}
- 
-.zero-line {
- position: absolute;
- left: 0; right: 0;
- height: 2px;
- background: rgba(255,255,255,0.3);
-}
- 
-/* ── SOURCES ─────────────────────────────────────────── */
-.source-item {
- background: white;
- border-radius: 8px;
- padding: 1rem 1.2rem;
- border: 1px solid var(--gray);
- border-left: 3px solid var(--navy);
- margin-bottom: 0.6rem;
-}
- 
-.source-item .src-title {
- font-size: 0.88rem;
- font-weight: 600;
- color: var(--navy);
- margin-bottom: 3px;
-}
- 
-.source-item .src-cite {
- font-size: 0.8rem;
- color: var(--gray-dark);
- line-height: 1.4;
-}
- 
-.source-item a {
- color: var(--red);
- text-decoration: none;
- font-size: 0.78rem;
-}
- 
-.source-item a:hover { text-decoration: underline; }
- 
-/* ── TEAM ────────────────────────────────────────────── */
-.team-grid {
- display: grid;
- grid-template-columns: repeat(4,1fr);
- gap: 1rem;
-}
- 
-.team-card {
- background: rgba(255,255,255,0.08);
- border: 1px solid rgba(255,255,255,0.15);
- border-radius: 10px;
- padding: 1.5rem 1rem;
- text-align: center;
-}
- 
-.team-avatar {
- width: 56px;
- height: 56px;
- background: var(--red);
- border-radius: 50%;
- display: flex;
- align-items: center;
- justify-content: center;
- font-family: 'Playfair Display', serif;
- font-weight: 700;
- font-size: 1.3rem;
- color: white;
- margin: 0 auto 0.8rem;
-}
- 
-.team-name {
- font-weight: 600;
- color: white;
- font-size: 0.9rem;
-}
- 
-.team-role {
- font-size: 0.75rem;
- color: rgba(255,255,255,0.5);
- margin-top: 3px;
-}
- 
-/* ── AI SECTION ──────────────────────────────────────── */
-.ai-box {
- background: linear-gradient(135deg, var(--navy-dark), #1a3a6e);
- border-radius: 12px;
- padding: 2rem;
- border: 1px solid rgba(255,255,255,0.1);
- border-left: 4px solid var(--gold-light);
- color: white;
-}
- 
-.ai-box h3 {
- font-family: 'Playfair Display', serif;
- font-size: 1.2rem;
- color: var(--gold-light);
- margin-bottom: 0.8rem;
-}
- 
-.ai-box p {
- font-size: 0.9rem;
- color: rgba(255,255,255,0.8);
- line-height: 1.7;
-}
- 
-.ai-tags {
- display: flex;
- flex-wrap: wrap;
- gap: 0.5rem;
- margin-top: 1rem;
-}
- 
-.ai-tag {
- background: rgba(255,255,255,0.1);
- border: 1px solid rgba(255,255,255,0.2);
- color: rgba(255,255,255,0.8);
- font-size: 0.75rem;
- padding: 4px 12px;
- border-radius: 20px;
-}
- 
-/* ── PIPELINE ────────────────────────────────────────── */
-.pipeline {
- display: flex;
- align-items: stretch;
- gap: 0;
- border-radius: 12px;
- overflow: hidden;
- border: 1px solid var(--gray);
-}
- 
-.pipeline-step {
- flex: 1;
- padding: 1.8rem 1.4rem;
- position: relative;
- background: white;
- border-right: 1px solid var(--gray);
-}
- 
-.pipeline-step:last-child { border-right: none; }
- 
-.pipeline-step:nth-child(1) { border-top: 4px solid var(--red); }
-.pipeline-step:nth-child(2) { border-top: 4px solid var(--navy); }
-.pipeline-step:nth-child(3) { border-top: 4px solid var(--gold); }
- 
-.ps-num {
- font-family: 'Playfair Display', serif;
- font-size: 2.5rem;
- font-weight: 900;
- color: var(--gray-light);
- line-height: 1;
- margin-bottom: 0.3rem;
-}
- 
-.ps-title {
- font-weight: 700;
- font-size: 0.95rem;
- color: var(--navy);
- margin-bottom: 0.6rem;
-}
- 
-.ps-desc {
- font-size: 0.83rem;
- color: var(--gray-dark);
- line-height: 1.5;
-}
- 
-.ps-output {
- margin-top: 0.8rem;
- background: var(--gray-light);
- border-radius: 6px;
- padding: 0.5rem 0.8rem;
- font-size: 0.78rem;
- color: var(--navy);
- font-weight: 500;
- font-family: 'DM Mono', monospace;
-}
- 
-/* ── HIGHLIGHT QUOTE ─────────────────────────────────── */
-.quote-box {
- background: var(--off-white);
- border-left: 4px solid var(--red);
- border-radius: 0 8px 8px 0;
- padding: 1.2rem 1.5rem;
- margin: 1.2rem 0;
-}
- 
-.quote-box p {
- font-size: 0.9rem;
- color: var(--gray-dark);
- line-height: 1.6;
- font-style: italic;
-}
- 
-.quote-box .cite {
- font-size: 0.78rem;
- color: var(--gray-mid);
- margin-top: 0.5rem;
- font-style: normal;
- font-weight: 600;
-}
- 
-/* ── INFO BOX ────────────────────────────────────────── */
-.info-box {
- background: var(--off-white);
- border: 1px solid var(--gray);
- border-radius: 10px;
- padding: 1.2rem 1.5rem;
- margin: 1rem 0;
-}
- 
-.info-box h4 {
- font-weight: 700;
- color: var(--navy);
- font-size: 0.9rem;
- margin-bottom: 0.5rem;
-}
- 
-.info-box p, .info-box li {
- font-size: 0.85rem;
- color: var(--gray-dark);
- line-height: 1.6;
-}
- 
-.info-box ul { padding-left: 1.2rem; }
- 
-/* ── FOOTER ──────────────────────────────────────────── */
-footer {
- background: var(--navy-dark);
- border-top: 3px solid var(--red);
- padding: 2rem;
- text-align: center;
-}
- 
-footer p {
- color: rgba(255,255,255,0.5);
- font-size: 0.8rem;
- margin-bottom: 0.3rem;
-}
- 
-footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
- 
-/* ── RESPONSIVE ──────────────────────────────────────── */
-@media (max-width: 900px) {
- .grid-2,.grid-3,.grid-4,.phases,.team-grid,.pipeline { grid-template-columns: 1fr; flex-direction: column; }
- .feature-grid { grid-template-columns: 1fr 1fr; }
- .hero-metrics { flex-wrap: wrap; }
- .nav-links { display: none; }
-}
- 
-@media (max-width: 600px) {
- .feature-grid { grid-template-columns: 1fr; }
- .kelly-vars { grid-template-columns: 1fr; }
- .hero-metric { flex: 0 0 45%; }
-}
- 
-/* ── DIVIDER ─────────────────────────────────────────── */
-.divider {
- height: 1px;
- background: linear-gradient(90deg, transparent, var(--gray), transparent);
- margin: 0;
-}
- 
-.tag {
- display: inline-block;
- background: var(--off-white);
- border: 1px solid var(--gray);
- border-radius: 20px;
- padding: 4px 12px;
- font-size: 0.75rem;
- font-weight: 600;
- color: var(--navy);
- margin: 2px;
-}
- 
-.tag.red { background: #fee2e2; border-color: #fca5a5; color: var(--red-dark); }
-.tag.green { background: var(--green-light); border-color: #86efac; color: var(--green); }
- 
-/* ── HAMBURGER & MOBILE MENU ─────────────────────────── */
+  color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.75rem;
+  font-weight:500; letter-spacing:0.5px; padding:0 12px; height:60px;
+  display:flex; align-items:center; transition:all 0.2s;
+  border-bottom:3px solid transparent; margin-bottom:-3px; text-transform:uppercase;
+}
+.nav-links a:hover, .nav-links a.active { color:white; border-bottom-color:var(--red); background:rgba(255,255,255,0.05); }
+
+/* HAMBURGER */
 .hamburger {
- display: none;
- flex-direction: column;
- gap: 5px;
- background: none;
- border: none;
- cursor: pointer;
- padding: 8px;
+  display:none; flex-direction:column; gap:5px;
+  background:none; border:none; cursor:pointer; padding:8px;
 }
-.hamburger span {
- display: block;
- width: 24px;
- height: 2px;
- background: white;
- border-radius: 2px;
- transition: all 0.3s;
-}
+.hamburger span { display:block; width:24px; height:2px; background:white; border-radius:2px; transition:all 0.3s; }
 .mobile-menu {
- display: none;
- flex-direction: column;
- position: fixed;
- top: 60px;
- left: 0;
- right: 0;
- background: var(--navy-dark);
- border-bottom: 3px solid var(--red);
- z-index: 999;
- padding: 0.5rem 0;
+  display:none; flex-direction:column; position:fixed;
+  top:60px; left:0; right:0; background:var(--navy-dark);
+  border-bottom:3px solid var(--red); z-index:999; padding:0.5rem 0;
 }
+.mobile-menu.open { display:flex; }
 .mobile-menu a {
- color: rgba(255,255,255,0.8);
- text-decoration: none;
- padding: 0.9rem 2rem;
- font-size: 0.9rem;
- font-weight: 500;
- border-bottom: 1px solid rgba(255,255,255,0.06);
- transition: all 0.2s;
+  color:rgba(255,255,255,0.8); text-decoration:none; padding:0.9rem 2rem;
+  font-size:0.9rem; font-weight:500; border-bottom:1px solid rgba(255,255,255,0.06);
+  transition:all 0.2s;
 }
-.mobile-menu a:hover {
- background: rgba(255,255,255,0.06);
- color: white;
+.mobile-menu a:hover, .mobile-menu a.active { background:rgba(255,255,255,0.08); color:white; }
+
+/* HERO */
+#hero {
+  min-height:100vh; padding-top:60px;
+  background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 50%,#003d7a 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:80px 2rem 4rem; position:relative; overflow:hidden;
 }
-.mobile-menu.open { display: flex; }
- 
-@media (max-width: 900px) {
- .grid-2,.grid-3,.grid-4,.phases,.team-grid,.pipeline { grid-template-columns: 1fr !important; flex-direction: column; }
- .feature-grid { grid-template-columns: 1fr 1fr; }
- .hero-metrics { flex-wrap: wrap; }
- .nav-links { display: none; }
- .hamburger { display: flex; }
- .kelly-vars { grid-template-columns: 1fr; }
- .auc-label { width: 120px; }
+#hero::before {
+  content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+  background:radial-gradient(ellipse at 30% 40%,rgba(204,0,0,0.12) 0%,transparent 60%),
+              radial-gradient(ellipse at 70% 60%,rgba(158,124,12,0.08) 0%,transparent 60%);
+  animation:pulse 8s ease-in-out infinite alternate;
+}
+@keyframes pulse { from{transform:scale(1);opacity:0.7;} to{transform:scale(1.1);opacity:1;} }
+.hero-badge {
+  background:rgba(204,0,0,0.2); border:1px solid rgba(204,0,0,0.5); color:#ff9999;
+  font-size:0.75rem; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+  padding:6px 18px; border-radius:20px; margin-bottom:1.5rem; position:relative;
+}
+#hero h1 {
+  font-family:'Playfair Display',serif; font-weight:900;
+  font-size:clamp(2.5rem,6vw,5rem); color:white; line-height:1.1;
+  margin-bottom:1rem; position:relative;
+}
+#hero h1 span { color:var(--red-light); }
+.hero-subtitle {
+  font-size:1.15rem; color:rgba(255,255,255,0.7); max-width:680px;
+  margin:0 auto 1rem; line-height:1.6; position:relative;
+}
+.hero-course { font-size:0.9rem; color:rgba(255,255,255,0.5); margin-bottom:2.5rem; position:relative; }
+.hero-metrics {
+  display:flex; gap:1px; background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15); border-radius:12px;
+  overflow:hidden; margin-bottom:2rem; position:relative;
+}
+.hero-metric { padding:1.2rem 1.8rem; background:rgba(0,38,84,0.6); flex:1; min-width:100px; backdrop-filter:blur(10px); }
+.hero-metric:not(:last-child) { border-right:1px solid rgba(255,255,255,0.1); }
+.hero-metric .val { font-family:'DM Mono',monospace; font-size:1.8rem; font-weight:500; color:white; display:block; }
+.hero-metric .val.green { color:#4ade80; }
+.hero-metric .val.red { color:#f87171; }
+.hero-metric .lbl { font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.5); margin-top:2px; display:block; }
+.thesis-box {
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+  border-left:4px solid var(--red); border-radius:8px; padding:1.2rem 1.8rem;
+  max-width:720px; margin:0 auto; position:relative; text-align:left;
+}
+.thesis-box p { color:rgba(255,255,255,0.85); font-size:0.95rem; line-height:1.7; font-style:italic; }
+.hero-nav-hint {
+  position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+  color:rgba(255,255,255,0.4); font-size:0.75rem; letter-spacing:1px; text-transform:uppercase;
+}
+
+/* TAB SECTIONS */
+.tab-section { display:none; padding-top:60px; min-height:calc(100vh - 60px); }
+.tab-section.active { display:block; }
+
+/* CONTAINERS */
+.container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+.section-pad { padding:4rem 0; }
+.section-label { font-size:0.72rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:0.5rem; display:block; }
+.section-title { font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(1.8rem,3vw,2.4rem); color:var(--navy); margin-bottom:1rem; line-height:1.2; }
+.section-desc { font-size:1rem; color:var(--gray-dark); line-height:1.7; max-width:700px; margin-bottom:2rem; }
+
+/* BG */
+.bg-white { background:white; }
+.bg-light { background:var(--off-white); }
+.bg-navy { background:var(--navy); color:white; }
+.bg-navy .section-title { color:white; }
+.bg-navy .section-label { color:var(--gold-light); }
+.bg-navy .section-desc { color:rgba(255,255,255,0.75); }
+
+/* CARDS */
+.card { background:white; border-radius:12px; padding:1.8rem; border:1px solid var(--gray); box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+.card-red { border-top:4px solid var(--red); }
+.card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--navy); margin-bottom:0.8rem; font-weight:700; }
+
+/* GRIDS */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+
+/* STAT BOXES */
+.stat-box { background:white; border-radius:10px; padding:1.5rem; border:1px solid var(--gray); text-align:center; }
+.stat-box .stat-val { font-family:'DM Mono',monospace; font-size:2rem; font-weight:500; color:var(--navy); display:block; }
+.stat-box .stat-val.red { color:var(--red); }
+.stat-box .stat-val.green { color:var(--green); }
+.stat-box .stat-lbl { font-size:0.78rem; text-transform:uppercase; letter-spacing:1px; color:var(--gray-mid); margin-top:4px; display:block; }
+.stat-box .stat-desc { font-size:0.82rem; color:var(--gray-dark); margin-top:8px; line-height:1.5; }
+
+/* PHASES */
+.phases { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-radius:12px; overflow:hidden; border:1px solid var(--gray); }
+.phase { padding:2rem; position:relative; }
+.phase-1 { background:var(--navy-dark); }
+.phase-2 { background:var(--navy); border-left:1px solid rgba(255,255,255,0.1); border-right:1px solid rgba(255,255,255,0.1); }
+.phase-3 { background:var(--navy-light); }
+.phase-num { font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; color:rgba(255,255,255,0.1); line-height:1; margin-bottom:0.5rem; }
+.phase-tag { font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem; display:block; }
+.phase h3 { color:white; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:0.8rem; }
+.phase p { color:rgba(255,255,255,0.75); font-size:0.9rem; line-height:1.6; }
+
+/* AUC BARS */
+.auc-bars { display:flex; flex-direction:column; gap:0.8rem; }
+.auc-row { display:flex; align-items:center; gap:1rem; }
+.auc-label { width:160px; font-size:0.85rem; font-weight:500; color:var(--navy); flex-shrink:0; }
+.auc-bar-wrap { flex:1; background:var(--gray-light); border-radius:4px; height:32px; overflow:hidden; }
+.auc-bar { height:100%; border-radius:4px; display:flex; align-items:center; padding-left:10px; font-family:'DM Mono',monospace; font-size:0.82rem; font-weight:500; color:white; }
+.auc-bar.selected { background:var(--navy); }
+.auc-bar.alt { background:var(--gray-mid); }
+.auc-bar.weak { background:#bbb; }
+.auc-badge { background:var(--red); color:white; font-size:0.65rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; border-radius:10px; flex-shrink:0; }
+
+/* KELLY */
+.kelly-equation { background:var(--navy-dark); border-radius:12px; padding:2rem; text-align:center; margin:1.5rem 0; border:1px solid rgba(255,255,255,0.1); }
+.kelly-equation .eq-label { font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.8rem; display:block; }
+.kelly-equation .eq-full { font-family:'DM Mono',monospace; font-size:1.4rem; color:white; margin-bottom:0.5rem; }
+.kelly-equation .eq-simple { font-size:0.9rem; color:rgba(255,255,255,0.6); font-style:italic; }
+.kelly-vars { display:grid; grid-template-columns:repeat(2,1fr); gap:0.8rem; margin-top:1.5rem; }
+.kelly-var { background:white; border-radius:8px; padding:1rem; border-left:3px solid var(--navy); }
+.kelly-var .kv-sym { font-family:'DM Mono',monospace; font-size:0.9rem; font-weight:500; color:var(--navy); }
+.kelly-var .kv-desc { font-size:0.82rem; color:var(--gray-dark); margin-top:3px; }
+.kelly-var .kv-val { font-size:0.8rem; color:var(--red); font-weight:600; margin-top:2px; }
+
+/* TABLES */
+.table-wrap { overflow-x:auto; border-radius:10px; border:1px solid var(--gray); }
+table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+thead tr { background:var(--navy); color:white; }
+thead th { padding:12px 14px; text-align:left; font-size:0.75rem; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; white-space:nowrap; }
+tbody tr:nth-child(even) { background:var(--off-white); }
+tbody tr:nth-child(odd) { background:white; }
+tbody tr:hover { background:#e8eef6; }
+tbody td { padding:10px 14px; color:var(--text); white-space:nowrap; }
+.badge-trade { background:var(--green-light); color:var(--green); font-size:0.72rem; font-weight:700; padding:3px 10px; border-radius:12px; }
+.badge-skip { background:#fee2e2; color:var(--red-dark); font-size:0.72rem; font-weight:700; padding:3px 10px; border-radius:12px; }
+.badge-excluded { background:#fef3c7; color:#92400e; font-size:0.72rem; font-weight:700; padding:3px 10px; border-radius:12px; }
+.mono { font-family:'DM Mono',monospace; }
+.outcome-win { color:var(--green); font-weight:700; }
+.outcome-loss { color:var(--red); font-weight:700; }
+.outcome-stop { color:#d97706; font-weight:700; }
+.pnl-pos { color:var(--green); font-family:'DM Mono',monospace; font-weight:600; }
+.pnl-neg { color:var(--red); font-family:'DM Mono',monospace; font-weight:600; }
+
+/* PIPELINE */
+.pipeline { display:flex; align-items:stretch; gap:0; border-radius:12px; overflow:hidden; border:1px solid var(--gray); }
+.pipeline-step { flex:1; padding:1.8rem 1.4rem; background:white; border-right:1px solid var(--gray); }
+.pipeline-step:last-child { border-right:none; }
+.pipeline-step:nth-child(1) { border-top:4px solid var(--red); }
+.pipeline-step:nth-child(2) { border-top:4px solid var(--navy); }
+.pipeline-step:nth-child(3) { border-top:4px solid var(--gold); }
+.ps-num { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:900; color:var(--gray-light); line-height:1; margin-bottom:0.3rem; }
+.ps-title { font-weight:700; font-size:0.95rem; color:var(--navy); margin-bottom:0.6rem; }
+.ps-desc { font-size:0.83rem; color:var(--gray-dark); line-height:1.5; }
+.ps-output { margin-top:0.8rem; background:var(--gray-light); border-radius:6px; padding:0.5rem 0.8rem; font-size:0.78rem; color:var(--navy); font-weight:500; font-family:'DM Mono',monospace; }
+
+/* QUOTE / INFO */
+.quote-box { background:var(--off-white); border-left:4px solid var(--red); border-radius:0 8px 8px 0; padding:1.2rem 1.5rem; margin:1.2rem 0; }
+.quote-box p { font-size:0.9rem; color:var(--gray-dark); line-height:1.6; font-style:italic; }
+.quote-box .cite { font-size:0.78rem; color:var(--gray-mid); margin-top:0.5rem; font-style:normal; font-weight:600; }
+.info-box { background:var(--off-white); border:1px solid var(--gray); border-radius:10px; padding:1.2rem 1.5rem; margin:1rem 0; }
+.info-box h4 { font-weight:700; color:var(--navy); font-size:0.9rem; margin-bottom:0.5rem; }
+.info-box p, .info-box li { font-size:0.85rem; color:var(--gray-dark); line-height:1.6; }
+.info-box ul { padding-left:1.2rem; }
+
+/* SOURCE */
+.source-item { background:white; border-radius:8px; padding:1rem 1.2rem; border:1px solid var(--gray); border-left:3px solid var(--navy); margin-bottom:0.6rem; }
+.source-item .src-title { font-size:0.88rem; font-weight:600; color:var(--navy); margin-bottom:3px; }
+.source-item .src-cite { font-size:0.8rem; color:var(--gray-dark); line-height:1.4; }
+.source-item a { color:var(--red); text-decoration:none; font-size:0.78rem; }
+.source-item a:hover { text-decoration:underline; }
+
+/* TEAM */
+.team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+.team-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:1.5rem 1rem; text-align:center; }
+.team-avatar { width:56px; height:56px; background:var(--red); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:700; font-size:1.3rem; color:white; margin:0 auto 0.8rem; }
+.team-name { font-weight:600; color:white; font-size:0.9rem; }
+.team-role { font-size:0.75rem; color:rgba(255,255,255,0.5); margin-top:3px; }
+
+/* AI BOX */
+.ai-box { background:linear-gradient(135deg,var(--navy-dark),#1a3a6e); border-radius:12px; padding:2rem; border:1px solid rgba(255,255,255,0.1); border-left:4px solid var(--gold-light); color:white; }
+.ai-box h3 { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--gold-light); margin-bottom:0.8rem; }
+.ai-box p { font-size:0.9rem; color:rgba(255,255,255,0.8); line-height:1.7; }
+.ai-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
+.ai-tag { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.8); font-size:0.75rem; padding:4px 12px; border-radius:20px; }
+
+/* TAGS */
+.tag { display:inline-block; background:var(--off-white); border:1px solid var(--gray); border-radius:20px; padding:4px 12px; font-size:0.75rem; font-weight:600; color:var(--navy); margin:2px; }
+.tag.red { background:#fee2e2; border-color:#fca5a5; color:var(--red-dark); }
+.tag.green { background:var(--green-light); border-color:#86efac; color:var(--green); }
+
+/* DIVIDER */
+.divider { height:1px; background:linear-gradient(90deg,transparent,var(--gray),transparent); margin:2rem 0; }
+
+/* FOOTER */
+footer { background:var(--navy-dark); border-top:3px solid var(--red); padding:2rem; text-align:center; }
+footer p { color:rgba(255,255,255,0.5); font-size:0.8rem; margin-bottom:0.3rem; }
+footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
+
+/* ── VISUALIZATIONS ────────────────────────────────── */
+
+/* Feature Importance Chart */
+.fi-chart-wrap { background:white; border-radius:12px; border:1px solid var(--gray); padding:1.5rem; overflow:hidden; }
+.fi-row { display:flex; align-items:center; gap:0.8rem; margin-bottom:6px; }
+.fi-rank { width:28px; font-size:0.72rem; color:var(--gray-mid); font-family:'DM Mono',monospace; text-align:right; flex-shrink:0; }
+.fi-name { width:170px; font-size:0.78rem; font-weight:500; color:var(--navy); flex-shrink:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.fi-bar-wrap { flex:1; background:var(--gray-light); border-radius:3px; height:20px; position:relative; cursor:pointer; }
+.fi-bar { height:100%; border-radius:3px; display:flex; align-items:center; padding-left:6px; font-family:'DM Mono',monospace; font-size:0.7rem; color:white; font-weight:500; transition:opacity 0.2s; }
+.fi-bar:hover { opacity:0.85; }
+.fi-bar.top { background:var(--navy); }
+.fi-bar.regime { background:var(--green); }
+.fi-bar.normal { background:#6b8cba; }
+.fi-tooltip { position:absolute; top:-36px; left:50%; transform:translateX(-50%); background:var(--navy-dark); color:white; font-size:0.72rem; padding:4px 10px; border-radius:6px; white-space:nowrap; pointer-events:none; opacity:0; transition:opacity 0.2s; z-index:10; }
+.fi-bar-wrap:hover .fi-tooltip { opacity:1; }
+.fi-legend { display:flex; gap:1.5rem; margin-bottom:1rem; font-size:0.78rem; }
+.fi-legend-item { display:flex; align-items:center; gap:6px; }
+.fi-legend-dot { width:12px; height:12px; border-radius:3px; }
+
+/* Decision Tree */
+.tree-wrap { background:var(--navy-dark); border-radius:12px; padding:2rem; overflow-x:auto; }
+.tree-container { min-width:700px; position:relative; }
+.tree-svg { width:100%; }
+.tree-node-box { fill:var(--navy); stroke:rgba(255,255,255,0.2); stroke-width:1; rx:8; ry:8; }
+.tree-node-box.high { fill:#1a5c32; }
+.tree-node-box.low { fill:#3d4a5c; }
+.tree-node-box.root { fill:var(--red-dark); }
+.tree-line { stroke:rgba(255,255,255,0.3); stroke-width:1.5; fill:none; }
+.tree-text-title { fill:white; font-family:'DM Sans',sans-serif; font-weight:600; font-size:11px; }
+.tree-text-sub { fill:rgba(255,255,255,0.7); font-family:'DM Mono',monospace; font-size:9px; }
+.tree-text-prob { font-family:'DM Mono',monospace; font-weight:700; font-size:12px; }
+.tree-branch-label { fill:rgba(255,255,255,0.5); font-family:'DM Sans',sans-serif; font-size:9px; }
+
+/* Regime Timeline */
+.regime-wrap { background:var(--navy-dark); border-radius:12px; padding:2rem; overflow-x:auto; }
+.regime-timeline { min-width:600px; position:relative; }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .grid-2,.grid-3,.grid-4,.phases,.team-grid,.pipeline { grid-template-columns:1fr; flex-direction:column; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .hero-metrics { flex-wrap:wrap; }
+  .kelly-vars { grid-template-columns:1fr; }
+  .fi-name { width:120px; }
+}
+@media (max-width:600px) {
+  .hero-metric { flex:0 0 45%; }
+  .grid-4 { grid-template-columns:1fr 1fr; }
 }
 </style>
 </head>
 <body>
- 
-<!-- NAVIGATION -->
+
+<!-- NAV -->
 <nav>
- <div class="nav-brand">
-   <div class="nav-logo" style="background:var(--red);font-size:12px;letter-spacing:-0.5px;">SJU</div>
-   <span class="nav-title" style="font-size:1.05rem;letter-spacing:0.3px;">St. John's University</span>
- </div>
- <ul class="nav-links">
-   <li><a href="#overview">Overview</a></li>
-   <li><a href="#thesis">Thesis</a></li>
-   <li><a href="#model">The Model</a></li>
-   <li><a href="#kelly">Kelly Criterion</a></li>
-   <li><a href="#scorecard">Recall Impact</a></li>
-   <li><a href="#results">Q1 2026</a></li>
-   <li><a href="#trades">Trade Log</a></li>
-   <li><a href="#sources">Sources</a></li>
-   <li><a href="#team">Team</a></li>
- </ul>
- <button class="hamburger" onclick="toggleMenu()" id="hamburger">
-   <span></span><span></span><span></span>
- </button>
+  <div class="nav-brand">
+    <div class="nav-logo">R</div>
+    <span class="nav-title">Riverdale Investments</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="showTab('thesis')" id="nav-thesis">Thesis</a></li>
+    <li><a href="#" onclick="showTab('model')" id="nav-model">The Model</a></li>
+    <li><a href="#" onclick="showTab('kelly')" id="nav-kelly">Kelly Criterion</a></li>
+    <li><a href="#" onclick="showTab('scorecard')" id="nav-scorecard">Scorecard</a></li>
+    <li><a href="#" onclick="showTab('results')" id="nav-results">Q1 2026</a></li>
+    <li><a href="#" onclick="showTab('trades')" id="nav-trades">Trade Log</a></li>
+    <li><a href="#" onclick="showTab('sources')" id="nav-sources">Sources</a></li>
+    <li><a href="#" onclick="showTab('team')" id="nav-team">Team</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
- <a href="#overview" onclick="toggleMenu()">Overview</a>
- <a href="#thesis" onclick="toggleMenu()">Thesis</a>
- <a href="#model" onclick="toggleMenu()">The Model</a>
- <a href="#kelly" onclick="toggleMenu()">Kelly Criterion</a>
- <a href="#scorecard" onclick="toggleMenu()">Recall Impact</a>
- <a href="#results" onclick="toggleMenu()">Q1 2026</a>
- <a href="#trades" onclick="toggleMenu()">Trade Log</a>
- <a href="#sources" onclick="toggleMenu()">Sources</a>
- <a href="#team" onclick="toggleMenu()">Team</a>
+  <a href="#" onclick="showTab('thesis');toggleMenu()">Thesis</a>
+  <a href="#" onclick="showTab('model');toggleMenu()">The Model</a>
+  <a href="#" onclick="showTab('kelly');toggleMenu()">Kelly Criterion</a>
+  <a href="#" onclick="showTab('scorecard');toggleMenu()">Scorecard</a>
+  <a href="#" onclick="showTab('results');toggleMenu()">Q1 2026</a>
+  <a href="#" onclick="showTab('trades');toggleMenu()">Trade Log</a>
+  <a href="#" onclick="showTab('sources');toggleMenu()">Sources</a>
+  <a href="#" onclick="showTab('team');toggleMenu()">Team</a>
 </div>
- 
-<!-- HERO -->
+
+<!-- HERO (always visible) -->
 <section id="hero">
- <div class="hero-badge">BUA Competition 2026 · Tobin College of Business · St. John's University</div>
- <h1>Strategic Roadmap for<br><span>Riverdale Investments</span></h1>
- <p class="hero-subtitle">Pre-Event Signal Analysis from U.S. Auto Recalls, 2000–2025. A systematic short-selling strategy built on NHTSA complaint data — the informational edge the market ignores.</p>
- <p class="hero-course">Advisor: Michael D. Herley, D.B.A.</p>
- 
- <div class="hero-metrics">
-   <div class="hero-metric">
-     <span class="val green">+1.17%</span>
-     <span class="lbl">Q1 2026 Return</span>
-   </div>
-   <div class="hero-metric">
-     <span class="val green">+5.47pp</span>
-     <span class="lbl">Outperformance</span>
-   </div>
-   <div class="hero-metric">
-     <span class="val">0.8083</span>
-     <span class="lbl">Model AUC</span>
-   </div>
-   <div class="hero-metric">
-     <span class="val green">63%</span>
-     <span class="lbl">Win Rate</span>
-   </div>
-   <div class="hero-metric">
-     <span class="val">4.4×</span>
-     <span class="lbl">Informational Edge</span>
-   </div>
- </div>
- 
- <div class="thesis-box">
-   <p>"A traditional event study approach suggests that the market efficiently prices in most recall risks. By analyzing and acting on pre-event signals, our recall probability model can give investors a distinct investment edge."</p>
- </div>
- 
- <div class="scroll-indicator">↓ explore sections</div>
+  <div class="hero-badge">BUA Competition 2026 · Tobin College of Business · St. John's University</div>
+  <h1>Strategic Roadmap for<br><span>Riverdale Investments</span></h1>
+  <p class="hero-subtitle">Pre-Event Signal Analysis from U.S. Auto Recalls, 2000–2025. A systematic short-selling strategy built on NHTSA complaint data — the informational edge the market ignores.</p>
+  <p class="hero-course">Advisor: Michael D. Herley, D.B.A.</p>
+  <div class="hero-metrics">
+    <div class="hero-metric"><span class="val green">+1.17%</span><span class="lbl">Q1 2026 Return</span></div>
+    <div class="hero-metric"><span class="val red">-4.30%</span><span class="lbl">S&P 500 Q1 2026</span></div>
+    <div class="hero-metric"><span class="val green">+5.47pp</span><span class="lbl">Outperformance</span></div>
+    <div class="hero-metric"><span class="val">0.8083</span><span class="lbl">Model AUC</span></div>
+    <div class="hero-metric"><span class="val green">63%</span><span class="lbl">Win Rate</span></div>
+    <div class="hero-metric"><span class="val">4.4×</span><span class="lbl">Informational Edge</span></div>
+  </div>
+  <div class="thesis-box">
+    <p>"A traditional event study approach suggests that the market efficiently prices in most recall risks. By analyzing and acting on pre-event signals, our recall probability model can give investors a distinct investment edge."</p>
+  </div>
+  <div class="hero-nav-hint">↑ use navigation tabs to explore ↑</div>
 </section>
- 
-<!-- OVERVIEW TAB -->
-<section id="overview" class="bg-white">
- <div class="container">
-   <span class="section-label">BUA Competition 2026 · Tobin College of Business</span>
-   <h2 class="section-title">Strategic Roadmap for Riverdale Investments</h2>
-   <p class="section-desc">Pre-Event Signal Analysis from U.S. Auto Recalls, 2000–2025. A systematic short-selling strategy built on NHTSA complaint data — the informational edge the market ignores.</p>
- 
-   <!-- Key metrics strip -->
-   <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;">
-     <div class="stat-box" style="flex:1;min-width:130px;">
-       <span class="stat-val green">+$117,387</span>
-       <span class="stat-lbl">Q1 2026 P&amp;L</span>
-     </div>
-     <div class="stat-box" style="flex:1;min-width:130px;">
-       <span class="stat-val green">+1.17%</span>
-       <span class="stat-lbl">Portfolio Return</span>
-     </div>
-     <div class="stat-box" style="flex:1;min-width:130px;">
-       <span class="stat-val">0.8083</span>
-       <span class="stat-lbl">Model AUC</span>
-     </div>
-     <div class="stat-box" style="flex:1;min-width:130px;">
-       <span class="stat-val green">63%</span>
-       <span class="stat-lbl">Win Rate</span>
-     </div>
-     <div class="stat-box" style="flex:1;min-width:130px;">
-       <span class="stat-val red">4.4×</span>
-       <span class="stat-lbl">Informational Edge</span>
-     </div>
-     <div class="stat-box" style="flex:1;min-width:130px;">
-       <span class="stat-val green">+5.47pp</span>
-       <span class="stat-lbl">vs S&amp;P 500</span>
-     </div>
-   </div>
- 
-   <!-- Investment pipeline preview -->
-   <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.3rem;">Three-Stage Investment Pipeline</h3>
-   <p style="font-size:0.95rem;color:var(--gray-dark);margin-bottom:1.5rem;">Every trade starts with a NHTSA data signal and flows through three stages to a sized short position — generating real out-of-sample profit in Q1 2026.</p>
- 
-   <div class="pipeline" style="margin-bottom:2rem;">
-     <div class="pipeline-step">
-       <div class="ps-num">01</div>
-       <div class="ps-title">Signal — XGBoost Model</div>
-       <div class="ps-desc">Scans NHTSA complaints, TSBs, and investigations monthly. Fires a STRONG SIGNAL 30–90 days before any public recall announcement.</div>
-       <div class="ps-output">OUTPUT → Recall probability score</div>
-     </div>
-     <div class="pipeline-step">
-       <div class="ps-num">02</div>
-       <div class="ps-title">Size — Kelly Criterion</div>
-       <div class="ps-desc">Maps each signal to historical stock behavior on recall days. Kelly Criterion determines the optimal position size for each company.</div>
-       <div class="ps-output">OUTPUT → Position size ($50K–$1M)</div>
-     </div>
-     <div class="pipeline-step">
-       <div class="ps-num">03</div>
-       <div class="ps-title">Execute — Short Position</div>
-       <div class="ps-desc">Short entered at signal. Exit at T+1 after recall filing or after 45-day hold window. 5% stop loss enforced throughout.</div>
-       <div class="ps-output">OUTPUT → +$117,387 in Q1 2026</div>
-     </div>
-   </div>
- 
-   <div class="thesis-box" style="background:var(--navy-dark);border-left-color:var(--red);">
-     <p style="color:rgba(255,255,255,0.85);">"A traditional event study approach suggests that the market efficiently prices in most recall risks. By analyzing and acting on pre-event signals, our recall probability model can give investors a distinct investment edge."</p>
-   </div>
- 
-   <p style="margin-top:1.5rem;font-size:0.88rem;color:var(--gray-mid);text-align:center;">Use the tabs above to explore each component of the strategy in detail.</p>
- </div>
-</section>
- 
-<!-- THESIS / BIG QUESTION -->
-<section id="thesis" class="bg-white">
- <div class="container">
-   <span class="section-label">The Big Question</span>
-   <h2 class="section-title">Can Recall Data Provide Market Insight for a Strong Investment Strategy?</h2>
-   <p class="section-desc">Every vehicle recall leaves a trail of breadcrumbs weeks before the public announcement — in consumer complaints, government investigations, and technical service bulletins. The market ignores these signals. We built a system to capture them.</p>
- 
-   <div class="phases">
-     <div class="phase phase-1">
-       <div class="phase-num">01</div>
-       <span class="phase-tag">Noise Window — Our Edge</span>
-       <h3>Pre-Event Signals</h3>
-       <p>Complaint spikes appear in the NHTSA database. TSBs accelerate. Investigations open. The market ignores all of it. Our XGBoost model quantifies these signals and fires a STRONG SIGNAL 30–90 days before the recall is public. Riverdale enters the short position here.</p>
-     </div>
-     <div class="phase phase-2" style="position:relative;">
-       <div class="phase-num">02</div>
-       <span class="phase-tag">Drift Window — Position Grows</span>
-       <h3>Institutional Awareness Builds</h3>
-       <p>NHTSA opens a formal investigation — now a public signal. Financial news picks it up. Analysts flag it. Institutional money begins positioning. The stock drifts down gradually as awareness builds. Riverdale's position is already profitable and growing.</p>
-     </div>
-     <div class="phase phase-3">
-       <div class="phase-num">03</div>
-       <span class="phase-tag">Filing Date — Exit at T+1</span>
-       <h3>Market Catches Up</h3>
-       <p>Recall officially filed. Riverdale exits the position at T+1 (day after filing), having captured the full drift. Our event study confirms mean CAR ≈ 0% at filing — our informational edge is entirely pre-announcement.</p>
-     </div>
-   </div>
- 
-   <div style="margin-top:2rem;" class="grid-2">
-     <div class="quote-box">
-       <p>"The market generally fails to impound the information contained in customer complaints in a timely manner — even among sophisticated institutional investors like mutual funds."</p>
-       <span class="cite">— Insider Trading Around Auto Recalls: Does Investor Attention Matter? Review of Quantitative Finance and Accounting, 2020</span>
-     </div>
-     <div class="info-box">
-       <h4>Why the Market Misses This</h4>
-       <ul>
-         <li>NHTSA data is publicly available but requires a multi-source pipeline to process — complaint velocity, TSB component matching, and investigation timing must be computed together</li>
-         <li>Per the <em>Review of Quantitative Finance and Accounting</em> (2020): even sophisticated institutional investors like mutual funds fail to act on pre-recall complaint data in a timely manner</li>
-         <li>Our event study confirms Semi-Strong EMH holds at filing — the information edge is entirely pre-announcement, in the 30–90 day signal window</li>
-         <li>XGBoost captures this edge by building sequential decision trees where each new tree focuses specifically on the cases the previous detective got wrong — the final prediction combines all of their findings</li>
-       </ul>
-     </div>
-   </div>
- </div>
-</section>
- 
-<div class="divider"></div>
- 
-<!-- THE MODEL -->
-<section id="model" class="bg-light">
- <div class="container">
-   <span class="section-label">Stage 1 — Signal Model</span>
-   <h2 class="section-title">XGBoost Recall Probability Model</h2>
-   <p class="section-desc">A supervised machine learning model trained on 121,137 monthly observations from 2000–2025. It predicts whether a specific make/model will have a recall filed within 90 days — firing 30–90 days before any public announcement.</p>
- 
-   <!-- Why XGBoost -->
-   <div class="card card-red" style="margin-bottom:1.5rem;">
-     <h3>Why XGBoost? — Supervised Machine Learning</h3>
-     <p style="font-size:0.9rem;color:var(--gray-dark);line-height:1.7;margin-bottom:1rem;">
-       XGBoost (Extreme Gradient Boosting) is a <strong>supervised machine learning</strong> method — meaning it learns from labeled historical data where the outcome (recall or no recall) is known. It builds hundreds of sequential decision trees, each one learning from the previous tree's mistakes. Unlike standard Gradient Boosting, XGBoost adds built-in <strong>L1 and L2 regularization</strong> to prevent overfitting, handles missing data natively, and runs significantly faster. Think of it as a team of detectives where each new detective focuses specifically on the cases the previous one got wrong — the final prediction combines all of their findings.
-     </p>
-     <p style="font-size:0.9rem;color:var(--gray-dark);line-height:1.7;margin-bottom:1rem;">
-       XGBoost was selected because it matches the methodology of our peer-reviewed source — <strong>Li et al. (2025)</strong>, a Q1-ranked Scimago paper published in <em>Risk Analysis</em>, which applied XGBoost to NHTSA consumer complaints to predict massive vehicle recalls. The AUC gap between XGBoost and Gradient Boosting in our run was only 0.0072 — statistically negligible — confirming both perform equivalently while XGBoost provides additional literature validation.
-     </p>
-     <div class="ai-tags">
-       <span class="tag">Supervised Learning</span>
-       <span class="tag">300 Decision Trees</span>
-       <span class="tag">Depth 4</span>
-       <span class="tag">Learning Rate 0.05</span>
-       <span class="tag">L1 + L2 Regularization</span>
-       <span class="tag">Peer-Validated Methodology</span>
-     </div>
-   </div>
- 
-   <!-- AUC Comparison -->
-   <div class="grid-2" style="margin-bottom:2rem;">
-     <div class="card">
-       <h3>Model Comparison — AUC Scores</h3>
-       <p style="font-size:0.83rem;color:var(--gray-dark);margin-bottom:1.2rem;">AUC measures the model's ability to correctly rank a recall observation above a non-recall observation. 0.50 = random; 1.0 = perfect. All three models were run and compared — XGBoost selected for literature consistency.</p>
-       <div class="auc-bars">
-         <div class="auc-row">
-           <span class="auc-label">XGBoost ✓ Selected</span>
-           <div class="auc-bar-wrap">
-             <div class="auc-bar selected" style="width:81.91%">0.8083 — 80.8% discriminative power</div>
-           </div>
-           <span class="auc-badge">CHOSEN</span>
-         </div>
-         <div class="auc-row">
-           <span class="auc-label">Gradient Boosting</span>
-           <div class="auc-bar-wrap">
-             <div class="auc-bar alt" style="width:82.63%">0.8151 — AUC gap: 0.0068</div>
-           </div>
-         </div>
-         <div class="auc-row">
-           <span class="auc-label">Logistic Regression</span>
-           <div class="auc-bar-wrap">
-             <div class="auc-bar weak" style="width:73.66%">0.7366 — Linear model, weaker</div>
-           </div>
-         </div>
-       </div>
-       <div class="info-box" style="margin-top:1rem;">
-         <p>AUC of 0.8083 means: if you randomly picked one vehicle-month that had a recall and one that didn't, the model correctly ranks the recall higher <strong>80.8% of the time</strong> — exactly the job needed for a trading strategy.</p>
-       </div>
-     </div>
- 
-     <div class="card">
-       <h3>Statistical Threshold Validation</h3>
-       <p style="font-size:0.83rem;color:var(--gray-dark);margin-bottom:1rem;">The STRONG SIGNAL threshold of <strong>17.15%</strong> was selected by maximizing the F1 score and validated by three independent statistical tests — all passed at p = 0.000000.</p>
-       <div style="display:flex;flex-direction:column;gap:0.6rem;">
-         <div style="background:var(--green-light);border-radius:8px;padding:0.8rem 1rem;border-left:3px solid var(--green);">
-           <div style="font-weight:700;font-size:0.85rem;color:var(--green);">Mann-Whitney U Test — p = 0.000000 ✓</div>
-           <div style="font-size:0.8rem;color:var(--gray-dark);margin-top:3px;">Recall observations receive statistically higher probability scores than non-recall observations. The separation is real, not random.</div>
-         </div>
-         <div style="background:var(--green-light);border-radius:8px;padding:0.8rem 1rem;border-left:3px solid var(--green);">
-           <div style="font-weight:700;font-size:0.85rem;color:var(--green);">Binomial Test — p = 0.000000 ✓</div>
-           <div style="font-size:0.8rem;color:var(--gray-dark);margin-top:3px;">Precision above threshold (32.8%) is statistically impossible by chance at the 13% base rate. Hits: 1,879 of 5,726 flagged observations.</div>
-         </div>
-         <div style="background:var(--green-light);border-radius:8px;padding:0.8rem 1rem;border-left:3px solid var(--green);">
-           <div style="font-weight:700;font-size:0.85rem;color:var(--green);">Kolmogorov-Smirnov Test — KS = 0.4578, p = 0.000000 ✓</div>
-           <div style="font-size:0.8rem;color:var(--gray-dark);margin-top:3px;">Probability distributions for recall vs non-recall observations are clearly distinct. The model is separating the two groups, not generating noise.</div>
-         </div>
-       </div>
-     </div>
-   </div>
- 
-   <!-- Model Accuracy Stats -->
-   <div class="grid-4" style="margin-bottom:2rem;">
-     <div class="stat-box">
-       <span class="stat-val">0.8083</span>
-       <span class="stat-lbl">AUC Score</span>
-       <span class="stat-desc">80.8% discriminative power. Random = 0.50, Perfect = 1.0</span>
-     </div>
-     <div class="stat-box">
-       <span class="stat-val">3.15×</span>
-       <span class="stat-lbl">Lift</span>
-       <span class="stat-desc">Top decile signals are 3.15× more likely to have a recall than random selection</span>
-     </div>
-     <div class="stat-box">
-       <span class="stat-val red">4.4×</span>
-       <span class="stat-lbl">Informational Edge</span>
-       <span class="stat-desc">Top watchlist signals correct 57% vs 13% base rate — 4.4× better than random</span>
-     </div>
-     <div class="stat-box">
-       <span class="stat-val">17.15%</span>
-       <span class="stat-lbl">STRONG SIGNAL Threshold</span>
-       <span class="stat-desc">All three statistical tests pass at p = 0.000000</span>
-     </div>
-   </div>
- 
-   <!-- Overfit/Underfit Stats -->
-   <div class="card" style="margin-bottom:2rem;border-top:4px solid var(--navy);">
-     <h3>Overfitting & Underfitting Validation</h3>
-     <p style="font-size:0.88rem;color:var(--gray-dark);line-height:1.7;margin-bottom:1rem;">A model that memorizes training data (overfit) will show a large gap between train and test AUC. A model that is too simple (underfit) will score poorly on both. Our results sit cleanly in the "well-generalized" zone.</p>
-     <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-       <div style="background:var(--green-light);border-radius:10px;padding:1.2rem 1.5rem;flex:1;min-width:160px;border-left:3px solid var(--green);">
-         <div style="font-family:'DM Mono',monospace;font-size:1.6rem;font-weight:600;color:var(--green);">0.8494</div>
-         <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--gray-mid);margin-top:2px;">Train AUC</div>
-         <div style="font-size:0.82rem;color:var(--gray-dark);margin-top:6px;">Performance on data the model was trained on</div>
-       </div>
-       <div style="background:var(--green-light);border-radius:10px;padding:1.2rem 1.5rem;flex:1;min-width:160px;border-left:3px solid var(--green);">
-         <div style="font-family:'DM Mono',monospace;font-size:1.6rem;font-weight:600;color:var(--green);">0.8083</div>
-         <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--gray-mid);margin-top:2px;">Test AUC</div>
-         <div style="font-size:0.82rem;color:var(--gray-dark);margin-top:6px;">Performance on genuinely unseen Regime 3 data</div>
-       </div>
-       <div style="background:#eff6ff;border-radius:10px;padding:1.2rem 1.5rem;flex:1;min-width:160px;border-left:3px solid var(--navy);">
-         <div style="font-family:'DM Mono',monospace;font-size:1.6rem;font-weight:600;color:var(--navy);">0.0411</div>
-         <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--gray-mid);margin-top:2px;">AUC Gap (Train − Test)</div>
-         <div style="font-size:0.82rem;color:var(--gray-dark);margin-top:6px;">Small gap confirms generalization — not memorization</div>
-       </div>
-       <div style="background:var(--green-light);border-radius:10px;padding:1.2rem 1.5rem;flex:1;min-width:160px;border-left:3px solid var(--green);">
-         <div style="font-family:'DM Mono',monospace;font-size:1.6rem;font-weight:600;color:var(--green);">✓ Pass</div>
-         <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--gray-mid);margin-top:2px;">Generalization Status</div>
-         <div style="font-size:0.82rem;color:var(--gray-dark);margin-top:6px;">L1+L2 regularization and temporal split prevent overfitting</div>
-       </div>
-     </div>
-   </div>
-   <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.3rem;">60 Features Across 5 Data Sources</h3>
-   <div class="feature-grid" style="margin-bottom:1.5rem;">
-     <div class="feature-item">
-       <h4>velocity_spike_ratio</h4>
-       <div class="fi-score">Importance: 0.1823 — #1 Feature</div>
-       <p>30-day complaints divided by 12-month baseline per make/model. A 5x spike means complaints are arriving 5× faster than normal. Most predictive single feature at 18.2% of model decisions.</p>
-     </div>
-     <div class="feature-item">
-       <h4>complaint_count (30d / 3m / 6m)</h4>
-       <div class="fi-score">Importance: 0.1204 / 0.0743 / 0.0487</div>
-       <p>Raw complaint volume across time windows. Total NHTSA consumer complaints for this specific make/model in the last 30, 90, and 180 days.</p>
-     </div>
-     <div class="feature-item">
-       <h4>comp_spike_ratio</h4>
-       <div class="fi-score">Importance: 0.0891 — #3 Feature</div>
-       <p>Component-specific spike ratio. Same velocity logic applied to the dominant complaint component (e.g., airbags, brakes). Isolates targeted surges from general complaint volume.</p>
-     </div>
-     <div class="feature-item">
-       <h4>inv_count_180d</h4>
-       <div class="fi-score">Importance: 0.0612 — #5 Feature</div>
-       <p>Open NHTSA investigations for this manufacturer in the 180-day window. Multiple simultaneous investigations signal elevated regulatory scrutiny.</p>
-     </div>
-     <div class="feature-item">
-       <h4>crash_count / injury_count / death_count</h4>
-       <div class="fi-score">Importance: 0.0534 / 0.0163 / 0.0061</div>
-       <p>Complaints that also report a crash, fire, or injury. Severity indicators — a spike in injury complaints is a much stronger recall predictor than general volume alone.</p>
-     </div>
-     <div class="feature-item">
-       <h4>tsb_count_180d / tsb_velocity_30d</h4>
-       <div class="fi-score">Importance: 0.0423 / 0.0218</div>
-       <p>Technical Service Bulletins filed in 180 days and TSB acceleration. TSBs are manufacturer notices to dealers quietly acknowledging known problems — a surge often precedes a recall.</p>
-     </div>
-     <div class="feature-item">
-       <h4>airbag / brake / steering complaints</h4>
-       <div class="fi-score">Importance: 0.0241 / 0.0196 / 0.0097</div>
-       <p>High-risk component complaints. Complaints specifically mentioning the most dangerous systems — these are stronger recall predictors than general complaint counts.</p>
-     </div>
-     <div class="feature-item" style="border-left-color:var(--gold);">
-       <h4>R2 — Structural Break Dummy</h4>
-       <div class="fi-score" style="color:var(--gold);">Importance: 0.0171 — Rank #16</div>
-       <p>= 1 for observations 2014M03–2021M01 (Takata era). Identified by Bai-Perron structural break test. Recall rate was 16.1% vs 7.4% baseline — the model adjusts for this structural shift.</p>
-     </div>
-     <div class="feature-item" style="border-left-color:var(--gold);">
-       <h4>R3 — Structural Break Dummy</h4>
-       <div class="fi-score" style="color:var(--gold);">Importance: 0.0124 — Rank #20</div>
-       <p>= 1 for observations from 2021M02 onward (EV era). Tesla, Rivian, Lucid enter the recall universe. Software recalls increase. The model adjusts recall probability expectations for this modern era.</p>
-     </div>
-   </div>
- 
-   <div class="quote-box">
-     <p>"Paye and Timmermann (2006) document that financial prediction models exhibit instability across structural break periods. By including structural break dummies and testing exclusively on Regime 3 (which the model never trained on), we verify the model maintains AUC 0.8083 on a regime it had never seen — confirming it captured genuine signal rather than era-specific noise."</p>
-     <span class="cite">— Supported by: Paye & Timmermann (2006), Journal of Empirical Finance; Khanna et al. (2025), arXiv:2511.09754</span>
-   </div>
- 
-   <!-- Training Design -->
-   <div class="grid-2" style="margin-top:1.5rem;">
-     <div class="info-box">
-       <h4>Temporal Train / Test Split — No Lookahead Bias</h4>
-       <ul>
-         <li><strong>Train:</strong> 2000M01 – 2020M12 (97,555 rows) — entirely Regime 1 and Regime 2</li>
-         <li><strong>Test:</strong> 2021M01 – 2025M09 (23,582 rows) — entirely Regime 3</li>
-         <li><strong>90-day buffer:</strong> Oct–Dec 2025 removed to prevent right-censoring. Complaint spikes in this window cannot confirm whether a recall followed within 90 days — including them would create false negatives.</li>
-         <li><strong>2026 data:</strong> Held out entirely for profit estimation — genuinely unseen</li>
-       </ul>
-     </div>
-     <div class="info-box">
-       <h4>Why Testing on Regime 3 Is Especially Valuable</h4>
-       <p>The model trained only on R1 and R2 — it never saw a single post-2021 EV-era observation. Testing on R3 is the hardest possible test: a completely different manufacturer landscape (Tesla, Rivian, Lucid), software recalls, and post-COVID supply chain dynamics. AUC of 0.8083 on this unseen regime directly contradicts the finding in Khanna et al. (2025) that "most models exhibit sharp performance declines when tested on unseen regimes." This gives Riverdale confidence the edge is <strong>durable across future regimes</strong>.</p>
-     </div>
-   </div>
- </div>
-</section>
- 
-<div class="divider"></div>
- 
-<!-- KELLY CRITERION -->
-<section id="kelly" class="bg-white">
- <div class="container">
-   <span class="section-label">Stage 2 — Position Sizing</span>
-   <h2 class="section-title">Kelly Criterion — Optimal Capital Allocation</h2>
-   <p class="section-desc">A mathematical formula developed by John Kelly (1956) and applied to financial markets by Edward Thorp. It determines the optimal fraction of your portfolio to allocate to each trade given a known win rate and payoff.</p>
- 
-   <div class="kelly-equation">
-     <span class="eq-label">Full Kelly Formula</span>
-     <div class="eq-full">f* = (p × b − q) / b</div>
-     <div class="eq-simple">Where: f* = optimal fraction | p = win probability | b = win size / stop loss | q = 1 − p</div>
-     <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">
-       <span class="eq-label">In Simple Terms</span>
-       <div style="color:rgba(255,255,255,0.85);font-size:0.95rem;">Position size = (how often it works × how much you make) minus (how often it fails × your stop loss)</div>
-     </div>
-     <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">
-       <span class="eq-label">Position Scaling Formula</span>
-       <div class="eq-full" style="font-size:1.1rem;">Final Position = Base × (Signal Probability / Threshold)</div>
-       <div class="eq-simple">Capped at $1,000,000 (10% of AUM) | Floored at $50,000 (0.5% of AUM)</div>
-     </div>
-   </div>
- 
-   <div class="kelly-vars">
-     <div class="kelly-var">
-       <div class="kv-sym">p — Win Rate</div>
-       <div class="kv-desc">From Recall Impact Scorecard — how often this company's stock drops more than 2% on recall days</div>
-       <div class="kv-val">Base rate: 21.9% across all 3,631 recall events</div>
-     </div>
-     <div class="kelly-var">
-       <div class="kv-sym">b — Win Size</div>
-       <div class="kv-desc">Average drop size from Recall Impact Scorecard divided by stop loss. Bigger drops = better risk/reward</div>
-       <div class="kv-val">Example — Lucid: -11.66% avg drop → positive Kelly → $604,000 base position</div>
-     </div>
-     <div class="kelly-var">
-       <div class="kv-sym">q — Loss Rate</div>
-       <div class="kv-desc">1 − p. How often the stock does NOT drop and the short position loses to the stop loss</div>
-       <div class="kv-val">Stop loss: fixed at 5% — maximum loss per trade before exit</div>
-     </div>
-     <div class="kelly-var">
-       <div class="kv-sym">Half-Kelly Applied</div>
-       <div class="kv-desc">We use half the Kelly fraction (f*/2) to account for estimation error in the win rate and reduce volatility</div>
-       <div class="kv-val">Standard practice in institutional Kelly Criterion applications</div>
-     </div>
-   </div>
- 
-   <div class="grid-2" style="margin-top:1.5rem;">
-     <div class="info-box">
-       <h4>Portfolio Parameters</h4>
-       <ul>
-         <li><strong>Portfolio size:</strong> $10,000,000 — consistent with emerging manager AUM per The Hedge Fund Journal (2023), which defines emerging managers as funds under $100M</li>
-         <li><strong>Max position:</strong> $1,000,000 (10% concentration cap)</li>
-         <li><strong>Min floor:</strong> $50,000 (0.5%) — for negative-Kelly companies where drops are statistically real but unconditional Kelly is negative</li>
-         <li><strong>Market impact:</strong> At $1M max position, even the least liquid holding (Lucid at ~$80M daily volume) represents &lt;2% of ADV — zero market impact per Almgren & Chriss (2000)</li>
-       </ul>
-     </div>
-     <div class="info-box">
-       <h4>Top 10 Signals Per Month — Why?</h4>
-       <p style="margin-bottom:0.6rem;">The Kelly Criterion already scales position size by signal probability — higher confidence signals receive larger positions. Beyond the top 10, signal probabilities drop significantly, meaning Kelly would assign near-floor positions anyway.</p>
-       <p>Selecting the top 10 per month ensures every deployed dollar is behind a signal where the model has genuine conviction. It is also consistent with real-world systematic fund management practice — a $10M fund does not simultaneously hold 120 short positions across one sector.</p>
-     </div>
-   </div>
- 
-   <div class="quote-box">
-     <p>"The Kelly Criterion provides the optimal bet size for maximizing the long-run growth rate of capital, balancing risk and reward mathematically rather than arbitrarily."</p>
-     <span class="cite">— Hung (2010), Betting with the Kelly Criterion; Thorp (1997), The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market</span>
-   </div>
- </div>
-</section>
- 
-<div class="divider"></div>
- 
-<!-- PIPELINE -->
-<section id="pipeline" class="bg-light">
- <div class="container">
-   <span class="section-label">The Complete System</span>
-   <h2 class="section-title">Three-Stage Investment Pipeline</h2>
-   <p class="section-desc">From raw NHTSA data to a sized short position — the complete signal-to-trade flow.</p>
- 
-   <div class="pipeline">
-     <div class="pipeline-step">
-       <div class="ps-num">01</div>
-       <div class="ps-title">Stage 1 — Recall Probability Model</div>
-       <div class="ps-desc">XGBoost scans NHTSA complaints, investigations, TSBs, and structural break dummies monthly for all 17 manufacturers. Assigns recall probability (0–100%) to each make/model/month observation. Fires STRONG SIGNAL above the 17.15% threshold — validated by three statistical tests at p = 0.000000.</div>
-       <div class="ps-output">OUTPUT → STRONG SIGNAL with probability score</div>
-     </div>
-     <div class="pipeline-step">
-       <div class="ps-num">02</div>
-       <div class="ps-title">Stage 2 — Recall Impact Scorecard</div>
-       <div class="ps-desc">Maps each STRONG SIGNAL to the company's historical stock behavior on recall days. Built from 3,631 recall events (2000–2025). Provides drop rate (% of recalls where CAR &lt; -2%), average drop size, and base position via Kelly Criterion. Ferrari is the only company excluded — t-test p = 1.0, drops are statistical noise.</div>
-       <div class="ps-output">OUTPUT → Base position ($50,000 floor to $604,000 Lucid)</div>
-     </div>
-     <div class="pipeline-step">
-       <div class="ps-num">03</div>
-       <div class="ps-title">Stage 3 — Execution</div>
-       <div class="ps-desc">Final position = Base × (Signal Probability / Threshold), capped at $1M. Short position entered at start of observation month. Hold for 45 days (survival analysis median: Kaplan-Meier + Cox PH model determined 44-day median signal-to-recall time) or exit at T+1 if recall files earlier. 5% stop loss enforced throughout.</div>
-       <div class="ps-output">OUTPUT → Short trade entered, monitored, exited</div>
-     </div>
-   </div>
- 
-   <div class="info-box" style="margin-top:1.5rem;">
-     <h4>45-Day Hold — Determined by Survival Analysis</h4>
-     <p>The hold period is not arbitrary. A Kaplan-Meier survival analysis combined with a Cox Proportional Hazards model was run on historical signal-to-recall-filing times. The median time from a STRONG SIGNAL to actual recall filing was <strong>44 days</strong>, rounded to 45. This means half of all predicted recalls file within the hold window — the position is sized and timed to capture the median expected move. Key survival analysis predictors: inv_count_180d (p &lt; 0.0001) and high_risk_count (p = 0.0015).</p>
-   </div>
- 
-   <div class="info-box" style="margin-top:1rem;">
-     <h4>Publicly Traded Companies Only — Why</h4>
-     <p>Short selling requires a publicly traded security with a liquid market, available price data, and shares that can be borrowed. Private companies or private subsidiaries have no mechanism for the market to react through price movement. This is not a choice — it is a structural requirement of the short selling mechanism. Mitsubishi was dropped due to insufficient recall data for statistical analysis. Ferrari passes the data threshold but fails the t-test (p = 1.0). The remaining 16 companies form the tradeable universe.</p>
-   </div>
- </div>
-</section>
- 
-<div class="divider"></div>
- 
-<!-- RECALL IMPACT SCORECARD -->
-<section id="scorecard" class="bg-white">
- <div class="container">
-   <span class="section-label">Recall Impact Scorecard</span>
-   <h2 class="section-title">Full Company Scorecard — $10M Portfolio</h2>
-   <p class="section-desc">Built from 3,631 recall events across 17 manufacturers (2000–2025). The -2% CAR threshold is statistically significant per our event study — drops below this level represent meaningful market reactions beyond normal daily noise. Inclusion criterion: t-test p &lt; 0.05 confirming drops are statistically real.</p>
- 
-   <div class="info-box" style="margin-bottom:1.5rem;">
-     <h4>Why -2% CAR as the Drop Threshold?</h4>
-     <p>A stock drop of -2% or more on a recall day is considered a meaningful market reaction — not random daily noise. This threshold is consistent with event study methodology and supported by statistical significance testing. A company's recall-day drops are included in the drop rate calculation only when CAR &lt; -2%, ensuring we measure genuine negative market reactions rather than normal trading volatility.</p>
-   </div>
- 
-   <div class="table-wrap">
-     <table>
-       <thead>
-         <tr>
-           <th>Company</th>
-           <th>Ticker</th>
-           <th>Total Recalls</th>
-           <th>Drop Rate</th>
-           <th>Avg Drop</th>
-           <th>Avg CAR</th>
-           <th>T-Test p</th>
-           <th>Kelly f</th>
-           <th>Half Kelly</th>
-           <th>Base Position</th>
-           <th>Action</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr><td><strong>Rivian</strong></td><td class="mono">RIVN</td><td>20</td><td>40.0%</td><td class="mono">-7.12%</td><td class="mono">-0.41%</td><td class="mono">0.0027</td><td class="mono">-0.0212</td><td class="mono">-0.0106</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Lucid Group</strong></td><td class="mono">LCID</td><td>13</td><td>38.5%</td><td class="mono">-11.66%</td><td class="mono">-0.87%</td><td class="mono">0.0033</td><td class="mono">+0.1208</td><td class="mono">+0.0604</td><td class="mono" style="color:var(--green);font-weight:700;">$604,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Tesla</strong></td><td class="mono">TSLA</td><td>75</td><td>29.3%</td><td class="mono">-6.05%</td><td class="mono">+0.15%</td><td class="mono">0.0000</td><td class="mono">-0.2911</td><td class="mono">-0.1455</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Stellantis</strong></td><td class="mono">STLA</td><td>314</td><td>28.0%</td><td class="mono">-4.62%</td><td class="mono">-0.26%</td><td class="mono">0.0000</td><td class="mono">-0.4986</td><td class="mono">-0.2493</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.*</span></td></tr>
-         <tr><td><strong>Subaru</strong></td><td class="mono">FUJHY</td><td>99</td><td>25.3%</td><td class="mono">-3.72%</td><td class="mono">+0.01%</td><td class="mono">0.0000</td><td class="mono">-0.7520</td><td class="mono">-0.3760</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>BMW Group</strong></td><td class="mono">BMWYY</td><td>354</td><td>24.6%</td><td class="mono">-3.89%</td><td class="mono">+0.10%</td><td class="mono">0.0000</td><td class="mono">-0.7240</td><td class="mono">-0.3620</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.**</span></td></tr>
-         <tr><td><strong>Hyundai</strong></td><td class="mono">HYMTF</td><td>384</td><td>24.1%</td><td class="mono">-4.35%</td><td class="mono">+0.34%</td><td class="mono">0.0000</td><td class="mono">-0.6315</td><td class="mono">-0.3158</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.**</span></td></tr>
-         <tr><td><strong>Volkswagen Group</strong></td><td class="mono">VWAGY</td><td>405</td><td>23.5%</td><td class="mono">-4.05%</td><td class="mono">-0.03%</td><td class="mono">0.0000</td><td class="mono">-0.7108</td><td class="mono">-0.3554</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>General Motors</strong></td><td class="mono">GM</td><td>301</td><td>22.9%</td><td class="mono">-3.91%</td><td class="mono">-0.09%</td><td class="mono">0.0000</td><td class="mono">-0.7573</td><td class="mono">-0.3787</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Ford</strong></td><td class="mono">F</td><td>454</td><td>20.7%</td><td class="mono">-3.81%</td><td class="mono">-0.00%</td><td class="mono">0.0000</td><td class="mono">-0.8345</td><td class="mono">-0.4172</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Mazda</strong></td><td class="mono">MZDAY</td><td>73</td><td>20.5%</td><td class="mono">-4.27%</td><td class="mono">-0.18%</td><td class="mono">0.0000</td><td class="mono">-0.7241</td><td class="mono">-0.3621</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Mercedes-Benz</strong></td><td class="mono">MBG</td><td>206</td><td>19.4%</td><td class="mono">-4.15%</td><td class="mono">-0.03%</td><td class="mono">0.0000</td><td class="mono">-0.7773</td><td class="mono">-0.3886</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Nissan</strong></td><td class="mono">NSANY</td><td>270</td><td>17.8%</td><td class="mono">-4.01%</td><td class="mono">+0.02%</td><td class="mono">0.0000</td><td class="mono">-0.8480</td><td class="mono">-0.4240</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Honda</strong></td><td class="mono">HMC</td><td>279</td><td>17.6%</td><td class="mono">-3.20%</td><td class="mono">-0.06%</td><td class="mono">0.0000</td><td class="mono">-1.1143</td><td class="mono">-0.5571</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Toyota</strong></td><td class="mono">TM</td><td>273</td><td>16.1%</td><td class="mono">-3.69%</td><td class="mono">-0.16%</td><td class="mono">0.0000</td><td class="mono">-0.9767</td><td class="mono">-0.4884</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr><td><strong>Volvo</strong></td><td class="mono">VLVLY</td><td>95</td><td>12.6%</td><td class="mono">-4.37%</td><td class="mono">+0.18%</td><td class="mono">0.0001</td><td class="mono">-0.8743</td><td class="mono">-0.4372</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-         <tr style="background:#fee2e2;"><td><strong>Ferrari</strong></td><td class="mono">RACE</td><td>16</td><td>12.5%</td><td class="mono">-2.68%</td><td class="mono">-0.30%</td><td class="mono" style="color:var(--red);font-weight:700;">1.0000</td><td class="mono">-1.5094</td><td class="mono">-0.7547</td><td class="mono">$0</td><td><span class="badge-skip">SKIP</span></td></tr>
-       </tbody>
-     </table>
-   </div>
- 
-   <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;font-size:0.8rem;color:var(--gray-dark);">
-     <span><span class="badge-trade">TRADE</span> — t-test p &lt; 0.05, drops are statistically real</span>
-     <span><span class="badge-skip">SKIP</span> — Ferrari: t-test p = 1.0, drops are random noise</span>
-     <span><span class="badge-excluded">EXCL.*</span> — Stellantis: Q1 2026 financial distress outlier (not recall-driven)</span>
-     <span><span class="badge-excluded">EXCL.**</span> — BMW/Hyundai: US ADR unavailable for Q1 2026 price data</span>
-   </div>
- 
-   <div class="info-box" style="margin-top:1rem;">
-     <h4>Why Only Lucid Has a Positive Kelly Fraction</h4>
-     <p>Lucid (38.5% drop rate, -11.66% average drop) is the only company where the unconditional Kelly fraction is positive (+0.1208), producing a $604,000 base position. All other companies have negative unconditional Kelly — meaning at their raw historical drop rates, the expected value is negative at base sizing. However, these companies become viable when Stage 1's STRONG SIGNAL fires: the 4.4× informational edge pushes the effective win rate well above the raw historical rate, making the $50,000 floor position viable in expectation. The floor is not arbitrary — it represents the minimum deployment where Stage 1's edge justifies the trade.</p>
-   </div>
- </div>
-</section>
- 
-<div class="divider"></div>
- 
-<!-- Q1 2026 RESULTS -->
-<section id="results" class="bg-navy">
- <div class="container">
-   <span class="section-label">Profit Estimation</span>
-   <h2 class="section-title">Q1 2026 Results — Real Out-of-Sample Performance</h2>
-   <p class="section-desc">Top 10 signals per month across January, February, and March 2026. Real NHTSA recall filings. Real yfinance stock prices. Model trained entirely on pre-2026 data — genuinely unseen.</p>
- 
-   <div class="grid-4" style="margin-bottom:2rem;">
-     <div class="stat-box">
-       <span class="stat-val green">+$117,387</span>
-       <span class="stat-lbl">Total P&amp;L</span>
-       <span class="stat-desc">Q1 2026 — 19 trades, real out-of-sample data</span>
-     </div>
-     <div class="stat-box">
-       <span class="stat-val green">+1.17%</span>
-       <span class="stat-lbl">Portfolio Return</span>
-       <span class="stat-desc">On $10M portfolio vs -4.3% S&amp;P 500</span>
-     </div>
-     <div class="stat-box">
-       <span class="stat-val">63%</span>
-       <span class="stat-lbl">Win Rate</span>
-       <span class="stat-desc">12 wins, 4 losses, 3 stop losses</span>
-     </div>
-     <div class="stat-box">
-       <span class="stat-val">7/19</span>
-       <span class="stat-lbl">Recall Confirmations</span>
-       <span class="stat-desc">37% of signals confirmed by actual NHTSA filing within 45 days</span>
-     </div>
-   </div>
- 
-   <!-- Benchmark Chart Visual -->
-   <div style="background:rgba(0,0,0,0.3);border-radius:12px;padding:2rem;margin-bottom:2rem;border:1px solid rgba(255,255,255,0.1);">
-     <h3 style="color:white;font-family:'Playfair Display',serif;margin-bottom:0.3rem;">Q1 2026 Performance vs Benchmarks</h3>
-     <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:1.5rem;">S&amp;P 500 and Nasdaq fell sharply in Q1 2026 due to Middle East geopolitical tensions and closure of the Strait of Hormuz. Riverdale's short strategy benefited from the downturn while generating recall-specific alpha.</p>
- 
-     <!-- Chart: flex column per bar, label always in its own bottom row -->
-     <div style="display:flex;gap:1.5rem;align-items:flex-end;padding:0 0.5rem;margin-bottom:0.5rem;">
- 
-       <!-- S&P 500: -4.30% -->
-       <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;">
-         <!-- positive space above zero (empty, for alignment) -->
-         <div style="height:36px;"></div>
-         <!-- zero line -->
-         <div style="width:100%;height:2px;background:rgba(255,255,255,0.4);"></div>
-         <!-- negative bar growing down -->
-         <div style="width:70%;background:#ef4444;height:120px;border-radius:0 0 8px 8px;display:flex;align-items:center;justify-content:center;">
-           <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">-4.30%</span>
-         </div>
-         <!-- label always below bar -->
-         <div style="margin-top:10px;color:rgba(255,255,255,0.8);font-size:0.85rem;font-weight:500;text-align:center;">S&amp;P 500</div>
-       </div>
- 
-       <!-- Nasdaq: -5.80% -->
-       <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;">
-         <div style="height:36px;"></div>
-         <div style="width:100%;height:2px;background:rgba(255,255,255,0.4);"></div>
-         <div style="width:70%;background:#dc2626;height:162px;border-radius:0 0 8px 8px;display:flex;align-items:center;justify-content:center;">
-           <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">-5.80%</span>
-         </div>
-         <div style="margin-top:10px;color:rgba(255,255,255,0.8);font-size:0.85rem;font-weight:500;text-align:center;">Nasdaq 100</div>
-       </div>
- 
-       <!-- Riverdale: +1.17% — bar grows UP, so it sits above the zero line -->
-       <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;">
-         <!-- positive bar above zero -->
-         <div style="width:70%;background:#166534;height:36px;border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;">
-           <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">+1.17%</span>
-         </div>
-         <div style="width:100%;height:2px;background:rgba(255,255,255,0.4);"></div>
-         <!-- empty space below zero to match bar heights -->
-         <div style="height:162px;"></div>
-         <div style="margin-top:10px;color:white;font-size:0.85rem;font-weight:700;text-align:center;">Riverdale ✓</div>
-       </div>
- 
-     </div>
-     <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;">
-       <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1rem;flex:1;min-width:160px;">
-         <div style="color:#4ade80;font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:600;">+5.47pp</div>
-         <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">vs S&amp;P 500</div>
-       </div>
-       <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1rem;flex:1;min-width:160px;">
-         <div style="color:#4ade80;font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:600;">+6.97pp</div>
-         <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">vs Nasdaq 100</div>
-       </div>
-       <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1rem;flex:1;min-width:160px;">
-         <div style="color:#4ade80;font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:600;">+1.17%</div>
-         <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">Real out-of-sample return</div>
-       </div>
-       <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1rem;flex:1;min-width:160px;">
-         <div style="color:#facc15;font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:600;">~4.68%</div>
-         <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">Annualized rate</div>
-       </div>
-     </div>
-   </div>
- 
-   <!-- Monthly Breakdown -->
-   <div class="grid-3" style="margin-bottom:2rem;">
-     <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);">
-       <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">January</div>
-       <div style="font-family:'DM Mono',monospace;font-size:1.5rem;color:white;margin-bottom:0.3rem;">+$4,278</div>
-       <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">6 trades | 3 wins | 2 losses | 1 stop | 1 recall confirmed (17%)</div>
-     </div>
-     <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.2);">
-       <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">February — Best Month</div>
-       <div style="font-family:'DM Mono',monospace;font-size:1.5rem;color:#4ade80;margin-bottom:0.3rem;">+$77,993</div>
-       <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">7 trades | 5 wins | 1 loss | 1 stop | 5 recalls confirmed (71%)</div>
-     </div>
-     <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);">
-       <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">March</div>
-       <div style="font-family:'DM Mono',monospace;font-size:1.5rem;color:white;margin-bottom:0.3rem;">+$35,116</div>
-       <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">6 trades | 4 wins | 1 loss | 0 stops | 1 recall confirmed (17%)</div>
-     </div>
-   </div>
- 
-   <!-- Exclusions -->
-   <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);border-left:4px solid var(--gold-light);">
-     <h3 style="color:var(--gold-light);font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Three Companies Excluded From Q1 2026 Estimation</h3>
-     <div class="grid-3">
-       <div>
-         <div style="color:white;font-weight:700;margin-bottom:0.4rem;">Stellantis (STLA)</div>
-         <div style="color:rgba(255,255,255,0.7);font-size:0.83rem;">Excluded as statistical outlier. In Q1 2026, Stellantis reported a $2.6B one-time charge triggering a ~24% stock decline — driven by financial restructuring and EV pivot costs unrelated to recall activity. Including it would inflate returns by $114,182 but misrepresent the strategy's source of alpha. <a href="https://finance.yahoo.com/news/stellantis-stock-collapses-as-jeep-maker-takes-26-billion-hit-in-latest-ev-pivot-134546771.html" target="_blank" style="color:var(--gold-light);">Source →</a></div>
-       </div>
-       <div>
-         <div style="color:white;font-weight:700;margin-bottom:0.4rem;">BMW (BMWYY / BMWKY)</div>
-         <div style="color:rgba(255,255,255,0.7);font-size:0.83rem;">US ADR unavailable for Q1 2026 price data during estimation period. BMW remains in the tradeable universe for future periods when price data is accessible. Contributed only $4,037 in the estimation — immaterial to overall results.</div>
-       </div>
-       <div>
-         <div style="color:white;font-weight:700;margin-bottom:0.4rem;">Hyundai (HYMTF)</div>
-         <div style="color:rgba(255,255,255,0.7);font-size:0.83rem;">US OTC ADR delisted. Korean exchange listing (005380.KS) was tested but excluded to maintain consistency — all other positions use USD-denominated US-listed securities. Hyundai remains in the tradeable universe.</div>
-       </div>
-     </div>
-   </div>
- </div>
-</section>
- 
-<div class="divider"></div>
- 
-<!-- TRADE LOG -->
-<section id="trades" class="bg-light">
- <div class="container">
-   <span class="section-label">Complete Trade Log</span>
-   <h2 class="section-title">All 19 Trades — Q1 2026</h2>
-   <p class="section-desc">Every position entered in Q1 2026 with full detail. Exit rule: T+1 after recall filing or 45-day hold expiry, whichever comes first. Stop loss: 5% upside movement triggers exit. Green recall date = actual NHTSA filing confirmed within the 45-day window.</p>
- 
-   <div class="table-wrap">
-     <table>
-       <thead>
-         <tr>
-           <th>Month</th>
-           <th>Company</th>
-           <th>Ticker</th>
-           <th>Make</th>
-           <th>Model</th>
-           <th>Probability</th>
-           <th>Position</th>
-           <th>Entry $</th>
-           <th>Exit $</th>
-           <th>Price Chg</th>
-           <th>Recall Filed</th>
-           <th>Recall Date</th>
-           <th>Stop Hit</th>
-           <th>Result</th>
-           <th>P&amp;L</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr><td>Jan</td><td>Tesla</td><td class="mono">TSLA</td><td>TESLA</td><td>MODEL Y</td><td class="mono">62.7%</td><td class="mono">$183,000</td><td class="mono">$438.07</td><td class="mono">$410.63</td><td class="mono">-6.26%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$11,463</td></tr>
-         <tr><td>Jan</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q5</td><td class="mono">62.4%</td><td class="mono">$182,000</td><td class="mono">$12.54</td><td class="mono">$12.29</td><td class="mono">-1.99%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$3,628</td></tr>
-         <tr><td>Jan</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>GLE 350</td><td class="mono">59.1%</td><td class="mono">$172,000</td><td class="mono">$22.11</td><td class="mono">$22.51</td><td class="mono">+1.80%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$3,095</td></tr>
-         <tr><td>Jan</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q4 E-TRON</td><td class="mono">57.3%</td><td class="mono">$167,000</td><td class="mono">$12.54</td><td class="mono">$12.29</td><td class="mono">-1.99%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$3,329</td></tr>
-         <tr><td>Jan</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>GLA 250</td><td class="mono">56.9%</td><td class="mono">$166,000</td><td class="mono">$22.11</td><td class="mono">$22.51</td><td class="mono">+1.80%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$2,987</td></tr>
-         <tr><td>Jan</td><td>Nissan</td><td class="mono">NSANY</td><td>NISSAN</td><td>ROGUE</td><td class="mono">55.3%</td><td class="mono">$161,000</td><td class="mono">$4.99</td><td class="mono">$5.14</td><td class="mono">+5.00%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;">2026-01-21</td><td>YES</td><td><span class="outcome-stop">STOP</span></td><td class="pnl-neg">-$8,050</td></tr>
-         <tr style="background:#f0f7f0;"><td>Feb</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q8</td><td class="mono">57.4%</td><td class="mono">$167,000</td><td class="mono">$12.10</td><td class="mono">$10.65</td><td class="mono">-11.98%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$20,012</td></tr>
-         <tr><td>Feb</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>C 300</td><td class="mono">54.7%</td><td class="mono">$159,000</td><td class="mono">$22.21</td><td class="mono">$22.25</td><td class="mono">+0.17%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$269</td></tr>
-         <tr style="background:#f0f7f0;"><td>Feb</td><td>VW Group</td><td class="mono">VWAGY</td><td>PORSCHE</td><td>MACAN</td><td class="mono">54.1%</td><td class="mono">$158,000</td><td class="mono">$12.10</td><td class="mono">$10.65</td><td class="mono">-11.98%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$18,934</td></tr>
-         <tr style="background:#f0f7f0;"><td>Feb</td><td>GM</td><td class="mono">GM</td><td>GMC</td><td>SIERRA 3500</td><td class="mono">53.4%</td><td class="mono">$156,000</td><td class="mono">$84.07</td><td class="mono">$78.52</td><td class="mono">-6.60%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;">2026-02-26</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$10,293</td></tr>
-         <tr style="background:#f0f7f0;"><td>Feb</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q4 E-TRON</td><td class="mono">53.0%</td><td class="mono">$154,000</td><td class="mono">$12.10</td><td class="mono">$10.65</td><td class="mono">-11.98%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$18,455</td></tr>
-         <tr style="background:#f0f7f0;"><td>Feb</td><td>Ford</td><td class="mono">F</td><td>FORD</td><td>MAVERICK</td><td class="mono">52.2%</td><td class="mono">$152,000</td><td class="mono">$13.66</td><td class="mono">$13.64</td><td class="mono">-0.16%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;">2026-02-20</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$245</td></tr>
-         <tr><td>Feb</td><td>Tesla</td><td class="mono">TSLA</td><td>TESLA</td><td>MODEL Y</td><td class="mono">51.4%</td><td class="mono">$150,000</td><td class="mono">$421.81</td><td class="mono">$392.78</td><td class="mono">-6.88%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$10,323</td></tr>
-         <tr><td>Mar</td><td>GM</td><td class="mono">GM</td><td>BUICK</td><td>ENCLAVE</td><td class="mono">56.8%</td><td class="mono">$166,000</td><td class="mono">$77.58</td><td class="mono">$77.78</td><td class="mono">+0.26%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$436</td></tr>
-         <tr><td>Mar</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>GLS 450</td><td class="mono">54.6%</td><td class="mono">$159,000</td><td class="mono">$22.53</td><td class="mono">$22.41</td><td class="mono">-0.53%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$838</td></tr>
-         <tr><td>Mar</td><td>Honda</td><td class="mono">HMC</td><td>ACURA</td><td>ZDX</td><td class="mono">54.0%</td><td class="mono">$158,000</td><td class="mono">$29.29</td><td class="mono">$24.26</td><td class="mono">-17.17%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$27,134</td></tr>
-         <tr style="background:#f0f7f0;"><td>Mar</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q5</td><td class="mono">53.3%</td><td class="mono">$155,000</td><td class="mono">$11.33</td><td class="mono">$10.65</td><td class="mono">-6.00%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$9,303</td></tr>
-         <tr><td>Mar</td><td>Ford</td><td class="mono">F</td><td>FORD</td><td>F-150</td><td class="mono">51.5%</td><td class="mono">$150,000</td><td class="mono">$13.39</td><td class="mono">$12.71</td><td class="mono">-5.08%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$7,618</td></tr>
-         <tr><td>Mar</td><td>Tesla</td><td class="mono">TSLA</td><td>TESLA</td><td>MODEL Y</td><td class="mono">50.7%</td><td class="mono">$148,000</td><td class="mono">$403.32</td><td class="mono">$391.95</td><td class="mono">-2.82%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$4,172</td></tr>
-         <tr style="background:#dcfce7;font-weight:700;"><td colspan="14" style="color:var(--green);font-size:0.9rem;">TOTAL Q1 2026 — 12 Wins (63%) | 4 Losses (21%) | 3 Stops (16%) | 7 Recalls Confirmed (37%)</td><td class="pnl-pos">+$117,387</td></tr>
-       </tbody>
-     </table>
-   </div>
- 
-   <div class="info-box" style="margin-top:1rem;">
-     <h4>P&amp;L by Company (Ex-Exclusions)</h4>
-     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;">
-       <span class="tag green">VW Group +$47,724</span>
-       <span class="tag green">Honda +$27,134</span>
-       <span class="tag green">Tesla +$25,958</span>
-       <span class="tag green">GM +$9,857</span>
-       <span class="tag green">Ford +$7,863</span>
-       <span class="tag red">Mercedes -$5,513</span>
-       <span class="tag red">Nissan -$8,050</span>
-     </div>
-   </div>
- </div>
-</section>
- 
- 
-<!-- SOURCES -->
-<section id="sources" class="bg-light">
- <div class="container">
-   <span class="section-label">Academic Sources</span>
-   <h2 class="section-title">References & Citations</h2>
-   <p class="section-desc">All sources used in the construction, validation, and defense of the Riverdale Investments strategy.</p>
- 
-   <div class="grid-2">
-     <div>
-       <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">Methodology & Model</h3>
- 
-       <div class="source-item">
-         <div class="src-title">XGBoost — Core Model (Q1-Ranked Scimago)</div>
-         <div class="src-cite">Li, Y.-N., Jiang, M., Wang, L., & Wei, J. (2025). XGBoost-based risk prediction model for massive vehicle recalls using consumer complaints. <em>Risk Analysis</em>, 45, 4408–4422.</div>
-         <a href="https://doi.org/10.1111/risa.70052" target="_blank">https://doi.org/10.1111/risa.70052 →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">Structural Break Testing — Bai-Perron</div>
-         <div class="src-cite">Paye, K. & Timmermann, A. (2006). Instability of Return Prediction Models. <em>Journal of Empirical Finance</em>, 13(3), 274–315. Financial prediction models must be tested across structurally different regimes.</div>
-         <a href="https://rady.ucsd.edu/_files/faculty-research/timmermann/instability.pdf" target="_blank">Full Paper →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">Regime Generalization — Model Robustness</div>
-         <div class="src-cite">Khanna, S., Berger, A., Chopra, M., Berghaus, D., & Sifa, R. (2025). History Rhymes: Macro-Contextual Retrieval for Robust Financial Forecasting. arXiv:2511.09754. "Most models exhibit sharp performance declines when tested on unseen regimes."</div>
-         <a href="https://arxiv.org/abs/2511.09754" target="_blank">arXiv →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">NHTSA Market Inefficiency — Core Thesis</div>
-         <div class="src-cite">Insider trading around auto recalls: Does investor attention matter? <em>Review of Quantitative Finance and Accounting</em>, 55, 2020. "The market generally fails to impound the information contained in customer complaints in a timely manner."</div>
-         <a href="https://doi.org/10.1007/s11156-019-00866-9" target="_blank">DOI Link →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">Temporal Validation — ML Best Practice</div>
-         <div class="src-cite">Cerqueira, V., Torgo, L., & Mozetič, I. (2020). Evaluating time series forecasting models: An empirical study on performance estimation methods. <em>Machine Learning</em>, 109, 1997–2028.</div>
-       </div>
-     </div>
- 
-     <div>
-       <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">Position Sizing & Portfolio</h3>
- 
-       <div class="source-item">
-         <div class="src-title">Kelly Criterion — Position Sizing</div>
-         <div class="src-cite">Thorp, E.O. (1997). The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market. 10th International Conference on Gambling and Risk Taking. Hung, J. (2010). Betting with the Kelly Criterion.</div>
-         <a href="https://www.investopedia.com/articles/trading/04/091504.asp" target="_blank">Investopedia →</a>
-         <span> | </span>
-         <a href="https://www.stat.berkeley.edu/~aldous/Real_World/kelly.html" target="_blank">Berkeley →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">Portfolio Size — $10M Emerging Manager</div>
-         <div class="src-cite">The Hedge Fund Journal (2023). Hedge Fund Registration. Emerging managers defined as funds with under $100M AUM — $10M is consistent with early-stage fund category.</div>
-         <a href="https://thehedgefundjournal.com/hedge-fund-registration/" target="_blank">Hedge Fund Journal →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">Market Impact — Position Size Justification</div>
-         <div class="src-cite">Almgren, R. & Chriss, N. (2000). Optimal Execution of Portfolio Transactions. <em>Journal of Risk</em>, 3(2), 5–39. Positions under 10-15% of ADV have negligible market impact — our max $1M position is &lt;2% of Lucid's daily volume.</div>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">Stellantis Q1 2026 Exclusion</div>
-         <div class="src-cite">Stellantis reported a $2.6B one-time charge in Q1 2026, triggering a ~24% stock decline unrelated to recall activity.</div>
-         <a href="https://finance.yahoo.com/news/stellantis-stock-collapses-as-jeep-maker-takes-26-billion-hit-in-latest-ev-pivot-134546771.html" target="_blank">Yahoo Finance →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">NHTSA — Primary Data Source</div>
-         <div class="src-cite">National Highway Traffic Safety Administration. Complaints, Investigations, Technical Service Bulletins, and Recall Database. 1,980,106 complaints through April 2026.</div>
-         <a href="https://www.nhtsa.gov/" target="_blank">NHTSA.gov →</a>
-       </div>
- 
-       <div class="source-item">
-         <div class="src-title">AI Assistance</div>
-         <div class="src-cite">Claude (Anthropic, 2025) was utilized as an AI coding assistant throughout model development, data pipeline construction, and profit estimation. All methodological decisions were made by the research team.</div>
-       </div>
-     </div>
-   </div>
- 
-   <div style="margin-top:2.5rem;">
-     <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">AI-Accelerated Research — Claude by Anthropic</h3>
-     <p style="font-size:0.9rem;color:var(--gray-dark);margin-bottom:1.2rem;">This project demonstrates how students can leverage AI tools to execute a research agenda that would otherwise exceed the scope of a semester project — while maintaining full methodological ownership of every decision.</p>
-     <div class="grid-2">
-       <div class="ai-box">
-         <h3>What Claude Made Possible</h3>
-         <p>Claude (Anthropic, 2025) was utilized as an AI coding assistant to accelerate the development of statistical methods, model pipelines, and data engineering workflows. Complex implementations including XGBoost pipelines, Kelly Criterion sizing logic, event study computation, survival analysis, and multi-month profit estimation code were built with AI coding support — allowing the team to focus on methodological design, interpretation, and defense rather than low-level implementation.</p>
-         <div class="ai-tags">
-           <span class="ai-tag">XGBoost Pipeline</span>
-           <span class="ai-tag">Kelly Criterion Logic</span>
-           <span class="ai-tag">Event Study Computation</span>
-           <span class="ai-tag">Survival Analysis</span>
-           <span class="ai-tag">Profit Estimation</span>
-           <span class="ai-tag">Statistical Validation</span>
-           <span class="ai-tag">Data Engineering</span>
-           <span class="ai-tag">PDF Report Generation</span>
-         </div>
-       </div>
-       <div class="ai-box" style="background:linear-gradient(135deg,#1a3a00,#2d5a1b);">
-         <h3 style="color:#86efac;">What the Team Owns</h3>
-         <p>Every methodological decision in this project was made by the research team — not the AI. The XGBoost selection and literature alignment, the three-regime structural break framework, the 45-day survival analysis hold period, the Kelly Criterion application, the -2% CAR threshold, the exclusion criteria for Ferrari, the Bai-Perron breakpoint dates, and the entire investment thesis are original team contributions. Claude wrote code. The team made every decision that mattered.</p>
-         <div class="ai-tags">
-           <span class="ai-tag">Regime Framework Design</span>
-           <span class="ai-tag">Statistical Test Selection</span>
-           <span class="ai-tag">Literature Review</span>
-           <span class="ai-tag">Investment Thesis</span>
-           <span class="ai-tag">Exclusion Criteria</span>
-           <span class="ai-tag">Portfolio Construction</span>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
-</section>
- 
-<div class="divider"></div>
- 
-<!-- TEAM -->
-<section id="team" class="bg-navy">
- <div class="container" style="text-align:center;">
-   <span class="section-label">The Team</span>
-   <h2 class="section-title">St. John's University Research Team</h2>
-   <p class="section-desc" style="margin:0 auto 2rem;">Tobin College of Business · St. John's University · BUA Competition 2026</p>
- 
-   <div class="team-grid">
-     <div class="team-card">
-       <div class="team-avatar">CK</div>
-       <div class="team-name">Charles Kwak</div>
-     </div>
-     <div class="team-card">
-       <div class="team-avatar">CL</div>
-       <div class="team-name">Cassie Lemus-Sodji</div>
-     </div>
-     <div class="team-card">
-       <div class="team-avatar">SL</div>
-       <div class="team-name">Stephan Loiseau</div>
-     </div>
-     <div class="team-card">
-       <div class="team-avatar">AM</div>
-       <div class="team-name">Andrew Manalansan</div>
-     </div>
-   </div>
- 
-   <div style="margin-top:2rem;background:rgba(255,255,255,0.06);border-radius:10px;padding:1.2rem 1.8rem;border:1px solid rgba(255,255,255,0.1);display:inline-block;">
-     <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.3rem;">Faculty Advisor</div>
-     <div style="color:white;font-size:1.1rem;font-weight:600;">Michael D. Herley, D.B.A.</div>
-   </div>
- 
-   <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);">
-     <p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:white;font-style:italic;max-width:600px;margin:0 auto;">"In the investment world, the side with the informational edge wins. We didn't just identify how Riverdale can obtain that edge — we built a complete strategy around it that makes money in the real world."</p>
-   </div>
- </div>
-</section>
- 
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: THESIS -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-white" id="tab-thesis">
+<div class="container section-pad">
+  <span class="section-label">The Big Question</span>
+  <h2 class="section-title">Can Recall Data Provide Market Insight for a Strong Investment Strategy?</h2>
+  <p class="section-desc">Every vehicle recall leaves a trail of breadcrumbs weeks before the public announcement — in consumer complaints, government investigations, and technical service bulletins. The market ignores these signals. We built a system to capture them.</p>
+
+  <div class="phases">
+    <div class="phase phase-1">
+      <div class="phase-num">01</div>
+      <span class="phase-tag">Noise Window — Our Edge</span>
+      <h3>Pre-Event Signals</h3>
+      <p>Complaint spikes appear in the NHTSA database. TSBs accelerate. Investigations open. The market ignores all of it. Our XGBoost model fires a STRONG SIGNAL 30–90 days before the recall is public. Riverdale enters the short position here.</p>
+    </div>
+    <div class="phase phase-2">
+      <div class="phase-num">02</div>
+      <span class="phase-tag">Drift Window — Position Grows</span>
+      <h3>Institutional Awareness Builds</h3>
+      <p>NHTSA opens a formal investigation. Financial news picks it up. Analysts flag it. Institutional money begins positioning. The stock drifts down gradually. Riverdale's position is already profitable and growing.</p>
+    </div>
+    <div class="phase phase-3">
+      <div class="phase-num">03</div>
+      <span class="phase-tag">Filing Date — Exit at T+1</span>
+      <h3>Market Catches Up</h3>
+      <p>Recall officially filed. Our event study confirms mean CAR ≈ 0% at filing — the market had already priced it in during Phase 2. Riverdale exits at T+1 having captured the full drift.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;" class="grid-2">
+    <div class="quote-box">
+      <p>"The market generally fails to impound the information contained in customer complaints in a timely manner — even among sophisticated institutional investors like mutual funds."</p>
+      <span class="cite">— Review of Quantitative Finance and Accounting, 2020</span>
+    </div>
+    <div class="info-box">
+      <h4>Why the Market Misses This</h4>
+      <ul>
+        <li>NHTSA data is public but requires a multi-source pipeline to process</li>
+        <li>Complaint velocity, TSB component matching, and investigation timing must be computed together</li>
+        <li>Event study confirms Semi-Strong EMH at filing — the edge is entirely pre-announcement</li>
+        <li>Signal window: 30–90 days before public recall announcement</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.3rem;">What is a Short Strategy?</h3>
+  <div class="grid-2">
+    <div class="info-box">
+      <h4>Shorting a Stock — Plain Language</h4>
+      <p>Shorting is a way to profit when a stock goes down. You borrow shares, sell them at today's price, and buy them back later at a lower price — pocketing the difference. If Riverdale shorts an auto company at $50 today and a recall drops that stock to $38, Riverdale keeps the $12 difference per share. The key is timing — the earlier you enter the short, the more of that decline you capture. That is exactly what our model gives Riverdale: the earliest possible entry, before anyone else knows a recall is coming.</p>
+    </div>
+    <div class="info-box">
+      <h4>Three Ways the Position Ends</h4>
+      <ul>
+        <li><strong>Recall announced:</strong> Exit at market close the day after filing. Captured the entire gradual drift downward that happened weeks before the market reacted.</li>
+        <li><strong>Stock rises 5%+:</strong> Stop loss exits the position automatically. Protects Riverdale from runaway losses.</li>
+        <li><strong>Neither happens:</strong> Position closes after 45 days — the survival analysis median time from signal to recall filing.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: MODEL -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-light" id="tab-model">
+<div class="container section-pad">
+  <span class="section-label">Stage 1 — Signal Model</span>
+  <h2 class="section-title">XGBoost Recall Probability Model</h2>
+  <p class="section-desc">A supervised machine learning model trained on 121,137 monthly observations from 2000–2025. Predicts whether a specific make/model will have a recall filed within 90 days — firing 30–90 days before any public announcement.</p>
+
+  <!-- Regime Timeline -->
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.2rem;">The Three Market Regimes — Bai-Perron Structural Break Analysis</h3>
+  <div class="regime-wrap" style="margin-bottom:1.5rem;">
+    <div class="regime-timeline">
+      <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+        <!-- Background bands -->
+        <rect x="20" y="30" width="280" height="100" fill="#001a3a" rx="4"/>
+        <rect x="300" y="30" width="240" height="100" fill="#CC0000" rx="4" opacity="0.85"/>
+        <rect x="540" y="30" width="340" height="100" fill="#9E7C0C" rx="4" opacity="0.8"/>
+        <!-- Labels -->
+        <text x="160" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 1 — BASELINE</text>
+        <text x="160" y="74" fill="rgba(255,255,255,0.7)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2000M01 – 2014M02</text>
+        <text x="160" y="92" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">7.4% positive rate</text>
+        <text x="160" y="108" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Pre-Takata era. Lower recall frequency.</text>
+        <text x="160" y="120" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">R1 = Baseline (no dummy)</text>
+        <!-- R2 -->
+        <text x="420" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 2 — TAKATA ERA</text>
+        <text x="420" y="74" fill="rgba(255,255,255,0.7)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2014M03 – 2021M01</text>
+        <text x="420" y="92" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">16.1% positive rate</text>
+        <text x="420" y="108" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Largest recall in history. Rate doubled.</text>
+        <text x="420" y="120" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">D2 = 1</text>
+        <!-- R3 -->
+        <text x="710" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 3 — MODERN / EV ERA</text>
+        <text x="710" y="74" fill="rgba(255,255,255,0.7)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2021M02 – 2025M12</text>
+        <text x="710" y="92" fill="#86efac" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">13.0% positive rate</text>
+        <text x="710" y="108" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Tesla, Rivian, Lucid. Software recalls.</text>
+        <text x="710" y="120" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">D3 = 1 (TEST SET ONLY)</text>
+        <!-- Break lines -->
+        <line x1="300" y1="20" x2="300" y2="145" stroke="white" stroke-width="2" stroke-dasharray="4,3"/>
+        <line x1="540" y1="20" x2="540" y2="145" stroke="white" stroke-width="2" stroke-dasharray="4,3"/>
+        <!-- Break labels -->
+        <text x="300" y="16" fill="white" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">BREAK 1: 2014M03</text>
+        <text x="540" y="16" fill="white" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">BREAK 2: 2021M02</text>
+        <!-- Train/Test line -->
+        <line x1="540" y1="145" x2="540" y2="170" stroke="#4ade80" stroke-width="2"/>
+        <rect x="20" y="148" width="520" height="22" fill="rgba(0,38,84,0.5)" rx="3"/>
+        <rect x="540" y="148" width="340" height="22" fill="rgba(26,122,63,0.4)" rx="3"/>
+        <text x="280" y="163" fill="rgba(255,255,255,0.8)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">TRAIN (2000–2020): R1 + R2</text>
+        <text x="710" y="163" fill="#4ade80" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">TEST (2021–2025): R3 only — genuinely unseen</text>
+        <!-- Year labels -->
+        <text x="20" y="185" fill="rgba(255,255,255,0.4)" font-size="9" font-family="DM Mono,monospace">2000</text>
+        <text x="290" y="185" fill="rgba(255,255,255,0.4)" font-size="9" font-family="DM Mono,monospace">2014</text>
+        <text x="530" y="185" fill="rgba(255,255,255,0.4)" font-size="9" font-family="DM Mono,monospace">2021</text>
+        <text x="855" y="185" fill="rgba(255,255,255,0.4)" font-size="9" font-family="DM Mono,monospace">2025</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Simplified Decision Tree -->
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.2rem;">How XGBoost Thinks — Simplified Decision Tree</h3>
+  <p style="font-size:0.85rem;color:var(--gray-dark);margin-bottom:1rem;">XGBoost builds 300 trees like this. Each tree learns from where the previous one was wrong. The final probability is a weighted vote across all 300. This shows one tree at 4 levels using your actual top features.</p>
+  <div class="tree-wrap" style="margin-bottom:1.5rem;">
+    <div class="tree-container">
+      <svg viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;" class="tree-svg">
+        <!-- Lines first -->
+        <!-- Root to L1 left -->
+        <path d="M 430 80 Q 430 120 220 155" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+        <!-- Root to L1 right -->
+        <path d="M 430 80 Q 430 120 640 155" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+        <!-- L1 left to L2 left-left -->
+        <path d="M 220 195 Q 220 230 110 265" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+        <!-- L1 left to L2 left-right -->
+        <path d="M 220 195 Q 220 230 330 265" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+        <!-- L1 right to L2 right-left -->
+        <path d="M 640 195 Q 640 230 530 265" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+        <!-- L1 right to L2 right-right -->
+        <path d="M 640 195 Q 640 230 750 265" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+        <!-- L2 to leaves -->
+        <path d="M 110 305 Q 110 340 60 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M 110 305 Q 110 340 160 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M 330 305 Q 330 340 280 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M 330 305 Q 330 340 380 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M 530 305 Q 530 340 480 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M 530 305 Q 530 340 580 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M 750 305 Q 750 340 700 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M 750 305 Q 750 340 800 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+
+        <!-- Branch labels -->
+        <text x="295" y="128" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">≤ 3.5x (normal)</text>
+        <text x="565" y="128" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">&gt; 3.5x (spike)</text>
+        <text x="145" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">No inv.</text>
+        <text x="295" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Inv. open</text>
+        <text x="565" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">R1/R2</text>
+        <text x="715" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">R3</text>
+
+        <!-- ROOT NODE -->
+        <rect x="320" y="22" width="220" height="58" rx="8" fill="#990000" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <text x="430" y="42" fill="white" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">velocity_spike_ratio</text>
+        <text x="430" y="56" fill="rgba(255,255,255,0.7)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">Importance: 0.1823 (#1)</text>
+        <text x="430" y="70" fill="#fbbf24" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">How fast are complaints arriving?</text>
+
+        <!-- L1 LEFT: inv_flag -->
+        <rect x="130" y="155" width="180" height="52" rx="8" fill="#002654" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <text x="220" y="174" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">inv_flag</text>
+        <text x="220" y="188" fill="rgba(255,255,255,0.7)" font-size="8.5" text-anchor="middle" font-family="DM Mono,monospace">Importance: 0.0312 (#10)</text>
+        <text x="220" y="202" fill="#93c5fd" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">Is NHTSA investigating?</text>
+
+        <!-- L1 RIGHT: R2/R3 -->
+        <rect x="550" y="155" width="180" height="52" rx="8" fill="#002654" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <text x="640" y="174" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">Regime Dummy (D2/D3)</text>
+        <text x="640" y="188" fill="rgba(255,255,255,0.7)" font-size="8.5" text-anchor="middle" font-family="DM Mono,monospace">Importance: 0.0171/0.0124</text>
+        <text x="640" y="202" fill="#86efac" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">Which recall era?</text>
+
+        <!-- L2 NODES -->
+        <rect x="40" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="110" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">airbag_complaints</text>
+        <text x="110" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0241</text>
+        <text x="110" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Airbag spike?</text>
+
+        <rect x="260" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="330" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">tsb_comp_flag</text>
+        <text x="330" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0109</text>
+        <text x="330" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">TSB matches complaint?</text>
+
+        <rect x="460" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="530" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">crash_count</text>
+        <text x="530" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0534</text>
+        <text x="530" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Crashes reported?</text>
+
+        <rect x="680" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="750" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">inv_count_180d</text>
+        <text x="750" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0612</text>
+        <text x="750" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Multiple investigations?</text>
+
+        <!-- LEAF NODES -->
+        <rect x="22" y="362" width="76" height="44" rx="6" fill="#3d4a5c" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <text x="60" y="379" fill="rgba(255,255,255,0.9)" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">8%</text>
+        <text x="60" y="392" fill="rgba(255,255,255,0.5)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">PASS</text>
+        <text x="60" y="402" fill="rgba(255,255,255,0.4)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Low risk</text>
+
+        <rect x="122" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="160" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">24%</text>
+        <text x="160" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">WATCH</text>
+        <text x="160" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Monitor</text>
+
+        <rect x="242" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="280" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">31%</text>
+        <text x="280" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">SIGNAL</text>
+        <text x="280" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Moderate</text>
+
+        <rect x="342" y="362" width="76" height="44" rx="6" fill="#1a5c32" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <text x="380" y="379" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">58%</text>
+        <text x="380" y="392" fill="white" font-size="7.5" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">STRONG</text>
+        <text x="380" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">High risk</text>
+
+        <rect x="462" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="500" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">29%</text>
+        <text x="500" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">SIGNAL</text>
+        <text x="500" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Elevated</text>
+
+        <rect x="562" y="362" width="76" height="44" rx="6" fill="#1a5c32" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <text x="600" y="379" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">67%</text>
+        <text x="600" y="392" fill="white" font-size="7.5" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">STRONG</text>
+        <text x="600" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">High risk</text>
+
+        <rect x="662" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="700" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">19%</text>
+        <text x="700" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">PASS</text>
+        <text x="700" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Low era adj.</text>
+
+        <rect x="762" y="362" width="76" height="44" rx="6" fill="#1a5c32" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <text x="800" y="379" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">74%</text>
+        <text x="800" y="392" fill="white" font-size="7.5" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">STRONG</text>
+        <text x="800" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Very high</text>
+      </svg>
+    </div>
+    <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin-top:0.5rem;">This shows ONE simplified tree. XGBoost builds 300 trees sequentially, each correcting the previous one's errors. Final probability = weighted vote across all 300 trees.</p>
+  </div>
+
+  <!-- Model Stats -->
+  <div class="grid-4" style="margin-bottom:1.5rem;">
+    <div class="stat-box"><span class="stat-val">0.8083</span><span class="stat-lbl">AUC Score</span><span class="stat-desc">Random = 0.50, Perfect = 1.0. Correctly identifies the more recall-prone vehicle 80.8% of the time.</span></div>
+    <div class="stat-box"><span class="stat-val">3.15×</span><span class="stat-lbl">Lift</span><span class="stat-desc">Vehicles ranked highest are 3.15× more likely to have a recall than random selection.</span></div>
+    <div class="stat-box"><span class="stat-val red">4.4×</span><span class="stat-lbl">Informational Edge</span><span class="stat-desc">STRONG SIGNAL vehicles have recalls follow 4.4× more often than the base rate.</span></div>
+    <div class="stat-box"><span class="stat-val">17.15%</span><span class="stat-lbl">STRONG SIGNAL Threshold</span><span class="stat-desc">All three stat tests pass at p = 0.000000. F1-maximized.</span></div>
+  </div>
+
+  <!-- AUC Comparison -->
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="card">
+      <h3>Model Comparison — AUC Scores</h3>
+      <p style="font-size:0.83rem;color:var(--gray-dark);margin-bottom:1.2rem;">Three models were run and compared. XGBoost selected for literature consistency — gap vs Gradient Boosting is only 0.0068, statistically negligible.</p>
+      <div class="auc-bars">
+        <div class="auc-row">
+          <span class="auc-label">XGBoost ✓ Selected</span>
+          <div class="auc-bar-wrap"><div class="auc-bar selected" style="width:81.91%">0.8083</div></div>
+          <span class="auc-badge">CHOSEN</span>
+        </div>
+        <div class="auc-row">
+          <span class="auc-label">Gradient Boosting</span>
+          <div class="auc-bar-wrap"><div class="auc-bar alt" style="width:82.63%">0.8151 — gap: 0.0068</div></div>
+        </div>
+        <div class="auc-row">
+          <span class="auc-label">Logistic Regression</span>
+          <div class="auc-bar-wrap"><div class="auc-bar weak" style="width:73.66%">0.7366 — linear, weaker</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Statistical Threshold Validation — All p = 0.000000</h3>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:0.5rem;">
+        <div style="background:var(--green-light);border-radius:8px;padding:0.7rem 1rem;border-left:3px solid var(--green);">
+          <div style="font-weight:700;font-size:0.85rem;color:var(--green);">Mann-Whitney U — p = 0.000000 ✓</div>
+          <div style="font-size:0.8rem;color:var(--gray-dark);margin-top:2px;">Recall observations receive statistically higher probability scores. Separation is real.</div>
+        </div>
+        <div style="background:var(--green-light);border-radius:8px;padding:0.7rem 1rem;border-left:3px solid var(--green);">
+          <div style="font-weight:700;font-size:0.85rem;color:var(--green);">Binomial Test — p = 0.000000 ✓</div>
+          <div style="font-size:0.8rem;color:var(--gray-dark);margin-top:2px;">Precision above threshold (32.8%) statistically impossible by chance at 13% base rate.</div>
+        </div>
+        <div style="background:var(--green-light);border-radius:8px;padding:0.7rem 1rem;border-left:3px solid var(--green);">
+          <div style="font-weight:700;font-size:0.85rem;color:var(--green);">KS Test — KS = 0.4578, p = 0.000000 ✓</div>
+          <div style="font-size:0.8rem;color:var(--gray-dark);margin-top:2px;">Probability distributions for recall vs non-recall are clearly distinct.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Importance Chart -->
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.2rem;">Feature Importance — Top 30 of 60 Features</h3>
+  <p style="font-size:0.85rem;color:var(--gray-dark);margin-bottom:1rem;">Each bar shows what percentage of the model's decision-making was driven by that feature. Hover for description. <span style="color:var(--navy);font-weight:700;">Navy = top 10.</span> <span style="color:var(--green);font-weight:700;">Green = regime dummies.</span></p>
+  <div class="fi-chart-wrap" style="margin-bottom:1.5rem;">
+    <div class="fi-legend">
+      <div class="fi-legend-item"><div class="fi-legend-dot" style="background:var(--navy);"></div><span>Top 10 features</span></div>
+      <div class="fi-legend-item"><div class="fi-legend-dot" style="background:var(--green);"></div><span>Structural break dummies (R2/R3)</span></div>
+      <div class="fi-legend-item"><div class="fi-legend-dot" style="background:#6b8cba;"></div><span>Other features</span></div>
+    </div>
+    <div id="fiChart"></div>
+  </div>
+
+  <div class="quote-box">
+    <p>"Khanna et al. (2025) demonstrate that most financial models exhibit sharp performance declines when tested on unseen market regimes. Our model achieves AUC 0.8083 on Regime 3 — a structural environment it never encountered during training — directly contradicting this pattern and confirming it captured genuine underlying signal rather than era-specific noise."</p>
+    <span class="cite">— Khanna et al. (2025), arXiv:2511.09754; Paye & Timmermann (2006), Journal of Empirical Finance</span>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: KELLY -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-white" id="tab-kelly">
+<div class="container section-pad">
+  <span class="section-label">Stage 2 — Position Sizing</span>
+  <h2 class="section-title">Kelly Criterion — Optimal Capital Allocation</h2>
+  <p class="section-desc">A mathematical formula developed by John Kelly at Bell Labs (1956), applied to financial markets by Edward Thorp. Widely used by professional traders and hedge funds to determine the optimal position size given a known win rate and payoff. Not to be confused with Kelly Blue Book.</p>
+
+  <div class="kelly-equation">
+    <span class="eq-label">Full Kelly Formula</span>
+    <div class="eq-full">f* = (p × b − q) / b</div>
+    <div class="eq-simple">f* = optimal fraction | p = win probability | b = win size / stop loss | q = 1 − p</div>
+    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">
+      <span class="eq-label">In Simple Terms</span>
+      <div style="color:rgba(255,255,255,0.85);font-size:0.95rem;">Position = (how often it works × how much you make) minus (how often it fails × your stop loss)</div>
+    </div>
+    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">
+      <span class="eq-label">Position Scaling Formula</span>
+      <div class="eq-full" style="font-size:1.1rem;">Final Position = Base × (Signal Probability / Threshold)</div>
+      <div class="eq-simple">Capped at $1,000,000 (10% of AUM) | Floored at $50,000 (0.5% of AUM)</div>
+    </div>
+  </div>
+
+  <div class="kelly-vars">
+    <div class="kelly-var"><div class="kv-sym">p — Win Rate</div><div class="kv-desc">From Recall Impact Scorecard — how often this company's stock drops more than 2% on recall days</div><div class="kv-val">Base rate: 21.9% across all 3,631 recall events</div></div>
+    <div class="kelly-var"><div class="kv-sym">b — Win Size</div><div class="kv-desc">Average drop size divided by stop loss. Bigger drops = better risk/reward ratio</div><div class="kv-val">Example — Lucid: -11.66% avg drop → positive Kelly → $604,000 base position</div></div>
+    <div class="kelly-var"><div class="kv-sym">q — Loss Rate (1−p)</div><div class="kv-desc">How often the stock does NOT drop and the short loses to the stop loss</div><div class="kv-val">Stop loss fixed at 5% — maximum loss per trade before exit</div></div>
+    <div class="kelly-var"><div class="kv-sym">Half-Kelly Applied</div><div class="kv-desc">We use half the Kelly fraction (f*/2) to account for estimation error and reduce volatility</div><div class="kv-val">Standard institutional practice for Kelly Criterion deployment</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-top:1.5rem;">
+    <div class="info-box">
+      <h4>Portfolio Parameters</h4>
+      <ul>
+        <li><strong>Portfolio size:</strong> $10,000,000 — consistent with emerging manager AUM per The Hedge Fund Journal (2023)</li>
+        <li><strong>Max position:</strong> $1,000,000 (10% single-name concentration cap)</li>
+        <li><strong>Min floor:</strong> $50,000 (0.5%) — for companies where drops are real but Kelly is negative</li>
+        <li><strong>Top 10 signals per month:</strong> Kelly already scales by probability — beyond top 10, signals receive near-floor positions anyway</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h4>Position Scaling Examples</h4>
+      <table style="font-size:0.8rem;width:100%;">
+        <thead><tr style="background:var(--navy);color:white;"><th style="padding:6px;">Signal</th><th>Prob</th><th>Scale</th><th>Position</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:5px;">Jeep Wrangler</td><td>67.5%</td><td>3.94×</td><td class="mono" style="color:var(--green);">$197,000</td></tr>
+          <tr><td style="padding:5px;">Tesla Model Y</td><td>62.7%</td><td>3.66×</td><td class="mono" style="color:var(--green);">$183,000</td></tr>
+          <tr><td style="padding:5px;">Nissan Rogue</td><td>55.3%</td><td>3.23×</td><td class="mono" style="color:var(--green);">$161,000</td></tr>
+          <tr><td style="padding:5px;">Ford Maverick</td><td>52.2%</td><td>3.05×</td><td class="mono" style="color:var(--green);">$152,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="quote-box" style="margin-top:1.5rem;">
+    <p>"The Kelly Criterion provides the optimal bet size for maximizing the long-run growth rate of capital, balancing risk and reward mathematically rather than arbitrarily."</p>
+    <span class="cite">— Hung (2010), Betting with the Kelly Criterion; Thorp (1997), The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market</span>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: SCORECARD -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-light" id="tab-scorecard">
+<div class="container section-pad">
+  <span class="section-label">Recall Impact Scorecard</span>
+  <h2 class="section-title">Full Company Scorecard — $10M Portfolio</h2>
+  <p class="section-desc">Built from 3,631 recall events across 17 manufacturers (2000–2025). Inclusion criterion: t-test p &lt; 0.05 confirming recall-day drops are statistically real. Ferrari excluded — drops are statistical noise (p = 1.0).</p>
+
+  <div class="info-box" style="margin-bottom:1.5rem;">
+    <h4>Why -2% CAR as the Drop Threshold?</h4>
+    <p>A drop of -2% or more on a recall day represents a meaningful market reaction beyond normal daily noise. This threshold is statistically significant and consistent with event study methodology. Only drops below this level are counted in the drop rate calculation.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Recalls</th><th>Drop Rate</th><th>Avg Drop</th><th>Avg CAR</th><th>T-Test p</th><th>Kelly f</th><th>Half Kelly</th><th>Base Position</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Rivian</strong></td><td class="mono">RIVN</td><td>20</td><td>40.0%</td><td class="mono">-7.12%</td><td class="mono">-0.41%</td><td class="mono">0.0027</td><td class="mono">-0.0212</td><td class="mono">-0.0106</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Lucid Group</strong></td><td class="mono">LCID</td><td>13</td><td>38.5%</td><td class="mono">-11.66%</td><td class="mono">-0.87%</td><td class="mono">0.0033</td><td class="mono">+0.1208</td><td class="mono">+0.0604</td><td class="mono" style="color:var(--green);font-weight:700;">$604,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Tesla</strong></td><td class="mono">TSLA</td><td>75</td><td>29.3%</td><td class="mono">-6.05%</td><td class="mono">+0.15%</td><td class="mono">0.0000</td><td class="mono">-0.2911</td><td class="mono">-0.1455</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Stellantis</strong></td><td class="mono">STLA</td><td>314</td><td>28.0%</td><td class="mono">-4.62%</td><td class="mono">-0.26%</td><td class="mono">0.0000</td><td class="mono">-0.4986</td><td class="mono">-0.2493</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.*</span></td></tr>
+        <tr><td><strong>Subaru</strong></td><td class="mono">FUJHY</td><td>99</td><td>25.3%</td><td class="mono">-3.72%</td><td class="mono">+0.01%</td><td class="mono">0.0000</td><td class="mono">-0.7520</td><td class="mono">-0.3760</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>BMW Group</strong></td><td class="mono">BMWYY</td><td>354</td><td>24.6%</td><td class="mono">-3.89%</td><td class="mono">+0.10%</td><td class="mono">0.0000</td><td class="mono">-0.7240</td><td class="mono">-0.3620</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.**</span></td></tr>
+        <tr><td><strong>Hyundai</strong></td><td class="mono">HYMTF</td><td>384</td><td>24.1%</td><td class="mono">-4.35%</td><td class="mono">+0.34%</td><td class="mono">0.0000</td><td class="mono">-0.6315</td><td class="mono">-0.3158</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.**</span></td></tr>
+        <tr><td><strong>Volkswagen Group</strong></td><td class="mono">VWAGY</td><td>405</td><td>23.5%</td><td class="mono">-4.05%</td><td class="mono">-0.03%</td><td class="mono">0.0000</td><td class="mono">-0.7108</td><td class="mono">-0.3554</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>General Motors</strong></td><td class="mono">GM</td><td>301</td><td>22.9%</td><td class="mono">-3.91%</td><td class="mono">-0.09%</td><td class="mono">0.0000</td><td class="mono">-0.7573</td><td class="mono">-0.3787</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Ford</strong></td><td class="mono">F</td><td>454</td><td>20.7%</td><td class="mono">-3.81%</td><td class="mono">-0.00%</td><td class="mono">0.0000</td><td class="mono">-0.8345</td><td class="mono">-0.4172</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Mazda</strong></td><td class="mono">MZDAY</td><td>73</td><td>20.5%</td><td class="mono">-4.27%</td><td class="mono">-0.18%</td><td class="mono">0.0000</td><td class="mono">-0.7241</td><td class="mono">-0.3621</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Mercedes-Benz</strong></td><td class="mono">MBG</td><td>206</td><td>19.4%</td><td class="mono">-4.15%</td><td class="mono">-0.03%</td><td class="mono">0.0000</td><td class="mono">-0.7773</td><td class="mono">-0.3886</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Nissan</strong></td><td class="mono">NSANY</td><td>270</td><td>17.8%</td><td class="mono">-4.01%</td><td class="mono">+0.02%</td><td class="mono">0.0000</td><td class="mono">-0.8480</td><td class="mono">-0.4240</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Honda</strong></td><td class="mono">HMC</td><td>279</td><td>17.6%</td><td class="mono">-3.20%</td><td class="mono">-0.06%</td><td class="mono">0.0000</td><td class="mono">-1.1143</td><td class="mono">-0.5571</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Toyota</strong></td><td class="mono">TM</td><td>273</td><td>16.1%</td><td class="mono">-3.69%</td><td class="mono">-0.16%</td><td class="mono">0.0000</td><td class="mono">-0.9767</td><td class="mono">-0.4884</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr><td><strong>Volvo</strong></td><td class="mono">VLVLY</td><td>95</td><td>12.6%</td><td class="mono">-4.37%</td><td class="mono">+0.18%</td><td class="mono">0.0001</td><td class="mono">-0.8743</td><td class="mono">-0.4372</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
+        <tr style="background:#fee2e2;"><td><strong>Ferrari</strong></td><td class="mono">RACE</td><td>16</td><td>12.5%</td><td class="mono">-2.68%</td><td class="mono">-0.30%</td><td class="mono" style="color:var(--red);font-weight:700;">1.0000</td><td class="mono">-1.5094</td><td class="mono">-0.7547</td><td class="mono">$0</td><td><span class="badge-skip">SKIP</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top:0.8rem;font-size:0.78rem;color:var(--gray-dark);">
+    <span class="badge-trade">TRADE</span> t-test p &lt; 0.05 &nbsp;|&nbsp;
+    <span class="badge-skip">SKIP</span> Ferrari p = 1.0, drops are noise &nbsp;|&nbsp;
+    <span class="badge-excluded">EXCL.*</span> Stellantis: Q1 2026 financial distress outlier &nbsp;|&nbsp;
+    <span class="badge-excluded">EXCL.**</span> BMW/Hyundai: US ADR unavailable Q1 2026
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: RESULTS -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-navy" id="tab-results">
+<div class="container section-pad">
+  <span class="section-label">Profit Estimation</span>
+  <h2 class="section-title">Q1 2026 Results — Real Out-of-Sample Performance</h2>
+  <p class="section-desc">Top 10 signals per month. Real NHTSA recall filings. Real yfinance stock prices. Model trained entirely on pre-2026 data — genuinely unseen.</p>
+
+  <div class="grid-4" style="margin-bottom:2rem;">
+    <div class="stat-box"><span class="stat-val green">+$117,387</span><span class="stat-lbl">Total P&L</span><span class="stat-desc">Q1 2026, 19 trades, real out-of-sample</span></div>
+    <div class="stat-box"><span class="stat-val green">+1.17%</span><span class="stat-lbl">Portfolio Return</span><span class="stat-desc">On $10M vs -4.3% S&P 500</span></div>
+    <div class="stat-box"><span class="stat-val">63%</span><span class="stat-lbl">Win Rate</span><span class="stat-desc">12 wins, 4 losses, 3 stop losses</span></div>
+    <div class="stat-box"><span class="stat-val">7/19</span><span class="stat-lbl">Recall Confirmations</span><span class="stat-desc">37% of signals confirmed by actual NHTSA filing</span></div>
+  </div>
+
+  <!-- Benchmark visual -->
+  <div style="background:rgba(0,0,0,0.3);border-radius:12px;padding:2rem;margin-bottom:2rem;border:1px solid rgba(255,255,255,0.1);">
+    <h3 style="color:white;font-family:'Playfair Display',serif;margin-bottom:1.5rem;">Q1 2026 Performance vs Benchmarks</h3>
+    <div style="display:flex;align-items:flex-end;gap:3rem;height:220px;padding-bottom:40px;position:relative;max-width:500px;margin:0 auto;">
+      <div style="position:absolute;bottom:40px;left:0;right:0;height:2px;background:rgba(255,255,255,0.3);"></div>
+      <!-- S&P -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;position:relative;">
+        <div style="background:#ef4444;width:80%;height:77px;border-radius:0 0 6px 6px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;position:absolute;top:40px;">
+          <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">-4.30%</span>
+        </div>
+        <span style="position:absolute;bottom:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">S&P 500</span>
+      </div>
+      <!-- Nasdaq -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;position:relative;">
+        <div style="background:#dc2626;width:80%;height:104px;border-radius:0 0 6px 6px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;position:absolute;top:40px;">
+          <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">-5.80%</span>
+        </div>
+        <span style="position:absolute;bottom:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">Nasdaq 100</span>
+      </div>
+      <!-- Riverdale -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;position:relative;">
+        <div style="background:#166534;width:80%;height:21px;border-radius:6px 6px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:4px;position:absolute;bottom:40px;">
+          <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">+1.17%</span>
+        </div>
+        <span style="position:absolute;bottom:0;color:#4ade80;font-size:0.9rem;font-weight:700;">Riverdale ✓</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;justify-content:center;">
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1.5rem;text-align:center;">
+        <div style="color:#4ade80;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:600;">+5.47pp</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">vs S&P 500</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1.5rem;text-align:center;">
+        <div style="color:#4ade80;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:600;">+6.97pp</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">vs Nasdaq 100</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1.5rem;text-align:center;">
+        <div style="color:#facc15;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:600;">~4.68%</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">Annualized rate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:2rem;">
+    <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);">
+      <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">January</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.5rem;color:white;margin-bottom:0.3rem;">+$4,278</div>
+      <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">6 trades | 3W 2L 1S | 1 recall hit (17%)</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.2);">
+      <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">February — Best Month</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.5rem;color:#4ade80;margin-bottom:0.3rem;">+$77,993</div>
+      <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">7 trades | 5W 1L 1S | 5 recall hits (71%)</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);">
+      <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">March</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.5rem;color:white;margin-bottom:0.3rem;">+$35,116</div>
+      <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">6 trades | 4W 1L 0S | 1 recall hit (17%)</div>
+    </div>
+  </div>
+
+  <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);border-left:4px solid var(--gold-light);">
+    <h3 style="color:var(--gold-light);font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Three Companies Excluded From Q1 2026</h3>
+    <div class="grid-3">
+      <div><div style="color:white;font-weight:700;margin-bottom:0.3rem;">Stellantis (STLA)</div><div style="color:rgba(255,255,255,0.7);font-size:0.83rem;">Reported a $2.6B one-time charge in Q1 2026, triggering a ~24% decline driven by financial restructuring — not recall activity. <a href="https://finance.yahoo.com/news/stellantis-stock-collapses-as-jeep-maker-takes-26-billion-hit-in-latest-ev-pivot-134546771.html" target="_blank" style="color:var(--gold-light);">Source →</a></div></div>
+      <div><div style="color:white;font-weight:700;margin-bottom:0.3rem;">BMW (BMWYY)</div><div style="color:rgba(255,255,255,0.7);font-size:0.83rem;">US ADR unavailable for Q1 2026 price data. Remains in tradeable universe for future periods. Only $4,037 contribution — immaterial.</div></div>
+      <div><div style="color:white;font-weight:700;margin-bottom:0.3rem;">Hyundai (HYMTF)</div><div style="color:rgba(255,255,255,0.7);font-size:0.83rem;">US OTC ADR delisted. Korean exchange listing excluded to maintain consistency — all other positions use USD-denominated securities.</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: TRADES -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-light" id="tab-trades">
+<div class="container section-pad">
+  <span class="section-label">Complete Trade Log</span>
+  <h2 class="section-title">All 19 Trades — Q1 2026</h2>
+  <p class="section-desc">Every position entered in Q1 2026. Exit: T+1 after recall filing or 45-day hold, whichever first. Stop loss: 5% upside. Green recall date = confirmed NHTSA filing within 45-day window.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Mo</th><th>Company</th><th>Ticker</th><th>Make</th><th>Model</th><th>Prob</th><th>Position</th><th>Entry</th><th>Exit</th><th>Chg%</th><th>Recall</th><th>Date</th><th>Stop</th><th>Result</th><th>P&L</th></tr></thead>
+      <tbody>
+        <tr><td>Jan</td><td>Tesla</td><td class="mono">TSLA</td><td>TESLA</td><td>MODEL Y</td><td class="mono">62.7%</td><td class="mono">$183,000</td><td class="mono">$438.07</td><td class="mono">$410.63</td><td class="mono">-6.26%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$11,463</td></tr>
+        <tr><td>Jan</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q5</td><td class="mono">62.4%</td><td class="mono">$182,000</td><td class="mono">$12.54</td><td class="mono">$12.29</td><td class="mono">-1.99%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$3,628</td></tr>
+        <tr><td>Jan</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>GLE 350</td><td class="mono">59.1%</td><td class="mono">$172,000</td><td class="mono">$22.11</td><td class="mono">$22.51</td><td class="mono">+1.80%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$3,095</td></tr>
+        <tr><td>Jan</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q4 E-TRON</td><td class="mono">57.3%</td><td class="mono">$167,000</td><td class="mono">$12.54</td><td class="mono">$12.29</td><td class="mono">-1.99%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$3,329</td></tr>
+        <tr><td>Jan</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>GLA 250</td><td class="mono">56.9%</td><td class="mono">$166,000</td><td class="mono">$22.11</td><td class="mono">$22.51</td><td class="mono">+1.80%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$2,987</td></tr>
+        <tr><td>Jan</td><td>Nissan</td><td class="mono">NSANY</td><td>NISSAN</td><td>ROGUE</td><td class="mono">55.3%</td><td class="mono">$161,000</td><td class="mono">$4.99</td><td class="mono">$5.14</td><td class="mono">+5.00%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;font-family:'DM Mono',monospace;font-size:0.8rem;">2026-01-21</td><td>YES</td><td><span class="outcome-stop">STOP</span></td><td class="pnl-neg">-$8,050</td></tr>
+        <tr style="background:#f0f7f0;"><td>Feb</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q8</td><td class="mono">57.4%</td><td class="mono">$167,000</td><td class="mono">$12.10</td><td class="mono">$10.65</td><td class="mono">-11.98%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;font-family:'DM Mono',monospace;font-size:0.8rem;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$20,012</td></tr>
+        <tr><td>Feb</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>C 300</td><td class="mono">54.7%</td><td class="mono">$159,000</td><td class="mono">$22.21</td><td class="mono">$22.25</td><td class="mono">+0.17%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$269</td></tr>
+        <tr style="background:#f0f7f0;"><td>Feb</td><td>VW Group</td><td class="mono">VWAGY</td><td>PORSCHE</td><td>MACAN</td><td class="mono">54.1%</td><td class="mono">$158,000</td><td class="mono">$12.10</td><td class="mono">$10.65</td><td class="mono">-11.98%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;font-family:'DM Mono',monospace;font-size:0.8rem;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$18,934</td></tr>
+        <tr style="background:#f0f7f0;"><td>Feb</td><td>GM</td><td class="mono">GM</td><td>GMC</td><td>SIERRA 3500</td><td class="mono">53.4%</td><td class="mono">$156,000</td><td class="mono">$84.07</td><td class="mono">$78.52</td><td class="mono">-6.60%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;font-family:'DM Mono',monospace;font-size:0.8rem;">2026-02-26</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$10,293</td></tr>
+        <tr style="background:#f0f7f0;"><td>Feb</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q4 E-TRON</td><td class="mono">53.0%</td><td class="mono">$154,000</td><td class="mono">$12.10</td><td class="mono">$10.65</td><td class="mono">-11.98%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;font-family:'DM Mono',monospace;font-size:0.8rem;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$18,455</td></tr>
+        <tr style="background:#f0f7f0;"><td>Feb</td><td>Ford</td><td class="mono">F</td><td>FORD</td><td>MAVERICK</td><td class="mono">52.2%</td><td class="mono">$152,000</td><td class="mono">$13.66</td><td class="mono">$13.64</td><td class="mono">-0.16%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;font-family:'DM Mono',monospace;font-size:0.8rem;">2026-02-20</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$245</td></tr>
+        <tr><td>Feb</td><td>Tesla</td><td class="mono">TSLA</td><td>TESLA</td><td>MODEL Y</td><td class="mono">51.4%</td><td class="mono">$150,000</td><td class="mono">$421.81</td><td class="mono">$392.78</td><td class="mono">-6.88%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$10,323</td></tr>
+        <tr><td>Mar</td><td>GM</td><td class="mono">GM</td><td>BUICK</td><td>ENCLAVE</td><td class="mono">56.8%</td><td class="mono">$166,000</td><td class="mono">$77.58</td><td class="mono">$77.78</td><td class="mono">+0.26%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-loss">LOSS</span></td><td class="pnl-neg">-$436</td></tr>
+        <tr><td>Mar</td><td>Mercedes</td><td class="mono">MBG</td><td>MERCEDES</td><td>GLS 450</td><td class="mono">54.6%</td><td class="mono">$159,000</td><td class="mono">$22.53</td><td class="mono">$22.41</td><td class="mono">-0.53%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$838</td></tr>
+        <tr><td>Mar</td><td>Honda</td><td class="mono">HMC</td><td>ACURA</td><td>ZDX</td><td class="mono">54.0%</td><td class="mono">$158,000</td><td class="mono">$29.29</td><td class="mono">$24.26</td><td class="mono">-17.17%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$27,134</td></tr>
+        <tr style="background:#f0f7f0;"><td>Mar</td><td>VW Group</td><td class="mono">VWAGY</td><td>AUDI</td><td>Q5</td><td class="mono">53.3%</td><td class="mono">$155,000</td><td class="mono">$11.33</td><td class="mono">$10.65</td><td class="mono">-6.00%</td><td style="color:var(--green);font-weight:700;">YES</td><td style="color:var(--green);font-weight:700;font-family:'DM Mono',monospace;font-size:0.8rem;">2026-03-11</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$9,303</td></tr>
+        <tr><td>Mar</td><td>Ford</td><td class="mono">F</td><td>FORD</td><td>F-150</td><td class="mono">51.5%</td><td class="mono">$150,000</td><td class="mono">$13.39</td><td class="mono">$12.71</td><td class="mono">-5.08%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$7,618</td></tr>
+        <tr><td>Mar</td><td>Tesla</td><td class="mono">TSLA</td><td>TESLA</td><td>MODEL Y</td><td class="mono">50.7%</td><td class="mono">$148,000</td><td class="mono">$403.32</td><td class="mono">$391.95</td><td class="mono">-2.82%</td><td>NO</td><td>N/A</td><td>NO</td><td><span class="outcome-win">WIN</span></td><td class="pnl-pos">+$4,172</td></tr>
+        <tr style="background:#dcfce7;font-weight:700;"><td colspan="14" style="color:var(--green);">TOTAL Q1 2026 — 12 Wins (63%) | 4 Losses (21%) | 3 Stops (16%) | 7 Recalls Confirmed (37%)</td><td class="pnl-pos">+$117,387</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box" style="margin-top:1rem;">
+    <h4>P&L by Company</h4>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;">
+      <span class="tag green">VW Group +$47,724</span>
+      <span class="tag green">Honda +$27,134</span>
+      <span class="tag green">Tesla +$25,958</span>
+      <span class="tag green">GM +$9,857</span>
+      <span class="tag green">Ford +$7,863</span>
+      <span class="tag red">Mercedes -$5,513</span>
+      <span class="tag red">Nissan -$8,050</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: SOURCES -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-white" id="tab-sources">
+<div class="container section-pad">
+  <span class="section-label">Academic Sources</span>
+  <h2 class="section-title">References & Citations</h2>
+  <p class="section-desc">All sources used in the construction, validation, and defense of the Riverdale Investments strategy.</p>
+
+  <div class="grid-2">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">Methodology & Model</h3>
+      <div class="source-item">
+        <div class="src-title">XGBoost — Core Model (Q1-Ranked Scimago)</div>
+        <div class="src-cite">Li, Y.-N., Jiang, M., Wang, L., & Wei, J. (2025). XGBoost-based risk prediction model for massive vehicle recalls using consumer complaints. <em>Risk Analysis</em>, 45, 4408–4422.</div>
+        <a href="https://doi.org/10.1111/risa.70052" target="_blank">https://doi.org/10.1111/risa.70052 →</a>
+      </div>
+      <div class="source-item">
+        <div class="src-title">NHTSA Market Inefficiency — Core Thesis</div>
+        <div class="src-cite">Insider trading around auto recalls: Does investor attention matter? <em>Review of Quantitative Finance and Accounting</em>, 55, 2020. "The market generally fails to impound the information contained in customer complaints in a timely manner."</div>
+        <a href="https://doi.org/10.1007/s11156-019-00866-9" target="_blank">DOI Link →</a>
+      </div>
+      <div class="source-item">
+        <div class="src-title">Structural Break Testing — Bai-Perron</div>
+        <div class="src-cite">Paye, K. & Timmermann, A. (2006). Instability of Return Prediction Models. <em>Journal of Empirical Finance</em>, 13(3), 274–315.</div>
+        <a href="https://rady.ucsd.edu/_files/faculty-research/timmermann/instability.pdf" target="_blank">Full Paper →</a>
+      </div>
+      <div class="source-item">
+        <div class="src-title">Regime Generalization — Model Robustness</div>
+        <div class="src-cite">Khanna, S., Berger, A., Chopra, M., Berghaus, D., & Sifa, R. (2025). History Rhymes: Macro-Contextual Retrieval for Robust Financial Forecasting. arXiv:2511.09754.</div>
+        <a href="https://arxiv.org/abs/2511.09754" target="_blank">arXiv →</a>
+      </div>
+      <div class="source-item">
+        <div class="src-title">NHTSA — Primary Data Source</div>
+        <div class="src-cite">National Highway Traffic Safety Administration. 1,980,106 complaints through April 2026. 234,766 TSBs. 122,638 investigations. 6,381 recalls across 17 parent companies.</div>
+        <a href="https://www.nhtsa.gov/" target="_blank">NHTSA.gov →</a>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">Position Sizing & Portfolio</h3>
+      <div class="source-item">
+        <div class="src-title">Kelly Criterion</div>
+        <div class="src-cite">Thorp, E.O. (1997). The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market. Hung, J. (2010). Betting with the Kelly Criterion.</div>
+        <a href="https://www.investopedia.com/articles/trading/04/091504.asp" target="_blank">Investopedia →</a>
+        <span> | </span>
+        <a href="https://www.stat.berkeley.edu/~aldous/Real_World/kelly.html" target="_blank">Berkeley →</a>
+      </div>
+      <div class="source-item">
+        <div class="src-title">Portfolio Size — $10M Emerging Manager</div>
+        <div class="src-cite">The Hedge Fund Journal (2023). Hedge Fund Registration. Emerging managers defined as funds with under $100M AUM.</div>
+        <a href="https://thehedgefundjournal.com/hedge-fund-registration/" target="_blank">Hedge Fund Journal →</a>
+      </div>
+      <div class="source-item">
+        <div class="src-title">Market Impact — Position Size Justification</div>
+        <div class="src-cite">Almgren, R. & Chriss, N. (2000). Optimal Execution of Portfolio Transactions. <em>Journal of Risk</em>, 3(2), 5–39. Positions under 10-15% of ADV have negligible market impact.</div>
+      </div>
+      <div class="source-item">
+        <div class="src-title">Stellantis Q1 2026 Exclusion</div>
+        <div class="src-cite">Stellantis reported a $2.6B one-time charge in Q1 2026 triggering a ~24% decline unrelated to recall activity.</div>
+        <a href="https://finance.yahoo.com/news/stellantis-stock-collapses-as-jeep-maker-takes-26-billion-hit-in-latest-ev-pivot-134546771.html" target="_blank">Yahoo Finance →</a>
+      </div>
+      <div class="source-item">
+        <div class="src-title">AI Assistance — Claude (Anthropic, 2025)</div>
+        <div class="src-cite">Claude (Anthropic, 2025) was utilized as an AI coding assistant to accelerate development of statistical methods, model pipelines, and data engineering workflows. All methodological decisions were made by the research team.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB: TEAM -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-section bg-navy" id="tab-team">
+<div class="container section-pad" style="text-align:center;">
+  <span class="section-label">The Team</span>
+  <h2 class="section-title">Riverdale Investments Research Team</h2>
+  <p class="section-desc" style="margin:0 auto 2rem;">Tobin College of Business · St. John's University · BUA Competition 2026</p>
+
+  <div class="team-grid">
+    <div class="team-card"><div class="team-avatar">CK</div><div class="team-name">Charles Kwak</div><div class="team-role">Event Study & Data Architecture</div></div>
+    <div class="team-card"><div class="team-avatar">CL</div><div class="team-name">Cassie Lemus-Sodji</div><div class="team-role">Model Development & Analysis</div></div>
+    <div class="team-card"><div class="team-avatar">SL</div><div class="team-name">Stephan Loiseau</div><div class="team-role">Strategy & Research</div></div>
+    <div class="team-card"><div class="team-avatar">AM</div><div class="team-name">Andrew Manalansan</div><div class="team-role">Pipeline & Profit Estimation</div></div>
+  </div>
+
+  <div style="margin-top:2rem;background:rgba(255,255,255,0.06);border-radius:10px;padding:1.2rem 1.8rem;border:1px solid rgba(255,255,255,0.1);display:inline-block;">
+    <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.3rem;">Faculty Advisor</div>
+    <div style="color:white;font-size:1.1rem;font-weight:600;">Michael D. Herley, D.B.A.</div>
+  </div>
+
+  <div class="divider" style="border-color:rgba(255,255,255,0.1);margin:2rem auto;max-width:600px;"></div>
+
+  <div class="grid-2" style="max-width:900px;margin:0 auto;">
+    <div class="ai-box">
+      <h3>How We Leveraged AI</h3>
+      <p>Claude (Anthropic, 2025) was utilized as an AI coding assistant to accelerate the development of statistical methods, model pipelines, and data engineering workflows that would have required significantly greater time and expertise to implement independently. XGBoost pipelines, Kelly Criterion sizing logic, event study computation, survival analysis, and profit estimation code were all built with AI coding support — allowing the team to focus on methodological design and interpretation.</p>
+      <div class="ai-tags">
+        <span class="ai-tag">XGBoost Pipeline</span><span class="ai-tag">Kelly Criterion Logic</span>
+        <span class="ai-tag">Event Study</span><span class="ai-tag">Survival Analysis</span>
+        <span class="ai-tag">Profit Estimation</span><span class="ai-tag">Statistical Validation</span>
+      </div>
+    </div>
+    <div class="ai-box" style="background:linear-gradient(135deg,#1a3a00,#2d5a1b);">
+      <h3 style="color:#86efac;">What the Team Owns</h3>
+      <p>Every methodological decision was made by the research team. The XGBoost selection, three-regime structural break framework, 45-day survival analysis hold period, Kelly Criterion application, -2% CAR threshold, exclusion criteria, Bai-Perron breakpoint dates, and entire investment thesis are original team contributions. Claude wrote code. The team made every decision that mattered.</p>
+      <div class="ai-tags">
+        <span class="ai-tag">Regime Framework</span><span class="ai-tag">Statistical Test Selection</span>
+        <span class="ai-tag">Literature Review</span><span class="ai-tag">Investment Thesis</span>
+        <span class="ai-tag">Exclusion Criteria</span><span class="ai-tag">Portfolio Construction</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);">
+    <p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:white;font-style:italic;max-width:600px;margin:0 auto 1rem;">"In the investment world, the side with the informational edge wins. We didn't just identify how Riverdale can obtain that edge — we built a complete strategy around it and proved it generates returns in the real world."</p>
+    <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;font-style:italic;">"And at the end of the day, the best strategy is a profitable one."</p>
+  </div>
+</div>
+</div>
+
 <!-- FOOTER -->
 <footer>
- <p><strong style="color:white;">St. John's University — Strategic Recall Analysis</strong></p>
- <p>Tobin College of Business · St. John's University · BUA Competition 2026</p>
- <p style="margin-top:0.5rem;">
-   <a href="https://www.nhtsa.gov/" target="_blank">NHTSA Data</a> ·
-   <a href="https://doi.org/10.1111/risa.70052" target="_blank">Li et al. (2025)</a> ·
-   <a href="https://thehedgefundjournal.com/hedge-fund-registration/" target="_blank">Hedge Fund Journal</a>
- </p>
+  <p><strong style="color:white;">Riverdale Investments — Strategic Recall Analysis</strong></p>
+  <p>Tobin College of Business · St. John's University · BUA Competition 2026</p>
+  <p style="margin-top:0.5rem;">
+    <a href="https://www.nhtsa.gov/" target="_blank">NHTSA Data</a> ·
+    <a href="https://doi.org/10.1111/risa.70052" target="_blank">Li et al. (2025)</a> ·
+    <a href="https://thehedgefundjournal.com/hedge-fund-registration/" target="_blank">Hedge Fund Journal</a>
+  </p>
+  <p style="margin-top:0.8rem;font-style:italic;">"The signal was always there. We were just the first ones listening."</p>
 </footer>
- 
+
 <script>
-const TAB_IDS = ['overview','thesis','model','kelly','pipeline','scorecard','results','trades','sources','team'];
- 
+// ── FEATURE IMPORTANCE DATA ─────────────────────────
+const fiData = [
+  {rank:1,  name:'velocity_spike_ratio', score:0.1823, type:'top', desc:'30-day complaints ÷ 12-month baseline. Most predictive feature at 18.2%.'},
+  {rank:2,  name:'complaint_count',      score:0.1204, type:'top', desc:'Raw 30-day complaint count for this make/model.'},
+  {rank:3,  name:'comp_spike_ratio',     score:0.0891, type:'top', desc:'Component-specific spike ratio — isolates targeted surges.'},
+  {rank:4,  name:'complaint_count_3m',   score:0.0743, type:'top', desc:'90-day complaint count.'},
+  {rank:5,  name:'inv_count_180d',       score:0.0612, type:'top', desc:'Open NHTSA investigations in last 180 days.'},
+  {rank:6,  name:'crash_count',          score:0.0534, type:'top', desc:'Complaints also reporting a crash event.'},
+  {rank:7,  name:'complaint_count_6m',   score:0.0487, type:'top', desc:'180-day complaint count.'},
+  {rank:8,  name:'tsb_count_180d',       score:0.0423, type:'top', desc:'Technical Service Bulletins filed in 180 days.'},
+  {rank:9,  name:'high_risk_count',      score:0.0398, type:'top', desc:'High-risk component complaints (brake/airbag/steering).'},
+  {rank:10, name:'inv_flag',             score:0.0312, type:'top', desc:'Binary: active NHTSA investigation open.'},
+  {rank:11, name:'days_since_inv',       score:0.0287, type:'normal', desc:'Days since most recent investigation opened.'},
+  {rank:12, name:'airbag_complaints',    score:0.0241, type:'normal', desc:'Complaints specifically about airbags.'},
+  {rank:13, name:'tsb_velocity_30d',     score:0.0218, type:'normal', desc:'TSB spike velocity vs 12-month baseline.'},
+  {rank:14, name:'brake_complaints',     score:0.0196, type:'normal', desc:'Complaints specifically about brakes.'},
+  {rank:15, name:'prior_recall_12m',     score:0.0184, type:'normal', desc:'Number of recalls in prior 12 months.'},
+  {rank:16, name:'R2 (Structural Break 2014)', score:0.0171, type:'regime', desc:'D2=1 for 2014M03–2021M01. Takata era. Positive rate 16.1% vs 7.4% baseline.'},
+  {rank:17, name:'injury_count',         score:0.0163, type:'normal', desc:'Complaints reporting an injury.'},
+  {rank:18, name:'tsb_comp_match',       score:0.0147, type:'normal', desc:'TSBs matching dominant complaint component.'},
+  {rank:19, name:'ewr_rate',             score:0.0132, type:'normal', desc:'Early Warning Report rate in complaints.'},
+  {rank:20, name:'R3 (Structural Break 2021)', score:0.0124, type:'regime', desc:'D3=1 for 2021M02 onward. EV era. Tesla, Rivian, Lucid.'},
+  {rank:21, name:'fire_count',           score:0.0118, type:'normal', desc:'Complaints reporting a fire event.'},
+  {rank:22, name:'tsb_comp_flag',        score:0.0109, type:'normal', desc:'Binary: TSB matches complaint component.'},
+  {rank:23, name:'steering_complaints',  score:0.0097, type:'normal', desc:'Complaints specifically about steering.'},
+  {rank:24, name:'big_spike',            score:0.0089, type:'normal', desc:'Binary: velocity spike above 5x baseline.'},
+  {rank:25, name:'comp_spike_flag',      score:0.0081, type:'normal', desc:'Binary: component spike above 5x baseline.'},
+  {rank:26, name:'prior_recall_24m',     score:0.0074, type:'normal', desc:'Number of recalls in prior 24 months.'},
+  {rank:27, name:'high_tsb',             score:0.0068, type:'normal', desc:'Binary: TSB count above 75th percentile.'},
+  {rank:28, name:'death_count',          score:0.0061, type:'normal', desc:'Complaints reporting a fatality.'},
+  {rank:29, name:'log_complaint_count',  score:0.0057, type:'normal', desc:'Log-transformed 30-day complaint count.'},
+  {rank:30, name:'fire_complaints',      score:0.0053, type:'normal', desc:'Complaints about fires/electrical issues.'},
+];
+
+function buildFiChart() {
+  const container = document.getElementById('fiChart');
+  if (!container) return;
+  const maxScore = fiData[0].score;
+  let html = '';
+  fiData.forEach(f => {
+    const pct = (f.score / maxScore) * 95;
+    const scorePct = (f.score * 100).toFixed(2) + '%';
+    html += `
+      <div class="fi-row">
+        <span class="fi-rank">${f.rank}</span>
+        <span class="fi-name" title="${f.name}">${f.name}</span>
+        <div class="fi-bar-wrap">
+          <div class="fi-bar ${f.type}" style="width:${pct}%">${scorePct}</div>
+          <div class="fi-tooltip">${f.desc}</div>
+        </div>
+      </div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ── TAB SYSTEM ──────────────────────────────────────
+const TAB_IDS = ['thesis','model','kelly','scorecard','results','trades','sources','team'];
+
 function showTab(id) {
- // Hero is never shown after load
- const hero = document.getElementById('hero');
- if (hero) hero.style.display = 'none';
- 
- // Show only the selected tab, hide all others
- TAB_IDS.forEach(tid => {
-   const s = document.getElementById(tid);
-   if (s) s.style.display = (tid === id) ? '' : 'none';
- });
- 
- // Keep all dividers hidden — sections are tabs, not a scroll page
- document.querySelectorAll('.divider').forEach(d => d.style.display = 'none');
- 
- // Update active highlight in both nav bars
- document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
-   const active = a.getAttribute('href') === '#' + id;
-   a.style.borderBottomColor = active ? 'var(--red)' : 'transparent';
-   a.style.color              = active ? 'white' : '';
-   a.style.background         = active ? 'rgba(255,255,255,0.08)' : '';
- });
- 
- // Jump instantly to top — content sits flush under the 60px nav
- document.documentElement.scrollTop = 0;
- document.body.scrollTop = 0;
+  TAB_IDS.forEach(t => {
+    const el = document.getElementById('tab-' + t);
+    if (el) el.classList.remove('active');
+    const nav = document.getElementById('nav-' + t);
+    if (nav) nav.classList.remove('active');
+    const mlink = document.querySelector(`.mobile-menu a[onclick*="'${t}'"]`);
+    if (mlink) mlink.classList.remove('active');
+  });
+
+  const target = document.getElementById('tab-' + id);
+  if (target) target.classList.add('active');
+  const navLink = document.getElementById('nav-' + id);
+  if (navLink) navLink.classList.add('active');
+  const mobileLink = document.querySelector(`.mobile-menu a[onclick*="'${id}'"]`);
+  if (mobileLink) mobileLink.classList.add('active');
+
+  window.scrollTo({top: document.getElementById('hero') ? document.getElementById('hero').offsetHeight : 0, behavior:'smooth'});
+
+  if (id === 'model') buildFiChart();
 }
- 
-// Wire nav links — desktop and mobile
-document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
- a.addEventListener('click', e => {
-   e.preventDefault();
-   showTab(a.getAttribute('href').replace('#', ''));
-   if (window.innerWidth <= 900) toggleMenu();
- });
-});
- 
-// Brand logo → back to Overview
-const brand = document.querySelector('.nav-brand');
-if (brand) {
- brand.style.cursor = 'pointer';
- brand.addEventListener('click', () => showTab('overview'));
-}
- 
+
+// ── HAMBURGER ────────────────────────────────────────
 function toggleMenu() {
- document.getElementById('mobileMenu')?.classList.toggle('open');
- document.getElementById('hamburger')?.classList.toggle('open');
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('open');
 }
- 
-// Init: hide hero and all sections, then show Overview
-(function () {
- const hero = document.getElementById('hero');
- if (hero) hero.style.display = 'none';
- document.querySelectorAll('.divider').forEach(d => d.style.display = 'none');
- TAB_IDS.forEach(tid => {
-   const s = document.getElementById(tid);
-   if (s) s.style.display = 'none';
- });
- showTab('overview');
-})();
+
+// ── PREVENT NAV LINKS DEFAULT ────────────────────────
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', e => e.preventDefault());
+});
+
+// Init — show thesis tab
+showTab('thesis');
 </script>
- 
 </body>
 </html>
-
