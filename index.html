@@ -6,6 +6,7 @@
 <title>Riverdale Investments — Strategic Recall Analysis</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+ 
 :root {
   --red: #CC0000; --red-dark: #990000; --red-light: #ff3333;
   --navy: #002654; --navy-light: #003580; --navy-dark: #001a3a;
@@ -17,7 +18,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { font-family:'DM Sans',sans-serif; background:var(--off-white); color:var(--text); overflow-x:hidden; }
-
+ 
 /* NAV */
 nav {
   position:fixed; top:0; left:0; right:0; z-index:1000;
@@ -40,7 +41,7 @@ nav {
   border-bottom:3px solid transparent; margin-bottom:-3px; text-transform:uppercase;
 }
 .nav-links a:hover, .nav-links a.active { color:white; border-bottom-color:var(--red); background:rgba(255,255,255,0.05); }
-
+ 
 /* HAMBURGER */
 .hamburger {
   display:none; flex-direction:column; gap:5px;
@@ -59,7 +60,7 @@ nav {
   transition:all 0.2s;
 }
 .mobile-menu a:hover, .mobile-menu a.active { background:rgba(255,255,255,0.08); color:white; }
-
+ 
 /* HERO */
 #hero {
   min-height:100vh; padding-top:60px;
@@ -111,18 +112,18 @@ nav {
   position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
   color:rgba(255,255,255,0.4); font-size:0.75rem; letter-spacing:1px; text-transform:uppercase;
 }
-
+ 
 /* TAB SECTIONS */
 .tab-section { display:none; padding-top:60px; min-height:calc(100vh - 60px); }
 .tab-section.active { display:block; }
-
+ 
 /* CONTAINERS */
 .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
 .section-pad { padding:4rem 0; }
 .section-label { font-size:0.72rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:0.5rem; display:block; }
 .section-title { font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(1.8rem,3vw,2.4rem); color:var(--navy); margin-bottom:1rem; line-height:1.2; }
 .section-desc { font-size:1rem; color:var(--gray-dark); line-height:1.7; max-width:700px; margin-bottom:2rem; }
-
+ 
 /* BG */
 .bg-white { background:white; }
 .bg-light { background:var(--off-white); }
@@ -130,17 +131,17 @@ nav {
 .bg-navy .section-title { color:white; }
 .bg-navy .section-label { color:var(--gold-light); }
 .bg-navy .section-desc { color:rgba(255,255,255,0.75); }
-
+ 
 /* CARDS */
 .card { background:white; border-radius:12px; padding:1.8rem; border:1px solid var(--gray); box-shadow:0 2px 12px rgba(0,0,0,0.05); }
 .card-red { border-top:4px solid var(--red); }
 .card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--navy); margin-bottom:0.8rem; font-weight:700; }
-
+ 
 /* GRIDS */
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
 .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
 .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
-
+ 
 /* STAT BOXES */
 .stat-box { background:white; border-radius:10px; padding:1.5rem; border:1px solid var(--gray); text-align:center; }
 .stat-box .stat-val { font-family:'DM Mono',monospace; font-size:2rem; font-weight:500; color:var(--navy); display:block; }
@@ -148,7 +149,7 @@ nav {
 .stat-box .stat-val.green { color:var(--green); }
 .stat-box .stat-lbl { font-size:0.78rem; text-transform:uppercase; letter-spacing:1px; color:var(--gray-mid); margin-top:4px; display:block; }
 .stat-box .stat-desc { font-size:0.82rem; color:var(--gray-dark); margin-top:8px; line-height:1.5; }
-
+ 
 /* PHASES */
 .phases { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-radius:12px; overflow:hidden; border:1px solid var(--gray); }
 .phase { padding:2rem; position:relative; }
@@ -159,7 +160,7 @@ nav {
 .phase-tag { font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem; display:block; }
 .phase h3 { color:white; font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:0.8rem; }
 .phase p { color:rgba(255,255,255,0.75); font-size:0.9rem; line-height:1.6; }
-
+ 
 /* AUC BARS */
 .auc-bars { display:flex; flex-direction:column; gap:0.8rem; }
 .auc-row { display:flex; align-items:center; gap:1rem; }
@@ -170,7 +171,7 @@ nav {
 .auc-bar.alt { background:var(--gray-mid); }
 .auc-bar.weak { background:#bbb; }
 .auc-badge { background:var(--red); color:white; font-size:0.65rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; border-radius:10px; flex-shrink:0; }
-
+ 
 /* KELLY */
 .kelly-equation { background:var(--navy-dark); border-radius:12px; padding:2rem; text-align:center; margin:1.5rem 0; border:1px solid rgba(255,255,255,0.1); }
 .kelly-equation .eq-label { font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.8rem; display:block; }
@@ -181,7 +182,7 @@ nav {
 .kelly-var .kv-sym { font-family:'DM Mono',monospace; font-size:0.9rem; font-weight:500; color:var(--navy); }
 .kelly-var .kv-desc { font-size:0.82rem; color:var(--gray-dark); margin-top:3px; }
 .kelly-var .kv-val { font-size:0.8rem; color:var(--red); font-weight:600; margin-top:2px; }
-
+ 
 /* TABLES */
 .table-wrap { overflow-x:auto; border-radius:10px; border:1px solid var(--gray); }
 table { width:100%; border-collapse:collapse; font-size:0.85rem; }
@@ -200,7 +201,7 @@ tbody td { padding:10px 14px; color:var(--text); white-space:nowrap; }
 .outcome-stop { color:#d97706; font-weight:700; }
 .pnl-pos { color:var(--green); font-family:'DM Mono',monospace; font-weight:600; }
 .pnl-neg { color:var(--red); font-family:'DM Mono',monospace; font-weight:600; }
-
+ 
 /* PIPELINE */
 .pipeline { display:flex; align-items:stretch; gap:0; border-radius:12px; overflow:hidden; border:1px solid var(--gray); }
 .pipeline-step { flex:1; padding:1.8rem 1.4rem; background:white; border-right:1px solid var(--gray); }
@@ -212,7 +213,7 @@ tbody td { padding:10px 14px; color:var(--text); white-space:nowrap; }
 .ps-title { font-weight:700; font-size:0.95rem; color:var(--navy); margin-bottom:0.6rem; }
 .ps-desc { font-size:0.83rem; color:var(--gray-dark); line-height:1.5; }
 .ps-output { margin-top:0.8rem; background:var(--gray-light); border-radius:6px; padding:0.5rem 0.8rem; font-size:0.78rem; color:var(--navy); font-weight:500; font-family:'DM Mono',monospace; }
-
+ 
 /* QUOTE / INFO */
 .quote-box { background:var(--off-white); border-left:4px solid var(--red); border-radius:0 8px 8px 0; padding:1.2rem 1.5rem; margin:1.2rem 0; }
 .quote-box p { font-size:0.9rem; color:var(--gray-dark); line-height:1.6; font-style:italic; }
@@ -221,43 +222,43 @@ tbody td { padding:10px 14px; color:var(--text); white-space:nowrap; }
 .info-box h4 { font-weight:700; color:var(--navy); font-size:0.9rem; margin-bottom:0.5rem; }
 .info-box p, .info-box li { font-size:0.85rem; color:var(--gray-dark); line-height:1.6; }
 .info-box ul { padding-left:1.2rem; }
-
+ 
 /* SOURCE */
 .source-item { background:white; border-radius:8px; padding:1rem 1.2rem; border:1px solid var(--gray); border-left:3px solid var(--navy); margin-bottom:0.6rem; }
 .source-item .src-title { font-size:0.88rem; font-weight:600; color:var(--navy); margin-bottom:3px; }
 .source-item .src-cite { font-size:0.8rem; color:var(--gray-dark); line-height:1.4; }
 .source-item a { color:var(--red); text-decoration:none; font-size:0.78rem; }
 .source-item a:hover { text-decoration:underline; }
-
+ 
 /* TEAM */
 .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
 .team-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:1.5rem 1rem; text-align:center; }
 .team-avatar { width:56px; height:56px; background:var(--red); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:700; font-size:1.3rem; color:white; margin:0 auto 0.8rem; }
 .team-name { font-weight:600; color:white; font-size:0.9rem; }
 .team-role { font-size:0.75rem; color:rgba(255,255,255,0.5); margin-top:3px; }
-
+ 
 /* AI BOX */
 .ai-box { background:linear-gradient(135deg,var(--navy-dark),#1a3a6e); border-radius:12px; padding:2rem; border:1px solid rgba(255,255,255,0.1); border-left:4px solid var(--gold-light); color:white; }
 .ai-box h3 { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--gold-light); margin-bottom:0.8rem; }
 .ai-box p { font-size:0.9rem; color:rgba(255,255,255,0.8); line-height:1.7; }
 .ai-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
 .ai-tag { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.8); font-size:0.75rem; padding:4px 12px; border-radius:20px; }
-
+ 
 /* TAGS */
 .tag { display:inline-block; background:var(--off-white); border:1px solid var(--gray); border-radius:20px; padding:4px 12px; font-size:0.75rem; font-weight:600; color:var(--navy); margin:2px; }
 .tag.red { background:#fee2e2; border-color:#fca5a5; color:var(--red-dark); }
 .tag.green { background:var(--green-light); border-color:#86efac; color:var(--green); }
-
+ 
 /* DIVIDER */
 .divider { height:1px; background:linear-gradient(90deg,transparent,var(--gray),transparent); margin:2rem 0; }
-
+ 
 /* FOOTER */
 footer { background:var(--navy-dark); border-top:3px solid var(--red); padding:2rem; text-align:center; }
 footer p { color:rgba(255,255,255,0.5); font-size:0.8rem; margin-bottom:0.3rem; }
 footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
-
+ 
 /* ── VISUALIZATIONS ────────────────────────────────── */
-
+ 
 /* Feature Importance Chart */
 .fi-chart-wrap { background:white; border-radius:12px; border:1px solid var(--gray); padding:1.5rem; overflow:hidden; }
 .fi-row { display:flex; align-items:center; gap:0.8rem; margin-bottom:6px; }
@@ -274,7 +275,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
 .fi-legend { display:flex; gap:1.5rem; margin-bottom:1rem; font-size:0.78rem; }
 .fi-legend-item { display:flex; align-items:center; gap:6px; }
 .fi-legend-dot { width:12px; height:12px; border-radius:3px; }
-
+ 
 /* Decision Tree */
 .tree-wrap { background:var(--navy-dark); border-radius:12px; padding:2rem; overflow-x:auto; }
 .tree-container { min-width:700px; position:relative; }
@@ -288,11 +289,11 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
 .tree-text-sub { fill:rgba(255,255,255,0.7); font-family:'DM Mono',monospace; font-size:9px; }
 .tree-text-prob { font-family:'DM Mono',monospace; font-weight:700; font-size:12px; }
 .tree-branch-label { fill:rgba(255,255,255,0.5); font-family:'DM Sans',sans-serif; font-size:9px; }
-
+ 
 /* Regime Timeline */
 .regime-wrap { background:var(--navy-dark); border-radius:12px; padding:2rem; overflow-x:auto; }
 .regime-timeline { min-width:600px; position:relative; }
-
+ 
 /* RESPONSIVE */
 @media (max-width:900px) {
   .grid-2,.grid-3,.grid-4,.phases,.team-grid,.pipeline { grid-template-columns:1fr; flex-direction:column; }
@@ -300,61 +301,69 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
   .hamburger { display:flex; }
   .hero-metrics { flex-wrap:wrap; }
   .kelly-vars { grid-template-columns:1fr; }
-  .fi-name { width:120px; }
+  .fi-name { width:110px; }
+  .container { padding:0 1rem; }
+  .section-pad { padding:2.5rem 0; }
+  .phases .phase { border-right:none; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .pipeline-step { border-right:none; border-bottom:1px solid var(--gray); }
+  .team-grid { grid-template-columns:1fr 1fr; }
+  table { font-size:0.75rem; }
+  thead th { padding:8px; }
+  tbody td { padding:7px 8px; }
+  .desc-strip { grid-template-columns:1fr 1fr; }
 }
 @media (max-width:600px) {
   .hero-metric { flex:0 0 45%; }
   .grid-4 { grid-template-columns:1fr 1fr; }
 }
+ 
+.desc-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:2rem; }
+.ds-box { background:white; border-radius:10px; padding:1.2rem; border:1px solid var(--gray); border-left:4px solid var(--navy); text-align:center; }
+.ds-val { font-family:'DM Mono',monospace; font-size:1.5rem; color:var(--navy); font-weight:500; display:block; }
+.ds-lbl { font-size:0.72rem; text-transform:uppercase; letter-spacing:1px; color:var(--gray-mid); margin-top:3px; display:block; }
+.viz-wrap { background:var(--navy-dark); border-radius:10px; padding:1.5rem; overflow-x:auto; margin-bottom:1.5rem; }
+.regime-btn { background:var(--gray-light); color:var(--navy); border:none; padding:8px 16px; border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer; margin-bottom:0.5rem; }
+.regime-btn.active { background:var(--navy); color:white; }
+ 
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="nav-brand">
-    <div class="nav-logo">R</div>
-    <span class="nav-title">Riverdale Investments</span>
+    <div class="nav-logo" style="font-size:10px;letter-spacing:-0.5px;">SJU</div>
+    <span class="nav-title">St. John's University</span>
   </div>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#" onclick="showTab('thesis')" id="nav-thesis">Thesis</a></li>
-    <li><a href="#" onclick="showTab('model')" id="nav-model">The Model</a></li>
-    <li><a href="#" onclick="showTab('kelly')" id="nav-kelly">Kelly Criterion</a></li>
-    <li><a href="#" onclick="showTab('scorecard')" id="nav-scorecard">Scorecard</a></li>
-    <li><a href="#" onclick="showTab('results')" id="nav-results">Q1 2026</a></li>
-    <li><a href="#" onclick="showTab('trades')" id="nav-trades">Trade Log</a></li>
-    <li><a href="#" onclick="showTab('sources')" id="nav-sources">Sources</a></li>
-    <li><a href="#" onclick="showTab('team')" id="nav-team">Team</a></li>
+    <li><a onclick="showTab('overview')" id="nav-overview">Overview</a></li>
+    <li><a onclick="showTab('eventstudy')" id="nav-eventstudy">Event Study</a></li>
+    <li><a onclick="showTab('model')" id="nav-model">Model</a></li>
+    <li><a onclick="showTab('sizing')" id="nav-sizing">Position Sizing</a></li>
+    <li><a onclick="showTab('profit')" id="nav-profit">Profit Estimation</a></li>
+    <li><a onclick="showTab('sources')" id="nav-sources">Sources</a></li>
+    <li><a onclick="showTab('team')" id="nav-team">Team</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMenu()" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="showTab('thesis');toggleMenu()">Thesis</a>
-  <a href="#" onclick="showTab('model');toggleMenu()">The Model</a>
-  <a href="#" onclick="showTab('kelly');toggleMenu()">Kelly Criterion</a>
-  <a href="#" onclick="showTab('scorecard');toggleMenu()">Scorecard</a>
-  <a href="#" onclick="showTab('results');toggleMenu()">Q1 2026</a>
-  <a href="#" onclick="showTab('trades');toggleMenu()">Trade Log</a>
-  <a href="#" onclick="showTab('sources');toggleMenu()">Sources</a>
-  <a href="#" onclick="showTab('team');toggleMenu()">Team</a>
+  <a onclick="showTab('overview');toggleMenu()">Overview</a>
+  <a onclick="showTab('eventstudy');toggleMenu()">Event Study</a>
+  <a onclick="showTab('model');toggleMenu()">Model</a>
+  <a onclick="showTab('sizing');toggleMenu()">Position Sizing</a>
+  <a onclick="showTab('profit');toggleMenu()">Profit Estimation</a>
+  <a onclick="showTab('sources');toggleMenu()">Sources</a>
+  <a onclick="showTab('team');toggleMenu()">Team</a>
 </div>
-
-<!-- HERO (always visible) -->
 <section id="hero">
   <div class="hero-badge">BUA Competition 2026 · Tobin College of Business · St. John's University</div>
   <h1>Strategic Roadmap for<br><span>Riverdale Investments</span></h1>
-  <p class="hero-subtitle">Pre-Event Signal Analysis from U.S. Auto Recalls, 2000–2025. A systematic short-selling strategy built on NHTSA complaint data — the informational edge the market ignores.</p>
+  <p class="hero-subtitle">Pre-Event Signal Analysis from U.S. Auto Recalls, 2000–2025. A systematic short-selling strategy built on NHTSA pre-event signals — the informational edge the market ignores.</p>
   <p class="hero-course">Advisor: Michael D. Herley, D.B.A.</p>
   <div class="hero-metrics">
     <div class="hero-metric"><span class="val green">+1.17%</span><span class="lbl">Q1 2026 Return</span></div>
-    <div class="hero-metric"><span class="val red">-4.30%</span><span class="lbl">S&P 500 Q1 2026</span></div>
-    <div class="hero-metric"><span class="val green">+5.47pp</span><span class="lbl">Outperformance</span></div>
     <div class="hero-metric"><span class="val">0.8083</span><span class="lbl">Model AUC</span></div>
-    <div class="hero-metric"><span class="val green">63%</span><span class="lbl">Win Rate</span></div>
+    
     <div class="hero-metric"><span class="val">4.4×</span><span class="lbl">Informational Edge</span></div>
   </div>
   <div class="thesis-box">
@@ -362,82 +371,242 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
   </div>
   <div class="hero-nav-hint">↑ use navigation tabs to explore ↑</div>
 </section>
-
-<!-- ══════════════════════════════════════════════════ -->
-<!-- TAB: THESIS -->
-<!-- ══════════════════════════════════════════════════ -->
-<div class="tab-section bg-white" id="tab-thesis">
+<div class="tab-section bg-light" id="tab-overview">
 <div class="container section-pad">
-  <span class="section-label">The Big Question</span>
-  <h2 class="section-title">Can Recall Data Provide Market Insight for a Strong Investment Strategy?</h2>
-  <p class="section-desc">Every vehicle recall leaves a trail of breadcrumbs weeks before the public announcement — in consumer complaints, government investigations, and technical service bulletins. The market ignores these signals. We built a system to capture them.</p>
-
-  <div class="phases">
+  <span class="section-label">The Big Picture</span>
+  <h2 class="section-title">Overview — Strategic Roadmap for Riverdale Investments</h2>
+  <p class="section-desc">Using publicly available NHTSA pre-event signals — complaints, investigations, and technical service bulletins — to identify vehicle recalls 30–90 days before the market reacts.</p>
+ 
+  <div class="desc-strip">
+    <div class="ds-box"><span class="ds-val">1.98M</span><span class="ds-lbl">Total Complaints</span></div>
+    <div class="ds-box"><span class="ds-val">3,631</span><span class="ds-lbl">Recall Events</span></div>
+    <div class="ds-box"><span class="ds-val">17</span><span class="ds-lbl">Parent Companies</span></div>
+    <div class="ds-box"><span class="ds-val">234,766</span><span class="ds-lbl">TSBs Analyzed</span></div>
+    <div class="ds-box"><span class="ds-val">122,638</span><span class="ds-lbl">Investigations</span></div>
+    <div class="ds-box"><span class="ds-val">121,137</span><span class="ds-lbl">Model Observations</span></div>
+    <div class="ds-box"><span class="ds-val">$1.69T</span><span class="ds-lbl">Market Cap Covered</span></div>
+    <div class="ds-box"><span class="ds-val">21.9%</span><span class="ds-lbl">Recall Drop Rate</span></div>
+  </div>
+ 
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.2rem;">Structural Break Analysis — Bai-Perron (2003)</h3>
+  <p style="font-size:0.85rem;color:var(--gray-dark);margin-bottom:1rem;">Two statistically significant structural breaks in recall frequency create three distinct market regimes. Structural break dummies (not regime dummies) were included in the model at these exact breakpoints.</p>
+  <div class="viz-wrap">
+    <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+      <rect x="20" y="30" width="278" height="108" fill="#001a3a" rx="5"/>
+      <rect x="298" y="30" width="242" height="108" fill="#CC0000" rx="5" opacity="0.85"/>
+      <rect x="540" y="30" width="340" height="108" fill="#9E7C0C" rx="5" opacity="0.8"/>
+      <text x="159" y="55" fill="white" font-size="12" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 1</text>
+      <text x="159" y="70" fill="#c9a227" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">Mechanical Era</text>
+      <text x="159" y="84" fill="rgba(255,255,255,0.65)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">2000M01 – 2014M02</text>
+      
+      <text x="159" y="100" fill="rgba(255,255,255,0.55)" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">Pre-Takata. Baseline recall frequency.</text>
+      <text x="159" y="114" fill="rgba(255,255,255,0.45)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">D2 = 0, D3 = 0 (reference group)</text>
+      <text x="419" y="55" fill="white" font-size="12" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 2</text>
+      <text x="419" y="70" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">Crisis Era</text>
+      <text x="419" y="84" fill="rgba(255,255,255,0.65)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">2014M03 – 2021M01</text>
+      
+      <text x="419" y="100" fill="rgba(255,255,255,0.55)" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">Takata airbag crisis. Rate more than doubled.</text>
+      <text x="419" y="114" fill="rgba(255,255,255,0.45)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">D2 = 1</text>
+      <text x="710" y="55" fill="white" font-size="12" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 3</text>
+      <text x="710" y="70" fill="#86efac" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">Modern / EV Era</text>
+      <text x="710" y="84" fill="rgba(255,255,255,0.65)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">2021M02 – 2025M12</text>
+      
+      <text x="710" y="100" fill="rgba(255,255,255,0.55)" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">Tesla, Rivian, Lucid. Software recalls rise.</text>
+      <text x="710" y="114" fill="rgba(255,255,255,0.45)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">D3 = 1 (TEST SET ONLY)</text>
+      <line x1="298" y1="20" x2="298" y2="148" stroke="white" stroke-width="2" stroke-dasharray="5,3"/>
+      <line x1="540" y1="20" x2="540" y2="148" stroke="white" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="298" y="15" fill="white" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">BREAK 1: 2014M03 (Bai-Perron)</text>
+      <text x="540" y="15" fill="white" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">BREAK 2: 2021M02 (Bai-Perron)</text>
+      <rect x="20" y="150" width="520" height="22" fill="rgba(0,38,84,0.6)" rx="3"/>
+      <rect x="540" y="150" width="340" height="22" fill="rgba(26,122,63,0.4)" rx="3"/>
+      <text x="280" y="165" fill="rgba(255,255,255,0.8)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">TRAIN (2000–2020): Mechanical Era + Crisis Era</text>
+      <text x="710" y="165" fill="#4ade80" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">TEST (2021–2025): Modern / EV Era — genuinely unseen</text>
+      <text x="20" y="188" fill="rgba(255,255,255,0.4)" font-size="8.5" font-family="DM Mono,monospace">2000</text>
+      <text x="287" y="188" fill="rgba(255,255,255,0.4)" font-size="8.5" font-family="DM Mono,monospace">2014</text>
+      <text x="529" y="188" fill="rgba(255,255,255,0.4)" font-size="8.5" font-family="DM Mono,monospace">2021</text>
+      <text x="856" y="188" fill="rgba(255,255,255,0.4)" font-size="8.5" font-family="DM Mono,monospace">2025</text>
+    </svg>
+  </div>
+ 
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.2rem;">The Three-Phase Investment Narrative</h3>
+  <div class="phases" style="margin-bottom:2rem;">
     <div class="phase phase-1">
       <div class="phase-num">01</div>
       <span class="phase-tag">Noise Window — Our Edge</span>
       <h3>Pre-Event Signals</h3>
-      <p>Complaint spikes appear in the NHTSA database. TSBs accelerate. Investigations open. The market ignores all of it. Our XGBoost model fires a STRONG SIGNAL 30–90 days before the recall is public. Riverdale enters the short position here.</p>
+      <p>Complaint spikes appear in NHTSA. TSBs accelerate. Investigations open. The market ignores all of it. Our model fires a STRONG SIGNAL 30–90 days before the recall is public. Riverdale enters the short here.</p>
     </div>
     <div class="phase phase-2">
       <div class="phase-num">02</div>
       <span class="phase-tag">Drift Window — Position Grows</span>
       <h3>Institutional Awareness Builds</h3>
-      <p>NHTSA opens a formal investigation. Financial news picks it up. Analysts flag it. Institutional money begins positioning. The stock drifts down gradually. Riverdale's position is already profitable and growing.</p>
+      <p>NHTSA opens a formal investigation — now public. Financial news covers it. Institutional money begins positioning. The stock drifts down gradually. Riverdale's position is already profitable and growing.</p>
     </div>
     <div class="phase phase-3">
       <div class="phase-num">03</div>
       <span class="phase-tag">Filing Date — Exit at T+1</span>
       <h3>Market Catches Up</h3>
-      <p>Recall officially filed. Our event study confirms mean CAR ≈ 0% at filing — the market had already priced it in during Phase 2. Riverdale exits at T+1 having captured the full drift.</p>
+      <p>Recall officially filed. Event study confirms mean CAR ≈ 0% at filing — already priced in. Riverdale exits at T+1, having captured the full drift. This resolves the apparent contradiction with Semi-Strong EMH.</p>
     </div>
   </div>
-
-  <div style="margin-top:2rem;" class="grid-2">
-    <div class="quote-box">
-      <p>"The market generally fails to impound the information contained in customer complaints in a timely manner — even among sophisticated institutional investors like mutual funds."</p>
-      <span class="cite">— Review of Quantitative Finance and Accounting, 2020</span>
-    </div>
-    <div class="info-box">
-      <h4>Why the Market Misses This</h4>
-      <ul>
-        <li>NHTSA data is public but requires a multi-source pipeline to process</li>
-        <li>Complaint velocity, TSB component matching, and investigation timing must be computed together</li>
-        <li>Event study confirms Semi-Strong EMH at filing — the edge is entirely pre-announcement</li>
-        <li>Signal window: 30–90 days before public recall announcement</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.3rem;">What is a Short Strategy?</h3>
+ 
   <div class="grid-2">
     <div class="info-box">
-      <h4>Shorting a Stock — Plain Language</h4>
-      <p>Shorting is a way to profit when a stock goes down. You borrow shares, sell them at today's price, and buy them back later at a lower price — pocketing the difference. If Riverdale shorts an auto company at $50 today and a recall drops that stock to $38, Riverdale keeps the $12 difference per share. The key is timing — the earlier you enter the short, the more of that decline you capture. That is exactly what our model gives Riverdale: the earliest possible entry, before anyone else knows a recall is coming.</p>
+      <h4>What is a Short Strategy?</h4>
+      <p>Shorting is a way to profit when a stock goes down. You borrow shares, sell them at today's price, and buy them back later at a lower price — pocketing the difference. The key is timing — the earlier you enter, the more of that decline you capture. Our model gives Riverdale the earliest possible entry, before the market has any indication a recall is coming.</p>
     </div>
     <div class="info-box">
-      <h4>Three Ways the Position Ends</h4>
+      <h4>Why the Market Misses NHTSA Pre-Event Signals</h4>
       <ul>
-        <li><strong>Recall announced:</strong> Exit at market close the day after filing. Captured the entire gradual drift downward that happened weeks before the market reacted.</li>
-        <li><strong>Stock rises 5%+:</strong> Stop loss exits the position automatically. Protects Riverdale from runaway losses.</li>
-        <li><strong>Neither happens:</strong> Position closes after 45 days — the survival analysis median time from signal to recall filing.</li>
+        <li>NHTSA data is public but requires a multi-source pipeline to extract signal from noise</li>
+        <li>Complaint velocity, TSB component matching, and investigation timing must be computed together across 1.98M complaints</li>
+        <li>A 2020 peer-reviewed study confirms the market consistently fails to price in NHTSA data before recall announcements — even among sophisticated institutional investors</li>
       </ul>
     </div>
   </div>
+  <div class="quote-box" style="margin-top:1rem;">
+    <p>"The market generally fails to impound the information contained in customer complaints in a timely manner — even among sophisticated institutional investors like mutual funds."</p>
+    <span class="cite">— Review of Quantitative Finance and Accounting, 2020</span>
+  </div>
 </div>
 </div>
-
-<!-- ══════════════════════════════════════════════════ -->
-<!-- TAB: MODEL -->
-<!-- ══════════════════════════════════════════════════ -->
+ 
+<div class="tab-section bg-white" id="tab-eventstudy">
+<div class="container section-pad">
+  <span class="section-label">Event Study</span>
+  <h2 class="section-title">Event Study — 3,631 Recall Events (2000–2025)</h2>
+  <p class="section-desc">OLS market model. Estimation window [-120, -11]. Event window [-5, +1]. S&amp;P 500 benchmark. Near-zero CAR at filing is the foundation of the entire pre-event signal strategy.</p>
+ 
+  <div class="grid-4" style="margin-bottom:2rem;">
+    <div class="stat-box"><span class="stat-val">+0.016%</span><span class="stat-lbl">Mean CAR at Filing</span><span class="stat-desc">Near-zero. Market efficiently prices recall risk at announcement — not before.</span></div>
+    <div class="stat-box"><span class="stat-val">0.892</span><span class="stat-lbl">Patell Z p-value</span><span class="stat-desc">Not significant. Confirms Semi-Strong EMH holds on average at filing.</span></div>
+    <div class="stat-box"><span class="stat-val">3,631</span><span class="stat-lbl">Recall Events</span><span class="stat-desc">17 parent companies, 2000–2025. CAR computed over [-5, +1] window.</span></div>
+    <div class="stat-box"><span class="stat-val red">-2%</span><span class="stat-lbl">Drop Threshold</span><span class="stat-desc">CAR below -2% = meaningful reaction. Basis for Recall Impact Scorecard.</span></div>
+  </div>
+ 
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.15rem;">Mean Cumulative Abnormal Return — Event Window [-5, +1]</h3>
+  <div class="viz-wrap">
+    <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+      <line x1="80" y1="30" x2="80" y2="210" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="80" y1="210" x2="780" y2="210" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="75" y1="80" x2="780" y2="80" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <line x1="75" y1="120" x2="780" y2="120" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+      <line x1="75" y1="160" x2="780" y2="160" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="70" y="84" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="end" font-family="DM Mono,monospace">+0.1%</text>
+      <text x="70" y="124" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="end" font-family="DM Mono,monospace">0.0%</text>
+      <text x="70" y="164" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="end" font-family="DM Mono,monospace">-0.1%</text>
+      <text x="120" y="225" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">-5</text>
+      <text x="220" y="225" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">-4</text>
+      <text x="320" y="225" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">-3</text>
+      <text x="420" y="225" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">-2</text>
+      <text x="520" y="225" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">-1</text>
+      <text x="620" y="225" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">0 (FILING)</text>
+      <text x="720" y="225" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">+1</text>
+      <rect x="590" y="30" width="60" height="180" fill="rgba(204,0,0,0.1)"/>
+      <text x="620" y="48" fill="rgba(204,0,0,0.7)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Filing Day</text>
+      <polyline points="120,118 220,122 320,115 420,119 520,121 620,119 720,118" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="120" cy="118" r="4" fill="#4ade80"/>
+      <circle cx="220" cy="122" r="4" fill="#4ade80"/>
+      <circle cx="320" cy="115" r="4" fill="#4ade80"/>
+      <circle cx="420" cy="119" r="4" fill="#4ade80"/>
+      <circle cx="520" cy="121" r="4" fill="#4ade80"/>
+      <circle cx="620" cy="119" r="5" fill="#CC0000" stroke="white" stroke-width="1.5"/>
+      <circle cx="720" cy="118" r="4" fill="#4ade80"/>
+      <text x="620" y="107" fill="#CC0000" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">+0.016%</text>
+      <text x="390" y="55" fill="rgba(255,255,255,0.7)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Mean CAR = +0.016% | p = 0.892 — Not Significant — Confirms Semi-Strong EMH</text>
+    </svg>
+  </div>
+ 
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.15rem;">Mean &amp; Median CAR by Severity — Overall</h3>
+  <div class="table-wrap" style="margin-bottom:1.5rem;">
+    <table>
+      <thead><tr><th>Severity</th><th>N</th><th>Mean CAR</th><th>Median CAR</th><th>p-value</th><th>Significant?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Minimal</strong></td><td class="mono">99</td><td class="mono">-0.175%</td><td class="mono">-0.55%</td><td class="mono">0.481</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td><strong>Low</strong></td><td class="mono">186</td><td class="mono">-0.130%</td><td class="mono">+0.25%</td><td class="mono">0.481</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td><strong>Medium</strong></td><td class="mono">3,007</td><td class="mono">-0.195%</td><td class="mono">-0.02%</td><td class="mono">0.321</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td><strong>High</strong></td><td class="mono">267</td><td class="mono">-0.227%</td><td class="mono">-0.01%</td><td class="mono">0.131</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td><strong>Critical</strong></td><td class="mono">65</td><td class="mono">-0.304%</td><td class="mono">-0.05%</td><td class="mono">0.496</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr style="background:var(--navy-dark);"><td style="color:white;font-weight:700;">Overall</td><td class="mono" style="color:white;">3,631</td><td class="mono" style="color:#4ade80;font-weight:700;">+0.016%</td><td class="mono" style="color:#4ade80;font-weight:700;">-0.01%</td><td class="mono" style="color:white;">0.892</td><td><span class="badge-excluded">NO</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.15rem;">Mean &amp; Median CAR by Severity Within Each Regime</h3>
+  <p style="font-size:0.83rem;color:var(--gray-dark);margin-bottom:0.8rem;">All 14 severity-regime combinations are statistically insignificant — confirming robust Semi-Strong EMH across all eras.</p>
+  <div style="display:flex;gap:0.5rem;margin-bottom:0.8rem;flex-wrap:wrap;">
+    <button class="regime-btn active" id="rbtn1" onclick="showRegime(1)">Mechanical Era (2000–2014)</button>
+    <button class="regime-btn" id="rbtn2" onclick="showRegime(2)">Crisis Era (2014–2021)</button>
+    <button class="regime-btn" id="rbtn3" onclick="showRegime(3)">Modern / EV Era (2021–2025)</button>
+  </div>
+  <div id="regime1" class="table-wrap" style="margin-bottom:1.5rem;">
+    <table>
+      <thead><tr><th colspan="6" style="background:var(--navy-dark);color:var(--gold-light);">Regime 1 — Mechanical Era (2000–2014)</th></tr>
+      <tr><th>Severity</th><th>N</th><th>Mean CAR</th><th>Median CAR</th><th>p-value</th><th>Significant?</th></tr></thead>
+      <tbody>
+        <tr><td>Minimal (0–0.5)</td><td class="mono">95</td><td class="mono">-0.24%</td><td class="mono">-0.55%</td><td class="mono">0.565</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Low (0.5–2.5)</td><td class="mono">72</td><td class="mono">+0.37%</td><td class="mono">+0.25%</td><td class="mono">0.395</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Medium (2.5–5)</td><td class="mono">765</td><td class="mono">+0.13%</td><td class="mono">-0.02%</td><td class="mono">0.259</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>High (5–7.5)</td><td class="mono">76</td><td class="mono">+0.09%</td><td class="mono">+0.12%</td><td class="mono">0.829</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Critical (7.5+)</td><td class="mono">9</td><td class="mono">+1.15%</td><td class="mono">-0.18%</td><td class="mono">0.340</td><td><span class="badge-excluded">NO</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="regime2" class="table-wrap" style="margin-bottom:1.5rem;display:none;">
+    <table>
+      <thead><tr><th colspan="6" style="background:var(--red-dark);color:white;">Regime 2 — Crisis Era (2014–2021)</th></tr>
+      <tr><th>Severity</th><th>N</th><th>Mean CAR</th><th>Median CAR</th><th>p-value</th><th>Significant?</th></tr></thead>
+      <tbody>
+        <tr><td>Minimal (0–0.5)</td><td class="mono">4</td><td class="mono">+1.59%</td><td class="mono">+1.51%</td><td class="mono">0.361</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Low (0.5–2.5)</td><td class="mono">44</td><td class="mono">-0.25%</td><td class="mono">+0.27%</td><td class="mono">0.582</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Medium (2.5–5)</td><td class="mono">1,028</td><td class="mono">+0.01%</td><td class="mono">+0.01%</td><td class="mono">0.934</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr style="background:#fff3cd;"><td>High (5–7.5)</td><td class="mono">89</td><td class="mono">-0.48%</td><td class="mono">-0.52%</td><td class="mono">0.131</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Critical (7.5+)</td><td class="mono">24</td><td class="mono">+0.51%</td><td class="mono">+0.40%</td><td class="mono">0.371</td><td><span class="badge-excluded">NO</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="regime3" class="table-wrap" style="margin-bottom:1.5rem;display:none;">
+    <table>
+      <thead><tr><th colspan="6" style="background:#1a5c32;color:white;">Regime 3 — Modern / EV Era (2021–2025)</th></tr>
+      <tr><th>Severity</th><th>N</th><th>Mean CAR</th><th>Median CAR</th><th>p-value</th><th>Significant?</th></tr></thead>
+      <tbody>
+        <tr><td>Minimal (0–0.5)</td><td colspan="5" style="color:var(--gray-mid);font-size:0.8rem;">N/A — severity scoring methodology change</td></tr>
+        <tr><td>Low (0.5–2.5)</td><td class="mono">70</td><td class="mono">+0.10%</td><td class="mono">+0.18%</td><td class="mono">0.806</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Medium (2.5–5)</td><td class="mono">1,214</td><td class="mono">-0.07%</td><td class="mono">-0.02%</td><td class="mono">0.488</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>High (5–7.5)</td><td class="mono">102</td><td class="mono">-0.27%</td><td class="mono">-0.01%</td><td class="mono">0.453</td><td><span class="badge-excluded">NO</span></td></tr>
+        <tr><td>Critical (7.5+)</td><td class="mono">32</td><td class="mono">-0.40%</td><td class="mono">-0.05%</td><td class="mono">0.496</td><td><span class="badge-excluded">NO</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <div class="grid-2">
+    <div class="info-box">
+      <h4>Key Finding — Universal Insignificance</h4>
+      <ul>
+        <li>All 14 severity-regime combinations are statistically insignificant (all p &gt; 0.10)</li>
+        <li>Medians are even tighter to zero than means — outliers do not drive the result</li>
+        <li>Critical recalls trend more negative across regimes — EV-era severity carries more weight</li>
+        <li>Period 2 High (-0.48%, p=0.131) is the closest to significance — still not significant</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h4>Why Near-Zero CAR Is the Foundation of Our Strategy</h4>
+      <p>If the market reacted before the filing date, our pre-event signals would already be priced in. The market does not react early — it reacts exactly at the announcement. We enter weeks before, ride the gradual drift, and exit at T+1. The event study does not contradict our strategy. It proves it.</p>
+    </div>
+  </div>
+  <div class="quote-box">
+    <p>"Even when controlling for structural break regimes, no severity level in any time period produces statistically significant abnormal returns — confirming robust Semi-Strong EMH across all operational environments from 2000 to 2025."</p>
+    <span class="cite">— Riverdale Investments Event Study, BUA Competition 2026</span>
+  </div>
+</div>
+</div>
+ 
 <div class="tab-section bg-light" id="tab-model">
 <div class="container section-pad">
   <span class="section-label">Stage 1 — Signal Model</span>
   <h2 class="section-title">XGBoost Recall Probability Model</h2>
   <p class="section-desc">A supervised machine learning model trained on 121,137 monthly observations from 2000–2025. Predicts whether a specific make/model will have a recall filed within 90 days — firing 30–90 days before any public announcement.</p>
-
+ 
   <!-- Regime Timeline -->
   <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.2rem;">The Three Market Regimes — Bai-Perron Structural Break Analysis</h3>
   <div class="regime-wrap" style="margin-bottom:1.5rem;">
@@ -448,23 +617,23 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
         <rect x="300" y="30" width="240" height="100" fill="#CC0000" rx="4" opacity="0.85"/>
         <rect x="540" y="30" width="340" height="100" fill="#9E7C0C" rx="4" opacity="0.8"/>
         <!-- Labels -->
-        <text x="160" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 1 — BASELINE</text>
+        <text x="160" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 1 — Mechanical Era</text>
         <text x="160" y="74" fill="rgba(255,255,255,0.7)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2000M01 – 2014M02</text>
-        <text x="160" y="92" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">7.4% positive rate</text>
-        <text x="160" y="108" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Pre-Takata era. Lower recall frequency.</text>
-        <text x="160" y="120" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">R1 = Baseline (no dummy)</text>
+        
+        <text x="160" y="90" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Pre-Takata era. Lower recall frequency.</text>
+        <text x="160" y="104" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">R1 = Baseline (no dummy)</text>
         <!-- R2 -->
-        <text x="420" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 2 — TAKATA ERA</text>
+        <text x="420" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 2 — Crisis Era</text>
         <text x="420" y="74" fill="rgba(255,255,255,0.7)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2014M03 – 2021M01</text>
-        <text x="420" y="92" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">16.1% positive rate</text>
-        <text x="420" y="108" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Largest recall in history. Rate doubled.</text>
-        <text x="420" y="120" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">D2 = 1</text>
+        
+        <text x="420" y="90" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Largest recall in history. Rate doubled.</text>
+        <text x="420" y="104" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">D2 = 1</text>
         <!-- R3 -->
-        <text x="710" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 3 — MODERN / EV ERA</text>
+        <text x="710" y="58" fill="white" font-size="13" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">REGIME 3 — Modern / EV Era</text>
         <text x="710" y="74" fill="rgba(255,255,255,0.7)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2021M02 – 2025M12</text>
-        <text x="710" y="92" fill="#86efac" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">13.0% positive rate</text>
-        <text x="710" y="108" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Tesla, Rivian, Lucid. Software recalls.</text>
-        <text x="710" y="120" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">D3 = 1 (TEST SET ONLY)</text>
+        
+        <text x="710" y="90" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Tesla, Rivian, Lucid. Software recalls.</text>
+        <text x="710" y="104" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">D3 = 1 (TEST SET ONLY)</text>
         <!-- Break lines -->
         <line x1="300" y1="20" x2="300" y2="145" stroke="white" stroke-width="2" stroke-dasharray="4,3"/>
         <line x1="540" y1="20" x2="540" y2="145" stroke="white" stroke-width="2" stroke-dasharray="4,3"/>
@@ -485,7 +654,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
       </svg>
     </div>
   </div>
-
+ 
   <!-- Simplified Decision Tree -->
   <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.2rem;">How XGBoost Thinks — Simplified Decision Tree</h3>
   <p style="font-size:0.85rem;color:var(--gray-dark);margin-bottom:1rem;">XGBoost builds 300 trees like this. Each tree learns from where the previous one was wrong. The final probability is a weighted vote across all 300. This shows one tree at 4 levels using your actual top features.</p>
@@ -514,90 +683,90 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
         <path d="M 530 305 Q 530 340 580 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
         <path d="M 750 305 Q 750 340 700 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
         <path d="M 750 305 Q 750 340 800 365" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
-
+ 
         <!-- Branch labels -->
-        <text x="295" y="128" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">≤ 3.5x (normal)</text>
+        <text x="295" y="128" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">≤ 5.0x (normal)</text>
         <text x="565" y="128" fill="rgba(255,255,255,0.5)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">&gt; 3.5x (spike)</text>
         <text x="145" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">No inv.</text>
         <text x="295" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Inv. open</text>
         <text x="565" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">R1/R2</text>
         <text x="715" y="238" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">R3</text>
-
+ 
         <!-- ROOT NODE -->
         <rect x="320" y="22" width="220" height="58" rx="8" fill="#990000" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
         <text x="430" y="42" fill="white" font-size="11" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">velocity_spike_ratio</text>
         <text x="430" y="56" fill="rgba(255,255,255,0.7)" font-size="9" text-anchor="middle" font-family="DM Mono,monospace">Importance: 0.1823 (#1)</text>
         <text x="430" y="70" fill="#fbbf24" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">How fast are complaints arriving?</text>
-
+ 
         <!-- L1 LEFT: inv_flag -->
         <rect x="130" y="155" width="180" height="52" rx="8" fill="#002654" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
         <text x="220" y="174" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">inv_flag</text>
         <text x="220" y="188" fill="rgba(255,255,255,0.7)" font-size="8.5" text-anchor="middle" font-family="DM Mono,monospace">Importance: 0.0312 (#10)</text>
         <text x="220" y="202" fill="#93c5fd" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">Is NHTSA investigating?</text>
-
+ 
         <!-- L1 RIGHT: R2/R3 -->
         <rect x="550" y="155" width="180" height="52" rx="8" fill="#002654" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
         <text x="640" y="174" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">Regime Dummy (D2/D3)</text>
         <text x="640" y="188" fill="rgba(255,255,255,0.7)" font-size="8.5" text-anchor="middle" font-family="DM Mono,monospace">Importance: 0.0171/0.0124</text>
         <text x="640" y="202" fill="#86efac" font-size="8.5" text-anchor="middle" font-family="DM Sans,sans-serif">Which recall era?</text>
-
+ 
         <!-- L2 NODES -->
         <rect x="40" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="110" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">airbag_complaints</text>
         <text x="110" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0241</text>
         <text x="110" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Airbag spike?</text>
-
+ 
         <rect x="260" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="330" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">tsb_comp_flag</text>
         <text x="330" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0109</text>
         <text x="330" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">TSB matches complaint?</text>
-
+ 
         <rect x="460" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="530" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">crash_count</text>
         <text x="530" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0534</text>
         <text x="530" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Crashes reported?</text>
-
+ 
         <rect x="680" y="265" width="140" height="44" rx="6" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="750" y="283" fill="white" font-size="9" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">inv_count_180d</text>
         <text x="750" y="296" fill="rgba(255,255,255,0.6)" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">Imp: 0.0612</text>
         <text x="750" y="308" fill="#93c5fd" font-size="8" text-anchor="middle" font-family="DM Sans,sans-serif">Multiple investigations?</text>
-
+ 
         <!-- LEAF NODES -->
         <rect x="22" y="362" width="76" height="44" rx="6" fill="#3d4a5c" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
         <text x="60" y="379" fill="rgba(255,255,255,0.9)" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">8%</text>
         <text x="60" y="392" fill="rgba(255,255,255,0.5)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">PASS</text>
         <text x="60" y="402" fill="rgba(255,255,255,0.4)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Low risk</text>
-
+ 
         <rect x="122" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="160" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">24%</text>
         <text x="160" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">WATCH</text>
         <text x="160" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Monitor</text>
-
+ 
         <rect x="242" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="280" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">31%</text>
         <text x="280" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">SIGNAL</text>
         <text x="280" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Moderate</text>
-
+ 
         <rect x="342" y="362" width="76" height="44" rx="6" fill="#1a5c32" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
         <text x="380" y="379" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">58%</text>
         <text x="380" y="392" fill="white" font-size="7.5" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">STRONG</text>
         <text x="380" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">High risk</text>
-
+ 
         <rect x="462" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="500" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">29%</text>
         <text x="500" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">SIGNAL</text>
         <text x="500" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Elevated</text>
-
+ 
         <rect x="562" y="362" width="76" height="44" rx="6" fill="#1a5c32" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
         <text x="600" y="379" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">67%</text>
         <text x="600" y="392" fill="white" font-size="7.5" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">STRONG</text>
         <text x="600" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">High risk</text>
-
+ 
         <rect x="662" y="362" width="76" height="44" rx="6" fill="#1a4a8a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <text x="700" y="379" fill="white" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">19%</text>
         <text x="700" y="392" fill="rgba(255,255,255,0.7)" font-size="7.5" text-anchor="middle" font-family="DM Sans,sans-serif">PASS</text>
         <text x="700" y="402" fill="rgba(255,255,255,0.5)" font-size="7" text-anchor="middle" font-family="DM Sans,sans-serif">Low era adj.</text>
-
+ 
         <rect x="762" y="362" width="76" height="44" rx="6" fill="#1a5c32" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
         <text x="800" y="379" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle" font-family="DM Mono,monospace">74%</text>
         <text x="800" y="392" fill="white" font-size="7.5" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">STRONG</text>
@@ -606,7 +775,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
     </div>
     <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin-top:0.5rem;">This shows ONE simplified tree. XGBoost builds 300 trees sequentially, each correcting the previous one's errors. Final probability = weighted vote across all 300 trees.</p>
   </div>
-
+ 
   <!-- Model Stats -->
   <div class="grid-4" style="margin-bottom:1.5rem;">
     <div class="stat-box"><span class="stat-val">0.8083</span><span class="stat-lbl">AUC Score</span><span class="stat-desc">Random = 0.50, Perfect = 1.0. Correctly identifies the more recall-prone vehicle 80.8% of the time.</span></div>
@@ -614,7 +783,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
     <div class="stat-box"><span class="stat-val red">4.4×</span><span class="stat-lbl">Informational Edge</span><span class="stat-desc">STRONG SIGNAL vehicles have recalls follow 4.4× more often than the base rate.</span></div>
     <div class="stat-box"><span class="stat-val">17.15%</span><span class="stat-lbl">STRONG SIGNAL Threshold</span><span class="stat-desc">All three stat tests pass at p = 0.000000. F1-maximized.</span></div>
   </div>
-
+ 
   <!-- AUC Comparison -->
   <div class="grid-2" style="margin-bottom:1.5rem;">
     <div class="card">
@@ -636,7 +805,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
         </div>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Statistical Threshold Validation — All p = 0.000000</h3>
       <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:0.5rem;">
@@ -655,11 +824,14 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
       </div>
     </div>
   </div>
-
+ 
   <!-- Feature Importance Chart -->
-  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.2rem;">Feature Importance — Top 30 of 60 Features</h3>
+  <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.5rem;font-size:1.2rem;">Feature Importance &amp; SHAP Analysis — Makes the &ldquo;Black Box&rdquo; Transparent</h3>
   <p style="font-size:0.85rem;color:var(--gray-dark);margin-bottom:1rem;">Each bar shows what percentage of the model's decision-making was driven by that feature. Hover for description. <span style="color:var(--navy);font-weight:700;">Navy = top 10.</span> <span style="color:var(--green);font-weight:700;">Green = regime dummies.</span></p>
-  <div class="fi-chart-wrap" style="margin-bottom:1.5rem;">
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+  <div class="fi-chart-wrap">
+    <h4 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.6rem;font-size:0.95rem;">XGBoost Feature Importance</h4>
+    <p style="font-size:0.72rem;color:var(--gray-mid);margin-bottom:0.6rem;">How often each feature was used across 300 trees</p>
     <div class="fi-legend">
       <div class="fi-legend-item"><div class="fi-legend-dot" style="background:var(--navy);"></div><span>Top 10 features</span></div>
       <div class="fi-legend-item"><div class="fi-legend-dot" style="background:var(--green);"></div><span>Structural break dummies (R2/R3)</span></div>
@@ -667,23 +839,34 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
     </div>
     <div id="fiChart"></div>
   </div>
-
+  <div class="fi-chart-wrap">
+    <h4 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:0.6rem;font-size:0.95rem;">SHAP — Mean Absolute Impact</h4>
+    <p style="font-size:0.72rem;color:var(--gray-mid);margin-bottom:0.6rem;">How much each feature actually moved the probability — real model output</p>
+    <div class="fi-legend">
+      <div class="fi-legend-item"><div class="fi-legend-dot" style="background:var(--navy);"></div><span>Top features</span></div>
+      <div class="fi-legend-item"><div class="fi-legend-dot" style="background:#6b8cba;"></div><span>Other features</span></div>
+    </div>
+    <div id="shapChart"></div>
+  </div>
+</div>
+ 
   <div class="quote-box">
     <p>"Khanna et al. (2025) demonstrate that most financial models exhibit sharp performance declines when tested on unseen market regimes. Our model achieves AUC 0.8083 on Regime 3 — a structural environment it never encountered during training — directly contradicting this pattern and confirming it captured genuine underlying signal rather than era-specific noise."</p>
     <span class="cite">— Khanna et al. (2025), arXiv:2511.09754; Paye & Timmermann (2006), Journal of Empirical Finance</span>
   </div>
 </div>
 </div>
-
+ 
 <!-- ══════════════════════════════════════════════════ -->
 <!-- TAB: KELLY -->
 <!-- ══════════════════════════════════════════════════ -->
-<div class="tab-section bg-white" id="tab-kelly">
+ 
+<div class="tab-section bg-white" id="tab-sizing">
 <div class="container section-pad">
   <span class="section-label">Stage 2 — Position Sizing</span>
   <h2 class="section-title">Kelly Criterion — Optimal Capital Allocation</h2>
   <p class="section-desc">A mathematical formula developed by John Kelly at Bell Labs (1956), applied to financial markets by Edward Thorp. Widely used by professional traders and hedge funds to determine the optimal position size given a known win rate and payoff. Not to be confused with Kelly Blue Book.</p>
-
+ 
   <div class="kelly-equation">
     <span class="eq-label">Full Kelly Formula</span>
     <div class="eq-full">f* = (p × b − q) / b</div>
@@ -698,14 +881,14 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
       <div class="eq-simple">Capped at $1,000,000 (10% of AUM) | Floored at $50,000 (0.5% of AUM)</div>
     </div>
   </div>
-
+ 
   <div class="kelly-vars">
     <div class="kelly-var"><div class="kv-sym">p — Win Rate</div><div class="kv-desc">From Recall Impact Scorecard — how often this company's stock drops more than 2% on recall days</div><div class="kv-val">Base rate: 21.9% across all 3,631 recall events</div></div>
     <div class="kelly-var"><div class="kv-sym">b — Win Size</div><div class="kv-desc">Average drop size divided by stop loss. Bigger drops = better risk/reward ratio</div><div class="kv-val">Example — Lucid: -11.66% avg drop → positive Kelly → $604,000 base position</div></div>
     <div class="kelly-var"><div class="kv-sym">q — Loss Rate (1−p)</div><div class="kv-desc">How often the stock does NOT drop and the short loses to the stop loss</div><div class="kv-val">Stop loss fixed at 5% — maximum loss per trade before exit</div></div>
     <div class="kelly-var"><div class="kv-sym">Half-Kelly Applied</div><div class="kv-desc">We use half the Kelly fraction (f*/2) to account for estimation error and reduce volatility</div><div class="kv-val">Standard institutional practice for Kelly Criterion deployment</div></div>
   </div>
-
+ 
   <div class="grid-2" style="margin-top:1.5rem;">
     <div class="info-box">
       <h4>Portfolio Parameters</h4>
@@ -729,120 +912,35 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
       </table>
     </div>
   </div>
-
+ 
   <div class="quote-box" style="margin-top:1.5rem;">
     <p>"The Kelly Criterion provides the optimal bet size for maximizing the long-run growth rate of capital, balancing risk and reward mathematically rather than arbitrarily."</p>
     <span class="cite">— Hung (2010), Betting with the Kelly Criterion; Thorp (1997), The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market</span>
   </div>
 </div>
-</div>
-
+ 
+ 
 <!-- ══════════════════════════════════════════════════ -->
 <!-- TAB: SCORECARD -->
 <!-- ══════════════════════════════════════════════════ -->
-<div class="tab-section bg-light" id="tab-scorecard">
-<div class="container section-pad">
-  <span class="section-label">Recall Impact Scorecard</span>
-  <h2 class="section-title">Full Company Scorecard — $10M Portfolio</h2>
-  <p class="section-desc">Built from 3,631 recall events across 17 manufacturers (2000–2025). Inclusion criterion: t-test p &lt; 0.05 confirming recall-day drops are statistically real. Ferrari excluded — drops are statistical noise (p = 1.0).</p>
-
-  <div class="info-box" style="margin-bottom:1.5rem;">
-    <h4>Why -2% CAR as the Drop Threshold?</h4>
-    <p>A drop of -2% or more on a recall day represents a meaningful market reaction beyond normal daily noise. This threshold is statistically significant and consistent with event study methodology. Only drops below this level are counted in the drop rate calculation.</p>
+ 
   </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Company</th><th>Ticker</th><th>Recalls</th><th>Drop Rate</th><th>Avg Drop</th><th>Avg CAR</th><th>T-Test p</th><th>Kelly f</th><th>Half Kelly</th><th>Base Position</th><th>Action</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Rivian</strong></td><td class="mono">RIVN</td><td>20</td><td>40.0%</td><td class="mono">-7.12%</td><td class="mono">-0.41%</td><td class="mono">0.0027</td><td class="mono">-0.0212</td><td class="mono">-0.0106</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Lucid Group</strong></td><td class="mono">LCID</td><td>13</td><td>38.5%</td><td class="mono">-11.66%</td><td class="mono">-0.87%</td><td class="mono">0.0033</td><td class="mono">+0.1208</td><td class="mono">+0.0604</td><td class="mono" style="color:var(--green);font-weight:700;">$604,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Tesla</strong></td><td class="mono">TSLA</td><td>75</td><td>29.3%</td><td class="mono">-6.05%</td><td class="mono">+0.15%</td><td class="mono">0.0000</td><td class="mono">-0.2911</td><td class="mono">-0.1455</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Stellantis</strong></td><td class="mono">STLA</td><td>314</td><td>28.0%</td><td class="mono">-4.62%</td><td class="mono">-0.26%</td><td class="mono">0.0000</td><td class="mono">-0.4986</td><td class="mono">-0.2493</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.*</span></td></tr>
-        <tr><td><strong>Subaru</strong></td><td class="mono">FUJHY</td><td>99</td><td>25.3%</td><td class="mono">-3.72%</td><td class="mono">+0.01%</td><td class="mono">0.0000</td><td class="mono">-0.7520</td><td class="mono">-0.3760</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>BMW Group</strong></td><td class="mono">BMWYY</td><td>354</td><td>24.6%</td><td class="mono">-3.89%</td><td class="mono">+0.10%</td><td class="mono">0.0000</td><td class="mono">-0.7240</td><td class="mono">-0.3620</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.**</span></td></tr>
-        <tr><td><strong>Hyundai</strong></td><td class="mono">HYMTF</td><td>384</td><td>24.1%</td><td class="mono">-4.35%</td><td class="mono">+0.34%</td><td class="mono">0.0000</td><td class="mono">-0.6315</td><td class="mono">-0.3158</td><td class="mono">$50,000</td><td><span class="badge-excluded">EXCL.**</span></td></tr>
-        <tr><td><strong>Volkswagen Group</strong></td><td class="mono">VWAGY</td><td>405</td><td>23.5%</td><td class="mono">-4.05%</td><td class="mono">-0.03%</td><td class="mono">0.0000</td><td class="mono">-0.7108</td><td class="mono">-0.3554</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>General Motors</strong></td><td class="mono">GM</td><td>301</td><td>22.9%</td><td class="mono">-3.91%</td><td class="mono">-0.09%</td><td class="mono">0.0000</td><td class="mono">-0.7573</td><td class="mono">-0.3787</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Ford</strong></td><td class="mono">F</td><td>454</td><td>20.7%</td><td class="mono">-3.81%</td><td class="mono">-0.00%</td><td class="mono">0.0000</td><td class="mono">-0.8345</td><td class="mono">-0.4172</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Mazda</strong></td><td class="mono">MZDAY</td><td>73</td><td>20.5%</td><td class="mono">-4.27%</td><td class="mono">-0.18%</td><td class="mono">0.0000</td><td class="mono">-0.7241</td><td class="mono">-0.3621</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Mercedes-Benz</strong></td><td class="mono">MBG</td><td>206</td><td>19.4%</td><td class="mono">-4.15%</td><td class="mono">-0.03%</td><td class="mono">0.0000</td><td class="mono">-0.7773</td><td class="mono">-0.3886</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Nissan</strong></td><td class="mono">NSANY</td><td>270</td><td>17.8%</td><td class="mono">-4.01%</td><td class="mono">+0.02%</td><td class="mono">0.0000</td><td class="mono">-0.8480</td><td class="mono">-0.4240</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Honda</strong></td><td class="mono">HMC</td><td>279</td><td>17.6%</td><td class="mono">-3.20%</td><td class="mono">-0.06%</td><td class="mono">0.0000</td><td class="mono">-1.1143</td><td class="mono">-0.5571</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Toyota</strong></td><td class="mono">TM</td><td>273</td><td>16.1%</td><td class="mono">-3.69%</td><td class="mono">-0.16%</td><td class="mono">0.0000</td><td class="mono">-0.9767</td><td class="mono">-0.4884</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr><td><strong>Volvo</strong></td><td class="mono">VLVLY</td><td>95</td><td>12.6%</td><td class="mono">-4.37%</td><td class="mono">+0.18%</td><td class="mono">0.0001</td><td class="mono">-0.8743</td><td class="mono">-0.4372</td><td class="mono">$50,000</td><td><span class="badge-trade">TRADE</span></td></tr>
-        <tr style="background:#fee2e2;"><td><strong>Ferrari</strong></td><td class="mono">RACE</td><td>16</td><td>12.5%</td><td class="mono">-2.68%</td><td class="mono">-0.30%</td><td class="mono" style="color:var(--red);font-weight:700;">1.0000</td><td class="mono">-1.5094</td><td class="mono">-0.7547</td><td class="mono">$0</td><td><span class="badge-skip">SKIP</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div style="margin-top:0.8rem;font-size:0.78rem;color:var(--gray-dark);">
-    <span class="badge-trade">TRADE</span> t-test p &lt; 0.05 &nbsp;|&nbsp;
-    <span class="badge-skip">SKIP</span> Ferrari p = 1.0, drops are noise &nbsp;|&nbsp;
-    <span class="badge-excluded">EXCL.*</span> Stellantis: Q1 2026 financial distress outlier &nbsp;|&nbsp;
-    <span class="badge-excluded">EXCL.**</span> BMW/Hyundai: US ADR unavailable Q1 2026
-  </div>
-</div>
-</div>
-
-<!-- ══════════════════════════════════════════════════ -->
-<!-- TAB: RESULTS -->
-<!-- ══════════════════════════════════════════════════ -->
-<div class="tab-section bg-navy" id="tab-results">
+<div class="tab-section bg-navy" id="tab-profit">
 <div class="container section-pad">
   <span class="section-label">Profit Estimation</span>
   <h2 class="section-title">Q1 2026 Results — Real Out-of-Sample Performance</h2>
   <p class="section-desc">Top 10 signals per month. Real NHTSA recall filings. Real yfinance stock prices. Model trained entirely on pre-2026 data — genuinely unseen.</p>
-
+ 
   <div class="grid-4" style="margin-bottom:2rem;">
     <div class="stat-box"><span class="stat-val green">+$117,387</span><span class="stat-lbl">Total P&L</span><span class="stat-desc">Q1 2026, 19 trades, real out-of-sample</span></div>
     <div class="stat-box"><span class="stat-val green">+1.17%</span><span class="stat-lbl">Portfolio Return</span><span class="stat-desc">On $10M vs -4.3% S&P 500</span></div>
     <div class="stat-box"><span class="stat-val">63%</span><span class="stat-lbl">Win Rate</span><span class="stat-desc">12 wins, 4 losses, 3 stop losses</span></div>
     <div class="stat-box"><span class="stat-val">7/19</span><span class="stat-lbl">Recall Confirmations</span><span class="stat-desc">37% of signals confirmed by actual NHTSA filing</span></div>
   </div>
-
+ 
   <!-- Benchmark visual -->
-  <div style="background:rgba(0,0,0,0.3);border-radius:12px;padding:2rem;margin-bottom:2rem;border:1px solid rgba(255,255,255,0.1);">
-    <h3 style="color:white;font-family:'Playfair Display',serif;margin-bottom:1.5rem;">Q1 2026 Performance vs Benchmarks</h3>
-    <div style="display:flex;align-items:flex-end;gap:3rem;height:220px;padding-bottom:40px;position:relative;max-width:500px;margin:0 auto;">
-      <div style="position:absolute;bottom:40px;left:0;right:0;height:2px;background:rgba(255,255,255,0.3);"></div>
-      <!-- S&P -->
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;position:relative;">
-        <div style="background:#ef4444;width:80%;height:77px;border-radius:0 0 6px 6px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;position:absolute;top:40px;">
-          <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">-4.30%</span>
-        </div>
-        <span style="position:absolute;bottom:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">S&P 500</span>
-      </div>
-      <!-- Nasdaq -->
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;position:relative;">
-        <div style="background:#dc2626;width:80%;height:104px;border-radius:0 0 6px 6px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;position:absolute;top:40px;">
-          <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">-5.80%</span>
-        </div>
-        <span style="position:absolute;bottom:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">Nasdaq 100</span>
-      </div>
-      <!-- Riverdale -->
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;position:relative;">
-        <div style="background:#166534;width:80%;height:21px;border-radius:6px 6px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:4px;position:absolute;bottom:40px;">
-          <span style="color:white;font-family:'DM Mono',monospace;font-size:1rem;font-weight:700;">+1.17%</span>
-        </div>
-        <span style="position:absolute;bottom:0;color:#4ade80;font-size:0.9rem;font-weight:700;">Riverdale ✓</span>
-      </div>
-    </div>
-    <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;justify-content:center;">
-      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1.5rem;text-align:center;">
-        <div style="color:#4ade80;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:600;">+5.47pp</div>
-        <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">vs S&P 500</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1.5rem;text-align:center;">
-        <div style="color:#4ade80;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:600;">+6.97pp</div>
-        <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">vs Nasdaq 100</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1.5rem;text-align:center;">
-        <div style="color:#facc15;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:600;">~4.68%</div>
-        <div style="color:rgba(255,255,255,0.6);font-size:0.75rem;">Annualized rate</div>
-      </div>
-    </div>
-  </div>
-
+  
+ 
   <div class="grid-3" style="margin-bottom:2rem;">
     <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);">
       <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">January</div>
@@ -860,7 +958,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
       <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">6 trades | 4W 1L 0S | 1 recall hit (17%)</div>
     </div>
   </div>
-
+ 
   <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:1.5rem;border:1px solid rgba(255,255,255,0.1);border-left:4px solid var(--gold-light);">
     <h3 style="color:var(--gold-light);font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Three Companies Excluded From Q1 2026</h3>
     <div class="grid-3">
@@ -870,17 +968,19 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
     </div>
   </div>
 </div>
-</div>
-
+ 
+ 
 <!-- ══════════════════════════════════════════════════ -->
 <!-- TAB: TRADES -->
 <!-- ══════════════════════════════════════════════════ -->
-<div class="tab-section bg-light" id="tab-trades">
-<div class="container section-pad">
+ 
+  <div class="divider"></div>
+ 
+  <div class="container section-pad">
   <span class="section-label">Complete Trade Log</span>
   <h2 class="section-title">All 19 Trades — Q1 2026</h2>
   <p class="section-desc">Every position entered in Q1 2026. Exit: T+1 after recall filing or 45-day hold, whichever first. Stop loss: 5% upside. Green recall date = confirmed NHTSA filing within 45-day window.</p>
-
+ 
   <div class="table-wrap">
     <table>
       <thead><tr><th>Mo</th><th>Company</th><th>Ticker</th><th>Make</th><th>Model</th><th>Prob</th><th>Position</th><th>Entry</th><th>Exit</th><th>Chg%</th><th>Recall</th><th>Date</th><th>Stop</th><th>Result</th><th>P&L</th></tr></thead>
@@ -908,7 +1008,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
       </tbody>
     </table>
   </div>
-
+ 
   <div class="info-box" style="margin-top:1rem;">
     <h4>P&L by Company</h4>
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;">
@@ -922,17 +1022,14 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
     </div>
   </div>
 </div>
+ 
 </div>
-
-<!-- ══════════════════════════════════════════════════ -->
-<!-- TAB: SOURCES -->
-<!-- ══════════════════════════════════════════════════ -->
 <div class="tab-section bg-white" id="tab-sources">
 <div class="container section-pad">
   <span class="section-label">Academic Sources</span>
   <h2 class="section-title">References & Citations</h2>
   <p class="section-desc">All sources used in the construction, validation, and defense of the Riverdale Investments strategy.</p>
-
+ 
   <div class="grid-2">
     <div>
       <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">Methodology & Model</h3>
@@ -993,30 +1090,31 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
   </div>
 </div>
 </div>
-
+ 
 <!-- ══════════════════════════════════════════════════ -->
 <!-- TAB: TEAM -->
 <!-- ══════════════════════════════════════════════════ -->
+ 
 <div class="tab-section bg-navy" id="tab-team">
 <div class="container section-pad" style="text-align:center;">
   <span class="section-label">The Team</span>
   <h2 class="section-title">Riverdale Investments Research Team</h2>
   <p class="section-desc" style="margin:0 auto 2rem;">Tobin College of Business · St. John's University · BUA Competition 2026</p>
-
+ 
   <div class="team-grid">
-    <div class="team-card"><div class="team-avatar">CK</div><div class="team-name">Charles Kwak</div><div class="team-role">Event Study & Data Architecture</div></div>
-    <div class="team-card"><div class="team-avatar">CL</div><div class="team-name">Cassie Lemus-Sodji</div><div class="team-role">Model Development & Analysis</div></div>
-    <div class="team-card"><div class="team-avatar">SL</div><div class="team-name">Stephan Loiseau</div><div class="team-role">Strategy & Research</div></div>
-    <div class="team-card"><div class="team-avatar">AM</div><div class="team-name">Andrew Manalansan</div><div class="team-role">Pipeline & Profit Estimation</div></div>
+    <div class="team-card"><div class="team-avatar">CK</div><div class="team-name">Charles Kwak</div></div>
+    <div class="team-card"><div class="team-avatar">CL</div><div class="team-name">Cassie Lemus-Sodji</div></div>
+    <div class="team-card"><div class="team-avatar">SL</div><div class="team-name">Stephan Loiseau</div></div>
+    <div class="team-card"><div class="team-avatar">AM</div><div class="team-name">Andrew Manalansan</div></div>
   </div>
-
+ 
   <div style="margin-top:2rem;background:rgba(255,255,255,0.06);border-radius:10px;padding:1.2rem 1.8rem;border:1px solid rgba(255,255,255,0.1);display:inline-block;">
     <div style="color:var(--gold-light);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.3rem;">Faculty Advisor</div>
     <div style="color:white;font-size:1.1rem;font-weight:600;">Michael D. Herley, D.B.A.</div>
   </div>
-
+ 
   <div class="divider" style="border-color:rgba(255,255,255,0.1);margin:2rem auto;max-width:600px;"></div>
-
+ 
   <div class="grid-2" style="max-width:900px;margin:0 auto;">
     <div class="ai-box">
       <h3>How We Leveraged AI</h3>
@@ -1037,120 +1135,179 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
       </div>
     </div>
   </div>
-
+ 
   <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);">
     <p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:white;font-style:italic;max-width:600px;margin:0 auto 1rem;">"In the investment world, the side with the informational edge wins. We didn't just identify how Riverdale can obtain that edge — we built a complete strategy around it and proved it generates returns in the real world."</p>
     <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;font-style:italic;">"And at the end of the day, the best strategy is a profitable one."</p>
+  <div class="divider" style="border-color:rgba(255,255,255,0.1);margin:2rem auto;max-width:800px;"></div>
+  <div style="max-width:900px;margin:0 auto;">
+    <span class="section-label" style="color:var(--gold-light);">Future Research</span>
+    <h3 style="font-family:'Playfair Display',serif;color:white;font-size:1.2rem;margin-bottom:1rem;">Beyond Investment — A Consulting Opportunity</h3>
+    <div class="grid-2">
+      <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:1.4rem;border:1px solid rgba(255,255,255,0.12);border-left:4px solid var(--gold-light);">
+        <h4 style="color:var(--gold-light);margin-bottom:0.6rem;font-size:0.9rem;">Manufacturer Risk Intelligence</h4>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.83rem;line-height:1.7;">The same model that identifies short opportunities can be reframed as a proactive risk tool for automakers. A manufacturer could license this system to monitor their own complaint velocity in real time — receiving early warning when a recall is likely, enabling faster voluntary action and protecting stock price before the market reacts.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:1.4rem;border:1px solid rgba(255,255,255,0.12);border-left:4px solid #f87171;">
+        <h4 style="color:#f87171;margin-bottom:0.6rem;font-size:0.9rem;">Stock Reaction Benchmarking</h4>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.83rem;line-height:1.7;">Manufacturers could use the Recall Impact Scorecard to understand how their stock reacts versus competitors on recall days — informing investor relations strategy and proactive communication when complaint spikes are detected early.</p>
+      </div>
+    </div>
+    <div style="background:rgba(158,124,12,0.15);border-radius:10px;padding:1.1rem 1.4rem;margin-top:1rem;border:1px solid rgba(158,124,12,0.3);">
+      <p style="color:rgba(255,255,255,0.8);font-size:0.85rem;line-height:1.6;font-style:italic;">"The infrastructure built for Riverdale — the NHTSA pipeline, XGBoost signal model, and recall impact database — is directly repurposable as a B2B consulting product for manufacturers seeking to get ahead of recall risk rather than react to it."</p>
+    </div>
+  </div>
   </div>
 </div>
 </div>
-
+ 
 <!-- FOOTER -->
+ 
 <footer>
   <p><strong style="color:white;">Riverdale Investments — Strategic Recall Analysis</strong></p>
-  <p>Tobin College of Business · St. John's University · BUA Competition 2026</p>
-  <p style="margin-top:0.5rem;">
-    <a href="https://www.nhtsa.gov/" target="_blank">NHTSA Data</a> ·
-    <a href="https://doi.org/10.1111/risa.70052" target="_blank">Li et al. (2025)</a> ·
-    <a href="https://thehedgefundjournal.com/hedge-fund-registration/" target="_blank">Hedge Fund Journal</a>
-  </p>
-  <p style="margin-top:0.8rem;font-style:italic;">"The signal was always there. We were just the first ones listening."</p>
+  <p>Manhattan University Competition 2026</p>
 </footer>
-
 <script>
-// ── FEATURE IMPORTANCE DATA ─────────────────────────
-const fiData = [
-  {rank:1,  name:'velocity_spike_ratio', score:0.1823, type:'top', desc:'30-day complaints ÷ 12-month baseline. Most predictive feature at 18.2%.'},
-  {rank:2,  name:'complaint_count',      score:0.1204, type:'top', desc:'Raw 30-day complaint count for this make/model.'},
-  {rank:3,  name:'comp_spike_ratio',     score:0.0891, type:'top', desc:'Component-specific spike ratio — isolates targeted surges.'},
-  {rank:4,  name:'complaint_count_3m',   score:0.0743, type:'top', desc:'90-day complaint count.'},
-  {rank:5,  name:'inv_count_180d',       score:0.0612, type:'top', desc:'Open NHTSA investigations in last 180 days.'},
-  {rank:6,  name:'crash_count',          score:0.0534, type:'top', desc:'Complaints also reporting a crash event.'},
-  {rank:7,  name:'complaint_count_6m',   score:0.0487, type:'top', desc:'180-day complaint count.'},
-  {rank:8,  name:'tsb_count_180d',       score:0.0423, type:'top', desc:'Technical Service Bulletins filed in 180 days.'},
-  {rank:9,  name:'high_risk_count',      score:0.0398, type:'top', desc:'High-risk component complaints (brake/airbag/steering).'},
-  {rank:10, name:'inv_flag',             score:0.0312, type:'top', desc:'Binary: active NHTSA investigation open.'},
-  {rank:11, name:'days_since_inv',       score:0.0287, type:'normal', desc:'Days since most recent investigation opened.'},
-  {rank:12, name:'airbag_complaints',    score:0.0241, type:'normal', desc:'Complaints specifically about airbags.'},
-  {rank:13, name:'tsb_velocity_30d',     score:0.0218, type:'normal', desc:'TSB spike velocity vs 12-month baseline.'},
-  {rank:14, name:'brake_complaints',     score:0.0196, type:'normal', desc:'Complaints specifically about brakes.'},
-  {rank:15, name:'prior_recall_12m',     score:0.0184, type:'normal', desc:'Number of recalls in prior 12 months.'},
-  {rank:16, name:'R2 (Structural Break 2014)', score:0.0171, type:'regime', desc:'D2=1 for 2014M03–2021M01. Takata era. Positive rate 16.1% vs 7.4% baseline.'},
-  {rank:17, name:'injury_count',         score:0.0163, type:'normal', desc:'Complaints reporting an injury.'},
-  {rank:18, name:'tsb_comp_match',       score:0.0147, type:'normal', desc:'TSBs matching dominant complaint component.'},
-  {rank:19, name:'ewr_rate',             score:0.0132, type:'normal', desc:'Early Warning Report rate in complaints.'},
-  {rank:20, name:'R3 (Structural Break 2021)', score:0.0124, type:'regime', desc:'D3=1 for 2021M02 onward. EV era. Tesla, Rivian, Lucid.'},
-  {rank:21, name:'fire_count',           score:0.0118, type:'normal', desc:'Complaints reporting a fire event.'},
-  {rank:22, name:'tsb_comp_flag',        score:0.0109, type:'normal', desc:'Binary: TSB matches complaint component.'},
-  {rank:23, name:'steering_complaints',  score:0.0097, type:'normal', desc:'Complaints specifically about steering.'},
-  {rank:24, name:'big_spike',            score:0.0089, type:'normal', desc:'Binary: velocity spike above 5x baseline.'},
-  {rank:25, name:'comp_spike_flag',      score:0.0081, type:'normal', desc:'Binary: component spike above 5x baseline.'},
-  {rank:26, name:'prior_recall_24m',     score:0.0074, type:'normal', desc:'Number of recalls in prior 24 months.'},
-  {rank:27, name:'high_tsb',             score:0.0068, type:'normal', desc:'Binary: TSB count above 75th percentile.'},
-  {rank:28, name:'death_count',          score:0.0061, type:'normal', desc:'Complaints reporting a fatality.'},
-  {rank:29, name:'log_complaint_count',  score:0.0057, type:'normal', desc:'Log-transformed 30-day complaint count.'},
-  {rank:30, name:'fire_complaints',      score:0.0053, type:'normal', desc:'Complaints about fires/electrical issues.'},
+ 
+const TAB_IDS = ['overview','eventstudy','model','sizing','profit','sources','team'];
+ 
+// ── FEATURE IMPORTANCE DATA ──────────────────────────
+const fiData=[
+  {rank:1, name:'velocity_spike_ratio',score:0.1823,type:'top',desc:'30-day complaints divided by 12-month baseline. #1 feature.'},
+  {rank:2, name:'complaint_count',score:0.1204,type:'top',desc:'Raw 30-day complaint count for this make/model.'},
+  {rank:3, name:'comp_spike_ratio',score:0.0891,type:'top',desc:'Component-specific spike ratio.'},
+  {rank:4, name:'complaint_count_3m',score:0.0743,type:'top',desc:'90-day complaint count.'},
+  {rank:5, name:'inv_count_180d',score:0.0612,type:'top',desc:'Open NHTSA investigations in last 180 days.'},
+  {rank:6, name:'crash_count',score:0.0534,type:'top',desc:'Complaints also reporting a crash.'},
+  {rank:7, name:'complaint_count_6m',score:0.0487,type:'top',desc:'180-day complaint count.'},
+  {rank:8, name:'tsb_count_180d',score:0.0423,type:'top',desc:'TSBs filed in last 180 days.'},
+  {rank:9, name:'high_risk_count',score:0.0398,type:'top',desc:'High-risk component complaints.'},
+  {rank:10,name:'inv_flag',score:0.0312,type:'top',desc:'Binary: active NHTSA investigation open.'},
+  {rank:11,name:'days_since_inv',score:0.0287,type:'normal',desc:'Days since most recent investigation.'},
+  {rank:12,name:'airbag_complaints',score:0.0241,type:'normal',desc:'Complaints specifically about airbags.'},
+  {rank:13,name:'tsb_velocity_30d',score:0.0218,type:'normal',desc:'TSB spike velocity vs 12-month baseline.'},
+  {rank:14,name:'brake_complaints',score:0.0196,type:'normal',desc:'Complaints about brakes.'},
+  {rank:15,name:'prior_recall_12m',score:0.0184,type:'normal',desc:'Recalls in prior 12 months.'},
+  {rank:16,name:'R2 (Break 2014M03)',score:0.0171,type:'regime',desc:'D2=1 for 2014M03-2021M01 (Crisis Era).'},
+  {rank:17,name:'injury_count',score:0.0163,type:'normal',desc:'Complaints reporting an injury.'},
+  {rank:18,name:'tsb_comp_match',score:0.0147,type:'normal',desc:'TSBs matching dominant complaint component.'},
+  {rank:19,name:'ewr_rate',score:0.0132,type:'normal',desc:'Early Warning Report rate.'},
+  {rank:20,name:'R3 (Break 2021M02)',score:0.0124,type:'regime',desc:'D3=1 for 2021M02 onward (Modern/EV Era).'},
 ];
-
-function buildFiChart() {
-  const container = document.getElementById('fiChart');
+ 
+// ── SHAP DATA ────────────────────────────────────────
+const shapData=[
+  {rank:1, name:'velocity_spike_ratio',score:0.8428,type:'top'},
+  {rank:2, name:'complaint_count',score:0.7667,type:'top'},
+  {rank:3, name:'DC_engine',score:0.2157,type:'normal'},
+  {rank:4, name:'airbag_complaints',score:0.1753,type:'top'},
+  {rank:5, name:'high_risk_count',score:0.1469,type:'top'},
+  {rank:6, name:'DC_other',score:0.1188,type:'normal'},
+  {rank:7, name:'tsb_count_180d',score:0.1055,type:'top'},
+  {rank:8, name:'tsb_comp_match',score:0.0969,type:'top'},
+  {rank:9, name:'DC_electrical',score:0.0753,type:'normal'},
+  {rank:10,name:'inv_count_180d',score:0.0583,type:'top'},
+  {rank:11,name:'days_since_inv',score:0.0507,type:'normal'},
+  {rank:12,name:'comp_spike_ratio',score:0.0354,type:'top'},
+  {rank:13,name:'DC_steering',score:0.0346,type:'normal'},
+  {rank:14,name:'injury_count',score:0.0311,type:'normal'},
+  {rank:15,name:'crash_count',score:0.0306,type:'top'},
+  {rank:16,name:'DC_structure',score:0.0239,type:'normal'},
+  {rank:17,name:'tsb_velocity_30d',score:0.0238,type:'normal'},
+  {rank:18,name:'M_HONDA',score:0.0223,type:'normal'},
+  {rank:19,name:'DC_brakes',score:0.0222,type:'normal'},
+  {rank:20,name:'M_BMW',score:0.0206,type:'normal'},
+];
+ 
+function buildChart(data, containerId) {
+  const container = document.getElementById(containerId);
   if (!container) return;
-  const maxScore = fiData[0].score;
-  let html = '';
-  fiData.forEach(f => {
-    const pct = (f.score / maxScore) * 95;
-    const scorePct = (f.score * 100).toFixed(2) + '%';
-    html += `
-      <div class="fi-row">
-        <span class="fi-rank">${f.rank}</span>
-        <span class="fi-name" title="${f.name}">${f.name}</span>
-        <div class="fi-bar-wrap">
-          <div class="fi-bar ${f.type}" style="width:${pct}%">${scorePct}</div>
-          <div class="fi-tooltip">${f.desc}</div>
-        </div>
-      </div>`;
+  const maxScore = data[0].score;
+  let h = '';
+  data.forEach(function(f) {
+    const pct = (f.score / maxScore) * 94;
+    const val = f.score > 0.1 ? f.score.toFixed(3) : f.score.toFixed(3);
+    h += '<div class="fi-row">' +
+      '<span class="fi-rank">' + f.rank + '</span>' +
+      '<span class="fi-name" title="' + f.name + '">' + f.name + '</span>' +
+      '<div class="fi-bar-wrap">' +
+        '<div class="fi-bar ' + f.type + '" style="width:' + pct + '%">' + val + '</div>' +
+        (f.desc ? '<div class="fi-tooltip">' + f.desc + '</div>' : '') +
+      '</div></div>';
   });
-  container.innerHTML = html;
+  container.innerHTML = h;
 }
-
-// ── TAB SYSTEM ──────────────────────────────────────
-const TAB_IDS = ['thesis','model','kelly','scorecard','results','trades','sources','team'];
-
+ 
+function buildFiChart()   { buildChart(fiData,   'fiChart'); }
+function buildShapChart() { buildChart(shapData,  'shapChart'); }
+ 
+// ── REGIME TOGGLE ────────────────────────────────────
+function showRegime(n) {
+  [1,2,3].forEach(function(i) {
+    var el  = document.getElementById('regime' + i);
+    var btn = document.getElementById('rbtn'   + i);
+    if (el)  el.style.display = (i === n) ? 'block' : 'none';
+    if (btn) {
+      btn.classList.toggle('active', i === n);
+    }
+  });
+}
+ 
+// ── TAB SYSTEM WITH FADE ─────────────────────────────
 function showTab(id) {
-  TAB_IDS.forEach(t => {
-    const el = document.getElementById('tab-' + t);
-    if (el) el.classList.remove('active');
-    const nav = document.getElementById('nav-' + t);
-    if (nav) nav.classList.remove('active');
-    const mlink = document.querySelector(`.mobile-menu a[onclick*="'${t}'"]`);
-    if (mlink) mlink.classList.remove('active');
-  });
-
-  const target = document.getElementById('tab-' + id);
-  if (target) target.classList.add('active');
-  const navLink = document.getElementById('nav-' + id);
-  if (navLink) navLink.classList.add('active');
-  const mobileLink = document.querySelector(`.mobile-menu a[onclick*="'${id}'"]`);
-  if (mobileLink) mobileLink.classList.add('active');
-
-  window.scrollTo({top: document.getElementById('hero') ? document.getElementById('hero').offsetHeight : 0, behavior:'smooth'});
-
-  if (id === 'model') buildFiChart();
+  var current = document.querySelector('.tab-section.active');
+  if (current && current.id !== 'tab-' + id) {
+    current.style.opacity = '0';
+    current.style.transition = 'opacity 0.25s ease';
+    setTimeout(function() {
+      current.classList.remove('active');
+      current.style.opacity = '';
+      current.style.transition = '';
+      _activateTab(id);
+    }, 250);
+  } else {
+    _activateTab(id);
+  }
 }
-
+ 
+function _activateTab(id) {
+  TAB_IDS.forEach(function(t) {
+    var nav = document.getElementById('nav-' + t);
+    if (nav) nav.classList.remove('active');
+  });
+  var target = document.getElementById('tab-' + id);
+  if (target) {
+    target.classList.add('active');
+    target.style.opacity = '0';
+    setTimeout(function() {
+      target.style.transition = 'opacity 0.25s ease';
+      target.style.opacity = '1';
+    }, 10);
+    setTimeout(function() { target.style.transition = ''; }, 280);
+  }
+  var nav = document.getElementById('nav-' + id);
+  if (nav) nav.classList.add('active');
+  var hero = document.getElementById('hero');
+  if (hero) {
+    if (id === 'overview') {
+      hero.style.display = 'flex';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      hero.style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+  if (id === 'model') { setTimeout(buildFiChart, 300); setTimeout(buildShapChart, 350); }
+}
+ 
 // ── HAMBURGER ────────────────────────────────────────
 function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
 }
-
-// ── PREVENT NAV LINKS DEFAULT ────────────────────────
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', e => e.preventDefault());
-});
-
-// Init — show thesis tab
-showTab('thesis');
+ 
+// Init
+showTab('overview');
+ 
 </script>
 </body>
 </html>
