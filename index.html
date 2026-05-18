@@ -302,7 +302,7 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
   .hero-metrics { flex-wrap:wrap; }
   .kelly-vars { grid-template-columns:1fr; }
   .fi-name { width:110px; }
-  .container { padding:0 1rem; }
+  .container { padding:0 1.2rem; }
   .section-pad { padding:2.5rem 0; }
   .phases .phase { border-right:none; border-bottom:1px solid rgba(255,255,255,0.1); }
   .pipeline-step { border-right:none; border-bottom:1px solid var(--gray); }
@@ -311,11 +311,20 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
   thead th { padding:8px; }
   tbody td { padding:7px 8px; }
   .desc-strip { grid-template-columns:1fr 1fr; }
+  #hero { padding-left:1.2rem !important; padding-right:1.2rem !important; }
+  .thesis-box { margin-left:0; margin-right:0; }
+  .stats-strip { width:100%; }
 }
 @media (max-width:600px) {
-  .hero-metric { flex:0 0 45%; }
+  .desc-strip { grid-template-columns:1fr; }
+  .stats-strip { flex-direction:column; }
+  .strip-stat { border-right:none !important; border-bottom:1px solid rgba(255,255,255,0.15); }
   .grid-4 { grid-template-columns:1fr 1fr; }
+  .hero-metric { flex:0 0 45%; }
+  nav { padding:0 1rem; }
+  .nav-title { font-size:0.82rem; }
 }
+ 
  
 .desc-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:2rem; }
 .ds-box { background:white; border-radius:10px; padding:1.2rem; border:1px solid var(--gray); border-left:4px solid var(--navy); text-align:center; }
@@ -363,8 +372,6 @@ footer a { color:rgba(255,255,255,0.7); text-decoration:none; }
   <div class="hero-metrics">
     <div class="hero-metric"><span class="val green">+1.17%</span><span class="lbl">Q1 2026 Return</span></div>
     <div class="hero-metric"><span class="val">0.8083</span><span class="lbl">Model AUC</span></div>
-    
-    <div class="hero-metric"><span class="val">4.4×</span><span class="lbl">Informational Edge</span></div>
   </div>
   <div class="thesis-box">
     <p>"A traditional event study approach suggests that the market efficiently prices in most recall risks. By analyzing and acting on pre-event signals, our recall probability model can give investors a distinct investment edge."</p>
